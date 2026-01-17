@@ -134,11 +134,46 @@
             margin-bottom: 20px;
             padding-bottom: 20px;
             border-bottom: 2px solid #e5e7eb;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        
+        #current-location.fade-out {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        
+        #current-location.fade-in {
+            animation: fadeInSlide 0.5s ease forwards;
+        }
+        
+        @keyframes fadeInSlide {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         #current-location-icon {
             font-size: 48px;
             margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        #current-location-icon.pulse {
+            animation: pulse 1s ease infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
         }
         
         #current-location-name {
@@ -151,6 +186,69 @@
         #current-location-instruction {
             font-size: 14px;
             color: #6b7280;
+        }
+        
+        /* Transition overlay for next location */
+        #next-location-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(37, 99, 235, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+        
+        #next-location-overlay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        #next-location-message {
+            color: white;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+            animation: bounceIn 0.6s ease;
+        }
+        
+        #next-location-icon {
+            font-size: 64px;
+            margin-bottom: 10px;
+            animation: bounceIn 0.6s ease 0.2s both;
+        }
+        
+        #next-location-name {
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+            animation: bounceIn 0.6s ease 0.4s both;
+        }
+        
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3) translateY(-20px);
+            }
+            50% {
+                transform: scale(1.05) translateY(0);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
         
         #running-score {
@@ -341,6 +439,11 @@
             <div id="running-score-label">Final Score</div>
             <button id="play-again-btn" onclick="location.reload()">Play Again</button>
         </div>
+    </div>
+    <div id="next-location-overlay">
+        <div id="next-location-message">Next Location!</div>
+        <div id="next-location-icon">🔔</div>
+        <div id="next-location-name">Loading...</div>
     </div>
     <div id="quick-score">
         <div id="quick-score-value">0</div>
@@ -665,7 +768,7 @@
         }
         
         // Update UI to show current location
-        function updateCurrentLocationDisplay() {
+        function updateCurrentLocationDisplay(animate = true) {
             const location = getCurrentLocation();
             
             if (!location) {
@@ -674,12 +777,28 @@
                 return;
             }
             
+            const currentLocationEl = document.getElementById('current-location');
+            const iconEl = document.getElementById('current-location-icon');
+            
+            // Remove fade classes
+            currentLocationEl.classList.remove('fade-out', 'fade-in');
+            iconEl.classList.remove('pulse');
+            
+            if (animate) {
+                // Fade in animation
+                currentLocationEl.classList.add('fade-in');
+                // Add pulse animation to icon to indicate user should tap
+                setTimeout(() => {
+                    iconEl.classList.add('pulse');
+                }, 500);
+            }
+            
             // Update progress indicator
             document.getElementById('current-location-number').textContent = gameState.currentLocationIndex + 1;
             document.getElementById('total-locations').textContent = locations.length;
             
             // Update current location display
-            document.getElementById('current-location-icon').textContent = location.icon;
+            iconEl.textContent = location.icon;
             document.getElementById('current-location-name').textContent = location.name;
             
             // Check if already guessed
@@ -691,6 +810,26 @@
                 document.getElementById('current-location-instruction').textContent = 
                     'Tap on the map to find this location';
             }
+        }
+        
+        // Show transition overlay for next location
+        function showNextLocationTransition(nextLocation) {
+            const overlay = document.getElementById('next-location-overlay');
+            const message = document.getElementById('next-location-message');
+            const icon = document.getElementById('next-location-icon');
+            const name = document.getElementById('next-location-name');
+            
+            // Update overlay content
+            icon.textContent = nextLocation.icon;
+            name.textContent = nextLocation.name;
+            
+            // Show overlay
+            overlay.classList.add('show');
+            
+            // Hide overlay after animation
+            setTimeout(() => {
+                overlay.classList.remove('show');
+            }, 2000);
         }
         
         // Update running score display
@@ -750,16 +889,43 @@
             saveGameState();
             
             // Update UI
-            updateCurrentLocationDisplay();
             updateRunningScore();
             
-            // Advance to next location after a short delay
+            // Fade out current location, then show transition and advance
+            const currentLocationEl = document.getElementById('current-location');
+            currentLocationEl.classList.add('fade-out');
+            
             setTimeout(() => {
-                advanceToNextLocation();
-            }, 1500);
+                // Find next unguessed location
+                gameState.currentLocationIndex++;
+                while (gameState.currentLocationIndex < locations.length) {
+                    const location = locations[gameState.currentLocationIndex];
+                    if (!gameState.guesses[location.id]) {
+                        // Found next unguessed location
+                        break;
+                    }
+                    gameState.currentLocationIndex++;
+                }
+                
+                // If we've completed all locations, show completion screen
+                if (gameState.currentLocationIndex >= locations.length) {
+                    showCompletionScreen();
+                    saveGameState();
+                } else {
+                    // Show transition overlay with next location
+                    const nextLocation = locations[gameState.currentLocationIndex];
+                    showNextLocationTransition(nextLocation);
+                    
+                    // Update display after transition
+                    setTimeout(() => {
+                        updateCurrentLocationDisplay(true);
+                        saveGameState();
+                    }, 2100);
+                }
+            }, 500);
         }
         
-        // Advance to next location
+        // Advance to next location (used when already guessed)
         function advanceToNextLocation() {
             // Find next unguessed location
             while (gameState.currentLocationIndex < locations.length) {
@@ -775,7 +941,11 @@
             if (gameState.currentLocationIndex >= locations.length) {
                 showCompletionScreen();
             } else {
-                updateCurrentLocationDisplay();
+                const nextLocation = locations[gameState.currentLocationIndex];
+                showNextLocationTransition(nextLocation);
+                setTimeout(() => {
+                    updateCurrentLocationDisplay(true);
+                }, 2100);
             }
             
             saveGameState();
@@ -819,9 +989,17 @@
             }
             
             // Initialize UI
-            updateCurrentLocationDisplay();
+            updateCurrentLocationDisplay(false); // Don't animate on initial load
             updateRunningScore();
             restoreMarkers();
+            
+            // Add pulse animation after a short delay to indicate user should tap
+            setTimeout(() => {
+                const iconEl = document.getElementById('current-location-icon');
+                if (iconEl) {
+                    iconEl.classList.add('pulse');
+                }
+            }, 1000);
         }
         
         // Start loading locations when page loads
