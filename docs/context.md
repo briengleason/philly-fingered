@@ -4,7 +4,7 @@
 
 **Philly Tap** is a daily location-guessing game for Philadelphia landmarks. Users must identify 5 different locations each day by tapping on an interactive map, receiving scores based on proximity to the actual locations. The game features sequential location display with smooth animations, shareable score results, and comprehensive test coverage.
 
-**Live Site**: https://briengleason.github.io/philly-fingered/
+**Live Site**: https://briengleason.github.io/philly-tap/
 
 ## Project Evolution & Development Summary
 
@@ -33,7 +33,7 @@
 ### Phase 5: Share Functionality
 - Added emoji-based scoring (🎯 for perfect, 🏅 for excellent, etc.)
 - Implemented share score button with clipboard API
-- Generated formatted share messages: `briengleason.github.io/philly-fingered/ January 17 96🏅 100🎯...`
+- Generated formatted share messages: `briengleason.github.io/philly-tap/ January 17 96🏅 100🎯...`
 
 ### Phase 6: Testing & Quality Assurance
 - Built comprehensive test suite (70+ tests)
@@ -52,7 +52,7 @@
 ## Project Structure
 
 ```
-philly-fingered/
+philly-tap/
 ├── index.html                 # Main application (root - required for GitHub Pages)
 ├── config/
 │   └── locations.yaml         # Daily locations configuration (YAML format)
@@ -151,7 +151,7 @@ philly-fingered/
   - Examples: 🎯 (100), 👑 (98-99), ⭐ (97), 💫 (96), 🏅 (95), 🥇 (94), 🏵️ (93), 🎖️ (92), 🏆 (90-91), 💎 (89, 76), 💍 (88), ✨ (87, 78), 🌟 (86, 77), 🎉 (85), 🎊 (84), 🔥 (83), 💥 (82), ⚡ (81), 😁 (75), 😄 (74), 😊 (73), 👍 (72), 👏 (71), 🤗 (70), 🙌 (69, 65), 👋 (68), ✌️ (67), 🤞 (66), 🤝 (64), 👌 (63, 60), 🙂 (62), 😌 (61), 🤔 (58-59), 😐 (55-57, 35-37), 😑 (53-54, 38-39), 🫣 (50-52), 🤷 (48-49), 😕 (45-47, 33-34), 😶 (43-44, 40-42), 😟 (30-32, 20-22), 😞 (28-29), 😔 (25-27), 😓 (23-24), 😥 (18-19), 😢 (15-17), 😰 (13-14, 5-7), 😨 (10-12), 😱 (8-9), 😭 (3-4, 0), 💀 (1-2)
 - **Share message format**:
   ```
-  briengleason.github.io/philly-fingered/ January 17
+  briengleason.github.io/philly-tap/ January 17
   96⭐ 100🎯 95🏅 87💎 89💎
   Final score: 467
   ```
@@ -162,6 +162,9 @@ philly-fingered/
 ### 7. Game State Management
 - **Daily Persistence**: Saves progress to localStorage
 - **Auto-reset**: New game each day (based on date)
+- **Automatic Cleanup**: Removes old localStorage entries on page load (keeps only current day)
+- **State Validation**: Validates saved guesses against current day's locations
+- **Invalid Guess Filtering**: Filters out guesses for locations that don't exist in current day's set
 - **Progress Tracking**: Shows which locations are completed
 - **Sequential Progression**: Tracks current location index
 - **Completion Detection**: Shows completion screen when all 5 locations guessed
@@ -247,6 +250,31 @@ let displayUpdateTimeoutId = null;
 - **Regression Prevention**: Tests verify the flag is set before setTimeout to prevent this bug from recurring
 - Transition duration: 500ms fade-out + 2100ms overlay = 2600ms total
 
+### State Management & Cleanup
+```javascript
+function cleanupOldGameState()
+function loadGameState()
+function saveGameState()
+function initializeGame()
+```
+- **`cleanupOldGameState()`**: Removes all localStorage entries that match `phillyGame_` pattern except today's entry
+  - Runs automatically on every page load
+  - Prevents localStorage accumulation of old game states
+  - Logs cleanup actions for debugging
+- **`loadGameState()`**: Loads game state from localStorage for today's date
+  - Calls `cleanupOldGameState()` first to remove old entries
+  - Uses date-based key: `phillyGame_${today.toDateString()}`
+  - Handles JSON parsing errors gracefully
+- **`saveGameState()`**: Saves current game state to localStorage
+  - Uses date-based key (changes automatically each day)
+  - Respects `DEV_MODE` flag (doesn't save in dev mode)
+- **`initializeGame()`**: Initializes game after locations are loaded
+  - Validates saved guesses against current day's locations
+  - Filters out guesses for locations not in today's set
+  - Recalculates totalScore based on valid guesses only
+  - Resets game if no valid guesses remain
+  - Restores markers for valid guesses
+
 ### Game State Structure
 ```javascript
 {
@@ -266,7 +294,32 @@ let displayUpdateTimeoutId = null;
 - Key: `phillyGame_${today.toDateString()}`
 - Example: `phillyGame_Tue Jan 17 2025`
 - Value: JSON stringified gameState
-- Resets automatically each day
+- Resets automatically each day (new key for each day)
+
+### State Cleanup & Validation
+
+The game includes automatic state management to ensure players can play with new locations each day:
+
+#### Automatic Cleanup (`cleanupOldGameState()`)
+- **Runs on every page load** before loading game state
+- Removes all localStorage entries that match the `phillyGame_` pattern but aren't for today
+- Prevents localStorage from accumulating old game states
+- Logs cleanup actions to console for debugging
+
+#### State Validation (`initializeGame()`)
+- **Validates saved guesses** against current day's locations when initializing the game
+- Filters out guesses for location IDs that don't exist in today's location set
+- Recalculates `totalScore` based only on valid guesses
+- Resets `currentLocationIndex` if no valid guesses remain
+- Ensures game state matches current locations (handles cases where locations change)
+
+**How it works:**
+1. On page load, `loadGameState()` calls `cleanupOldGameState()` to remove old entries
+2. Game state is loaded from localStorage using today's date key
+3. When `initializeGame()` runs after locations load, it validates all guesses against current locations
+4. Invalid guesses are filtered out, score is recalculated, and game starts fresh if needed
+
+This ensures that when new locations are available each day, players always start with a clean slate for that day's locations.
 
 ## Location Configuration
 
@@ -452,7 +505,7 @@ See `docs/DEVELOPMENT.md` for detailed development guide.
 
 ## Deployment
 
-**Live Site**: https://briengleason.github.io/philly-fingered/
+**Live Site**: https://briengleason.github.io/philly-tap/
 
 **Platform**: GitHub Pages (static hosting)
 
