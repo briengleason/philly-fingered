@@ -176,6 +176,102 @@ suite.test('Score calculation: exponential decay curve', () => {
     suite.assert(diff1 > diff2 * 0.5, 'Score decay should be exponential');
 });
 
+// Apply score multipliers based on location ID
+function applyScoreMultiplier(score, locationId) {
+    if (locationId === 2 || locationId === 3) {
+        // Locations 3 & 4 (ids 2 & 3) get x2 multiplier
+        return Math.round(score * 2);
+    } else if (locationId === 4) {
+        // Location 5 (id 4) gets x3 multiplier
+        return Math.round(score * 3);
+    }
+    return score;
+}
+
+// Score multiplier tests
+suite.test('Score multiplier: location 1 (id 0) should have no multiplier', () => {
+    const baseScore = 50;
+    const finalScore = applyScoreMultiplier(baseScore, 0);
+    suite.assertEquals(finalScore, 50, 'Location 1 should have no multiplier');
+});
+
+suite.test('Score multiplier: location 2 (id 1) should have no multiplier', () => {
+    const baseScore = 75;
+    const finalScore = applyScoreMultiplier(baseScore, 1);
+    suite.assertEquals(finalScore, 75, 'Location 2 should have no multiplier');
+});
+
+suite.test('Score multiplier: location 3 (id 2) should have x2 multiplier', () => {
+    const baseScore = 50;
+    const finalScore = applyScoreMultiplier(baseScore, 2);
+    suite.assertEquals(finalScore, 100, 'Location 3 should have x2 multiplier');
+});
+
+suite.test('Score multiplier: location 4 (id 3) should have x2 multiplier', () => {
+    const baseScore = 80;
+    const finalScore = applyScoreMultiplier(baseScore, 3);
+    suite.assertEquals(finalScore, 160, 'Location 4 should have x2 multiplier');
+});
+
+suite.test('Score multiplier: location 5 (id 4) should have x3 multiplier', () => {
+    const baseScore = 50;
+    const finalScore = applyScoreMultiplier(baseScore, 4);
+    suite.assertEquals(finalScore, 150, 'Location 5 should have x3 multiplier');
+});
+
+suite.test('Score multiplier: perfect score (100) with x2 should be 200', () => {
+    const baseScore = 100;
+    const finalScore = applyScoreMultiplier(baseScore, 2);
+    suite.assertEquals(finalScore, 200, 'Perfect score x2 should be 200');
+});
+
+suite.test('Score multiplier: perfect score (100) with x3 should be 300', () => {
+    const baseScore = 100;
+    const finalScore = applyScoreMultiplier(baseScore, 4);
+    suite.assertEquals(finalScore, 300, 'Perfect score x3 should be 300');
+});
+
+suite.test('Score multiplier: zero score should remain zero', () => {
+    const baseScore = 0;
+    const score2x = applyScoreMultiplier(baseScore, 2);
+    const score3x = applyScoreMultiplier(baseScore, 4);
+    suite.assertEquals(score2x, 0, 'Zero score x2 should remain 0');
+    suite.assertEquals(score3x, 0, 'Zero score x3 should remain 0');
+});
+
+suite.test('Score multiplier: multipliers should work with all base scores', () => {
+    const testScores = [10, 25, 50, 75, 90, 100];
+    
+    testScores.forEach(baseScore => {
+        const score2x = applyScoreMultiplier(baseScore, 2);
+        const score3x = applyScoreMultiplier(baseScore, 4);
+        
+        suite.assertEquals(score2x, baseScore * 2, 
+            `Score ${baseScore} x2 should be ${baseScore * 2}, got ${score2x}`);
+        suite.assertEquals(score3x, baseScore * 3, 
+            `Score ${baseScore} x3 should be ${baseScore * 3}, got ${score3x}`);
+    });
+});
+
+suite.test('Score multiplier: integration with distance calculation', () => {
+    // Calculate base score from distance
+    const distance = 1000; // 1km
+    const baseScore = calculateScore(distance);
+    
+    // Apply multipliers
+    const scoreLoc3 = applyScoreMultiplier(baseScore, 2);
+    const scoreLoc4 = applyScoreMultiplier(baseScore, 3);
+    const scoreLoc5 = applyScoreMultiplier(baseScore, 4);
+    
+    // Verify multipliers applied correctly
+    suite.assert(scoreLoc3 === baseScore * 2, 
+        `Location 3 score should be baseScore x2`);
+    suite.assert(scoreLoc4 === baseScore * 2, 
+        `Location 4 score should be baseScore x2`);
+    suite.assert(scoreLoc5 === baseScore * 3, 
+        `Location 5 score should be baseScore x3`);
+});
+
 // Location progression tests
 suite.test('Location progression: should go 0->1->2->3->4', () => {
     const guesses = {};
