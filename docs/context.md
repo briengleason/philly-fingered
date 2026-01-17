@@ -65,7 +65,6 @@ philly-fingered/
 │   └── sync-to-github.sh      # Manual GitHub sync script
 ├── test/
 │   ├── game-tests.js          # Comprehensive test suite (65+ tests)
-│   ├── run-tests.html         # Browser test runner (interactive)
 │   ├── run-tests-automated.html  # Browser test runner (auto-run)
 │   ├── run-tests-sync.js      # Node.js test runner (for pre-commit)
 │   ├── run-tests.sh           # Automated test runner script

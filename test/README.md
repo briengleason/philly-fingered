@@ -6,9 +6,8 @@ Comprehensive test suite for Philly Fingered game logic.
 
 ### Option 1: Browser (Recommended)
 
-1. Open `test/run-tests.html` in your browser
-2. Tests will run automatically
-3. Click "Run Tests" to re-run
+1. Open `test/run-tests-automated.html` in your browser
+2. Tests will run automatically and display results
 
 ### Option 2: Browser Console
 
