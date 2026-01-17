@@ -546,8 +546,20 @@
                 display: none !important;
             }
             .leaflet-tile-pane {
-                filter: contrast(1.1) brightness(0.95);
+                filter: contrast(1.15) brightness(1.1) saturate(1.4) hue-rotate(5deg);
             }
+            
+            /* Add colorful background gradient */
+            .leaflet-container {
+                background: linear-gradient(135deg, #f093fb 0%, #4facfe 100%);
+            }
+            
+            /* Make map tiles more vibrant */
+            .leaflet-tile-container img {
+                mix-blend-mode: overlay;
+                opacity: 0.9;
+            }
+            
             /* Hide any text that might appear on tiles */
             .leaflet-tile-container {
                 font-size: 0 !important;
