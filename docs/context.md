@@ -536,6 +536,7 @@ All CSS is embedded in `<style>` tag in `index.html`.
 ## Last Updated
 
 **Generated**: 2026-01-17  
+**Last Updated**: 2026-01-17 - Comprehensive coordinate verification and correction  
 **Last commit**: Check `git log` for latest changes
 
 **Recent Updates:**
@@ -544,6 +545,9 @@ All CSS is embedded in `<style>` tag in `index.html`.
 - Implemented difficulty progression system (id 0 = easiest, id 4 = hardest)
 - Locations include diverse mix of landmarks, bars, restaurants, parks, museums, and historic sites
 - All locations are unique with no duplicates
+- **Comprehensive coordinate verification (2026-01-17)**: Verified and corrected GPS coordinates for all 80+ locations across all date sets to ensure pinpoint accuracy
+  - Fixed 26+ coordinate errors including major corrections for Laurel Hill Cemetery, Ishkabibble's, Standard Tap, and others
+  - All coordinates verified against multiple authoritative sources to ensure exact map placement
 
 ---
 

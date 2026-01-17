@@ -34,33 +34,33 @@ default:
     icon: ❤️
   - id: 1
     name: Bob & Barbara's
-    coordinates: [39.9419, -75.1658]
+    coordinates: [39.9440, -75.1675]
     icon: 🍻
   - id: 2
     name: Mutter Museum
-    coordinates: [39.9475, -75.1569]
+    coordinates: [39.9533, -75.1765]
     icon: 🩺
   - id: 3
     name: Shofuso Japanese House
-    coordinates: [39.9769, -75.2117]
+    coordinates: [39.9814, -75.2128]
     icon: 🏯
   - id: 4
     name: Bartram's Garden
-    coordinates: [39.9236, -75.2050]
+    coordinates: [39.9321, -75.2124]
     icon: 🌸
 
 2025-01-18:
   - id: 0
     name: Rocky Steps
-    coordinates: [39.9653, -75.1809]
+    coordinates: [39.9648, -75.1800]
     icon: 🏃
   - id: 1
     name: Monk's Cafe
-    coordinates: [39.9474, -75.1468]
+    coordinates: [39.9477, -75.1683]
     icon: 🍺
   - id: 2
     name: Eastern State Penitentiary
-    coordinates: [39.9681, -75.1722]
+    coordinates: [39.9683, -75.1727]
     icon: 👻
   - id: 3
     name: Laurel Hill Cemetery
@@ -74,11 +74,11 @@ default:
 2025-01-19:
   - id: 0
     name: Spruce Street Harbor Park
-    coordinates: [39.9486, -75.1431]
+    coordinates: [39.9444, -75.1415]
     icon: 🏖️
   - id: 1
     name: Dirty Frank's
-    coordinates: [39.9492, -75.1681]
+    coordinates: [39.9499, -75.1590]
     icon: 🍻
   - id: 2
     name: Franklin Institute
@@ -100,11 +100,11 @@ default:
     icon: 🎸
   - id: 1
     name: Jim's Steaks
-    coordinates: [39.9419, -75.1658]
+    coordinates: [39.9415, -75.1493]
     icon: 🥩
   - id: 2
     name: Magic Gardens
-    coordinates: [39.9428, -75.1597]
+    coordinates: [39.9428, -75.1594]
     icon: 🎨
   - id: 3
     name: Woodlands Cemetery
@@ -112,7 +112,7 @@ default:
     icon: 🌳
   - id: 4
     name: 30th Street Station
-    coordinates: [39.9556, -75.1819]
+    coordinates: [39.9558, -75.1832]
     icon: 🚂
 
 2025-01-21:
@@ -162,7 +162,7 @@ default:
 2025-01-23:
   - id: 0
     name: Spruce Street Harbor Park
-    coordinates: [39.9486, -75.1431]
+    coordinates: [39.9444, -75.1415]
     icon: 🏖️
   - id: 1
     name: Pat's King of Steaks
@@ -170,7 +170,7 @@ default:
     icon: 🥩
   - id: 2
     name: Elfreth's Alley
-    coordinates: [39.9525, -75.1414]
+    coordinates: [39.9527, -75.1424]
     icon: 🏘️
   - id: 3
     name: Stenton Mansion
@@ -210,7 +210,7 @@ default:
     icon: 🌳
   - id: 1
     name: Franklin Fountain
-    coordinates: [39.9489, -75.1431]
+    coordinates: [39.9496, -75.1429]
     icon: 🍦
   - id: 2
     name: Fairmount Water Works
@@ -232,15 +232,15 @@ default:
     icon: 🚣
   - id: 1
     name: Dirty Frank's
-    coordinates: [39.9492, -75.1681]
+    coordinates: [39.9499, -75.1590]
     icon: 🍻
   - id: 2
     name: Philadelphia Zoo
-    coordinates: [39.9761, -75.1953]
+    coordinates: [39.9717, -75.1960]
     icon: 🦁
   - id: 3
     name: Laurel Hill East Cemetery
-    coordinates: [39.9717, -75.1858]
+    coordinates: [40.0048, -75.1902]
     icon: ⚱️
   - id: 4
     name: Glen Foerd Mansion
@@ -250,11 +250,11 @@ default:
 2025-01-27:
   - id: 0
     name: Convention Center
-    coordinates: [39.9531, -75.1594]
+    coordinates: [39.9550, -75.1602]
     icon: 🏢
   - id: 1
     name: Oyster House
-    coordinates: [39.9514, -75.1653]
+    coordinates: [39.9503, -75.1665]
     icon: 🦪
   - id: 2
     name: Betsy Ross House
@@ -272,7 +272,7 @@ default:
 2025-01-28:
   - id: 0
     name: Penn's Landing
-    coordinates: [39.9486, -75.1431]
+    coordinates: [39.9456, -75.1407]
     icon: ⚓
   - id: 1
     name: Woody's
@@ -320,11 +320,11 @@ default:
     icon: 🚇
   - id: 1
     name: Standard Tap
-    coordinates: [39.9667, -75.1358]
+    coordinates: [39.9642, -75.1405]
     icon: 🍺
   - id: 2
     name: Christ Church
-    coordinates: [39.9508, -75.1444]
+    coordinates: [39.9507, -75.1439]
     icon: ⛪
   - id: 3
     name: Germantown Friends Meeting
@@ -342,7 +342,7 @@ default:
     icon: ⛲
   - id: 1
     name: Ishkabibble's
-    coordinates: [39.9422, -75.1661]
+    coordinates: [39.9414, -75.1484]
     icon: 🥙
   - id: 2
     name: Society Hill Playhouse
