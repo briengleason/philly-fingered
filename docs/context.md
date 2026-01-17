@@ -251,6 +251,42 @@ Locations are defined in `config/locations.yaml` file. The file supports:
 1. **Default locations**: Used when no specific date match is found
 2. **Date-specific locations**: Format `YYYY-MM-DD` as keys for specific dates
 
+### Current Location Sets
+
+The game includes location sets for:
+- **Default locations**: Fallback set used when no date-specific match exists
+- **January 2025**: Daily location sets for January 18-31, 2025 (14 days)
+- **Current date**: Location set for today (2026-01-17)
+
+### Difficulty Progression
+
+Each day's locations are organized by difficulty, with `id` indicating difficulty level:
+
+- **Location 0 (Easiest)**: Most Philadelphians should be able to identify these well-known landmarks
+  - Examples: Rocky Steps, Love Park, South Street, Rittenhouse Square, Ben Franklin Bridge, Spruce Street Harbor Park
+- **Location 1 (~10% accuracy)**: Well-known but more specific locations that about 10% of players get close to
+  - Examples: Monk's Cafe, Bob & Barbara's, Jim's Steaks, Pat's King of Steaks, Dirty Frank's
+- **Locations 2-4 (Hardest)**: Progressively more challenging locations
+  - Location 2: Museums, popular attractions (Franklin Institute, Eastern State Penitentiary, Magic Gardens)
+  - Location 3: Historic houses, cemeteries, specialized institutions (Powel House, Laurel Hill Cemetery, Barnes Foundation)
+  - Location 4 (Hardest): Lesser-known historic sites, specialized venues, outlying areas (Wagner Free Institute, Stenton Mansion, Bartram's Garden)
+
+### Location Types
+
+Locations include a diverse mix of:
+- **Landmarks**: Rocky Steps, Love Park, South Street, Ben Franklin Bridge, Boathouse Row
+- **Bars & Restaurants**: Monk's Cafe, Bob & Barbara's, McGillin's Olde Ale House, Jim's Steaks, Pat's/Geno's
+- **Parks & Outdoor Spaces**: Rittenhouse Square, Washington Square, Spruce Street Harbor Park, Wissahickon Valley
+- **Museums & Cultural Sites**: Philadelphia Museum of Art, Franklin Institute, Mutter Museum, Magic Gardens, Barnes Foundation
+- **Historic Buildings**: Independence Hall, Betsy Ross House, Powel House, Elfreth's Alley
+- **Cemeteries**: Laurel Hill Cemetery, Woodlands Cemetery, Mt. Moriah Cemetery
+- **Specialized Institutions**: Wagner Free Institute of Science, Please Touch Museum, Academy of Natural Sciences
+- **Intersections & Districts**: Chinatown Gate, Market East Station, Old City District
+
+### Uniqueness Requirement
+
+All locations are unique across the entire configuration - no location appears twice in the same file. This ensures variety and prevents repetition.
+
 ### YAML Structure
 
 ```yaml
@@ -262,9 +298,25 @@ default:
 
 2025-01-20:
   - id: 0
-    name: Philadelphia Museum of Art
-    coordinates: [39.9656, -75.1809]
+    name: South Street
+    coordinates: [39.9419, -75.1536]
+    icon: 🎸
+  - id: 1
+    name: Jim's Steaks
+    coordinates: [39.9419, -75.1658]
+    icon: 🥩
+  - id: 2
+    name: Magic Gardens
+    coordinates: [39.9428, -75.1597]
     icon: 🎨
+  - id: 3
+    name: Woodlands Cemetery
+    coordinates: [39.9486, -75.2047]
+    icon: 🌳
+  - id: 4
+    name: 30th Street Station
+    coordinates: [39.9556, -75.1819]
+    icon: 🚂
 ```
 
 ### Default Location Coordinates
@@ -396,19 +448,40 @@ Edit `config/locations.yaml` file:
 1. **Update default locations**: Modify the `default:` section
 2. **Add date-specific locations**: Add a new date key (YYYY-MM-DD format)
 
+**Difficulty Guidelines:**
+- **Location 0 (id: 0)**: Should be easily identifiable by most Philadelphians (major landmarks, popular spots)
+- **Location 1 (id: 1)**: Well-known but more specific (~10% of players should get close)
+- **Locations 2-4 (id: 2-4)**: Progressively harder (museums, historic sites, specialized venues, outlying areas)
+
+**Requirements:**
+- All locations must be unique (no duplicates within the file)
+- Each day should have 5 locations (id 0-4)
+- Locations should progress from easiest (0) to hardest (4)
+- Mix of location types: landmarks, bars, restaurants, parks, museums, historic sites
+
 Example:
 ```yaml
-default:
-  - id: 0
-    name: Liberty Bell
-    coordinates: [39.9496, -75.1503]
-    icon: 🔔
-
 2025-01-20:
   - id: 0
-    name: Philadelphia Museum of Art
-    coordinates: [39.9656, -75.1809]
+    name: South Street
+    coordinates: [39.9419, -75.1536]
+    icon: 🎸
+  - id: 1
+    name: Jim's Steaks
+    coordinates: [39.9419, -75.1658]
+    icon: 🥩
+  - id: 2
+    name: Magic Gardens
+    coordinates: [39.9428, -75.1597]
     icon: 🎨
+  - id: 3
+    name: Woodlands Cemetery
+    coordinates: [39.9486, -75.2047]
+    icon: 🌳
+  - id: 4
+    name: 30th Street Station
+    coordinates: [39.9556, -75.1819]
+    icon: 🚂
 ```
 
 The app automatically loads the correct locations based on today's date.
@@ -462,8 +535,15 @@ All CSS is embedded in `<style>` tag in `index.html`.
 
 ## Last Updated
 
-**Generated**: 2025-01-17  
+**Generated**: 2026-01-17  
 **Last commit**: Check `git log` for latest changes
+
+**Recent Updates:**
+- Added location sets for January 18-31, 2025 (14 days)
+- Added location set for 2026-01-17
+- Implemented difficulty progression system (id 0 = easiest, id 4 = hardest)
+- Locations include diverse mix of landmarks, bars, restaurants, parks, museums, and historic sites
+- All locations are unique with no duplicates
 
 ---
 
