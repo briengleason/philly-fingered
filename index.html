@@ -959,15 +959,22 @@
             
             setTimeout(() => {
                 // Find next unguessed location
-                gameState.currentLocationIndex++;
-                while (gameState.currentLocationIndex < locations.length) {
-                    const location = locations[gameState.currentLocationIndex];
+                // Move to the next location index
+                let nextIndex = gameState.currentLocationIndex + 1;
+                
+                // Skip any already-guessed locations
+                while (nextIndex < locations.length) {
+                    const location = locations[nextIndex];
                     if (!gameState.guesses[location.id]) {
                         // Found next unguessed location
                         break;
                     }
-                    gameState.currentLocationIndex++;
+                    // This location is already guessed, move to next
+                    nextIndex++;
                 }
+                
+                // Update the current location index
+                gameState.currentLocationIndex = nextIndex;
                 
                 // If we've completed all locations, show completion screen
                 if (gameState.currentLocationIndex >= locations.length) {
