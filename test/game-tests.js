@@ -470,7 +470,7 @@ suite.test('Share emoji: perfect score (100) should be 🎯', () => {
 suite.test('Share emoji: excellent scores (95-99) should be 🏅', () => {
     suite.assertEquals(getScoreEmoji(99), '🏅');
     suite.assertEquals(getScoreEmoji(95), '🏅');
-    suite.assertEquals(getScoreEmoji(98), '🏅'));
+    suite.assertEquals(getScoreEmoji(98), '🏅');
 });
 
 suite.test('Share emoji: great scores (90-94) should be 🏆', () => {
