@@ -200,6 +200,20 @@ function calculateDistance(lat1, lon1, lat2, lon2)
 - Returns distance in meters
 - Accounts for Earth's curvature
 
+### Distance Formatting
+```javascript
+function formatDistance(meters)
+```
+- Converts meters to feet/miles for display
+- **Conversion**: 1 meter = 3.28084 feet
+- **Display rules**:
+  - Less than 5280 feet (1 mile): Displays in feet (e.g., "328ft")
+  - 5280 feet or more: Displays in miles with 2 decimal places (e.g., "1.50mi")
+- Used in:
+  - Instruction text showing guess distances
+  - Completion screen results table
+  - Map marker distance labels
+
 ### Score Calculation
 ```javascript
 function calculateScore(distance, maxDistance = 5000)

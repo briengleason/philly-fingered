@@ -1067,12 +1067,15 @@
             return Math.round(Math.max(0, Math.min(100, score)));
         }
         
-        // Format distance for display
+        // Format distance for display (converts meters to feet/miles)
         function formatDistance(meters) {
-            if (meters < 1000) {
-                return Math.round(meters) + 'm';
+            const feet = meters * 3.28084; // Convert meters to feet
+            if (feet < 5280) {
+                // Less than a mile, display in feet
+                return Math.round(feet) + 'ft';
             } else {
-                return (meters / 1000).toFixed(2) + 'km';
+                // A mile or more, display in miles
+                return (feet / 5280).toFixed(2) + 'mi';
             }
         }
         

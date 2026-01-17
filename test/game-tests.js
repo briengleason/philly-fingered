@@ -91,6 +91,18 @@ function calculateScore(distance, maxDistance = 5000) {
     return Math.round(Math.max(0, Math.min(100, score)));
 }
 
+// Format distance for display (converts meters to feet/miles)
+function formatDistance(meters) {
+    const feet = meters * 3.28084; // Convert meters to feet
+    if (feet < 5280) {
+        // Less than a mile, display in feet
+        return Math.round(feet) + 'ft';
+    } else {
+        // A mile or more, display in miles
+        return (feet / 5280).toFixed(2) + 'mi';
+    }
+}
+
 // Find next unguessed location index
 function findNextUnguessedLocation(currentIndex, guesses, locations) {
     let nextIndex = currentIndex + 1;
@@ -127,6 +139,49 @@ suite.test('Distance calculation: known distance verification', () => {
     // Distance between Liberty Bell and Independence Hall (very close)
     const dist = calculateDistance(39.9496, -75.1503, 39.9489, -75.1500);
     suite.assertApprox(dist, 86, 20); // Approximately 86 meters
+});
+
+// Distance formatting tests (meters to feet/miles)
+suite.test('Distance formatting: small distances should be in feet', () => {
+    // 10 meters = ~32.8 feet
+    suite.assertEquals(formatDistance(10), '33ft');
+    // 100 meters = ~328 feet
+    suite.assertEquals(formatDistance(100), '328ft');
+    // 500 meters = ~1640 feet
+    suite.assertEquals(formatDistance(500), '1640ft');
+});
+
+suite.test('Distance formatting: distances less than 1 mile should be in feet', () => {
+    // 1000 meters = ~3281 feet (less than 1 mile)
+    suite.assertEquals(formatDistance(1000), '3281ft');
+    // 1500 meters = ~4921 feet (less than 1 mile)
+    suite.assertEquals(formatDistance(1500), '4921ft');
+});
+
+suite.test('Distance formatting: distances 1 mile or more should be in miles', () => {
+    // 1609 meters = ~5280 feet = 1 mile
+    const oneMile = formatDistance(1609);
+    suite.assert(oneMile.includes('mi'), 'Should include "mi"');
+    suite.assertApprox(parseFloat(oneMile), 1.0, 0.1);
+    
+    // 5000 meters = ~16404 feet = ~3.11 miles
+    const fiveKm = formatDistance(5000);
+    suite.assert(fiveKm.includes('mi'), 'Should include "mi"');
+    suite.assertApprox(parseFloat(fiveKm), 3.11, 0.1);
+});
+
+suite.test('Distance formatting: zero distance should be 0ft', () => {
+    suite.assertEquals(formatDistance(0), '0ft');
+});
+
+suite.test('Distance formatting: edge case at 1 mile boundary', () => {
+    // Just under 1 mile (5279 feet)
+    const justUnder = formatDistance(1608);
+    suite.assert(justUnder.includes('ft'), 'Should be in feet');
+    
+    // Exactly 1 mile (5280 feet)
+    const exactlyOne = formatDistance(1609);
+    suite.assert(exactlyOne.includes('mi'), 'Should be in miles');
 });
 
 // Score calculation tests
