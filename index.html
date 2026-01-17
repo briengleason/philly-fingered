@@ -1304,11 +1304,22 @@
             // Update UI
             updateRunningScore();
             
+            // Set transitioning flag to prevent multiple simultaneous transitions
+            isTransitioning = true;
+            
+            // Clear any existing transition timeouts
+            if (transitionTimeoutId) {
+                clearTimeout(transitionTimeoutId);
+            }
+            if (displayUpdateTimeoutId) {
+                clearTimeout(displayUpdateTimeoutId);
+            }
+            
             // Fade out current location, then show transition and advance
             const currentLocationEl = document.getElementById('current-location');
             currentLocationEl.classList.add('fade-out');
             
-            setTimeout(() => {
+            transitionTimeoutId = setTimeout(() => {
                 // Find next unguessed location
                 // Move to the next location index
                 let nextIndex = gameState.currentLocationIndex + 1;
