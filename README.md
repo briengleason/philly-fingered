@@ -1,4 +1,4 @@
-# Philly Fingered 🗺️
+# Philly Tap 🗺️
 
 A daily location-guessing game for Philadelphia landmarks.
 

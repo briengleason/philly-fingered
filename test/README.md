@@ -1,6 +1,6 @@
 # Game Tests
 
-Comprehensive test suite for Philly Fingered game logic.
+Comprehensive test suite for Philly Tap game logic.
 
 ## Running Tests
 

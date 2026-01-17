@@ -1,5 +1,5 @@
 /**
- * Game Logic Tests for Philly Fingered
+ * Game Logic Tests for Philly Tap
  * 
  * Run in browser console or use: node test/run-tests.js
  */

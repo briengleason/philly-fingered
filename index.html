@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="mobile-web-app-capable" content="yes">
-    <title>Philly Fingered</title>
+    <title>Philly Tap</title>
     
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -1215,12 +1215,14 @@
             // Sort locations by their original order (by id)
             const sortedLocations = locations.slice().sort((a, b) => a.id - b.id);
             
-            // Build score string with emojis
+            // Build score string with emojis (using base scores, not multiplied)
             const scoreParts = sortedLocations.map(location => {
                 const guess = gameState.guesses[location.id];
                 if (guess) {
-                    const emoji = getScoreEmoji(guess.score);
-                    return `${guess.score}${emoji}`;
+                    // Use baseScore for share message (1-100 range)
+                    const baseScore = guess.baseScore !== undefined ? guess.baseScore : guess.score;
+                    const emoji = getScoreEmoji(baseScore);
+                    return `${baseScore}${emoji}`;
                 }
                 return '';
             }).filter(part => part !== '');

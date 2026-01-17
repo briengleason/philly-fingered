@@ -1,4 +1,4 @@
-# Philly Fingered 🗺️
+# Philly Tap 🗺️
 
 A daily location-guessing game for Philadelphia landmarks. Test your knowledge of Philly by finding 5 different locations each day!
 

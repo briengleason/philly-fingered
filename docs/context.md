@@ -1,8 +1,8 @@
-# Project Context: Philly Fingered
+# Project Context: Philly Tap
 
 ## Overview
 
-**Philly Fingered** is a daily location-guessing game for Philadelphia landmarks. Users must identify 5 different locations each day by tapping on an interactive map, receiving scores based on proximity to the actual locations. The game features sequential location display with smooth animations, shareable score results, and comprehensive test coverage.
+**Philly Tap** is a daily location-guessing game for Philadelphia landmarks. Users must identify 5 different locations each day by tapping on an interactive map, receiving scores based on proximity to the actual locations. The game features sequential location display with smooth animations, shareable score results, and comprehensive test coverage.
 
 **Live Site**: https://briengleason.github.io/philly-fingered/
 
@@ -143,21 +143,19 @@ philly-fingered/
 
 ### 6. Share Score Functionality
 - **Share button**: On completion screen, below score table
-- **Emoji-based scoring**: Visual representation of performance
-  - 🎯 = Perfect (100)
-  - 🏅 = Excellent (95-99)
-  - 🏆 = Great (90-94)
-  - 🎉 = Good (85-89)
-  - ✨ = Nice (80-84)
-  - 😁 = Good (75-79)
-  - 🤗 = Okay (70-74)
-  - Lower scores have appropriate emojis
+- **Base scores in share**: Share message shows base scores (1-100 range) rather than multiplied scores
+  - Makes it easier to compare performance across locations
+  - Multipliers are still applied to the total score calculation
+- **Highly varied emoji mapping**: 50+ unique emojis for visual variety
+  - Each score value (0-100) maps to a distinct emoji
+  - Examples: 🎯 (100), 👑 (98-99), ⭐ (97), 💫 (96), 🏅 (95), 🥇 (94), 🏵️ (93), 🎖️ (92), 🏆 (90-91), 💎 (89, 76), 💍 (88), ✨ (87, 78), 🌟 (86, 77), 🎉 (85), 🎊 (84), 🔥 (83), 💥 (82), ⚡ (81), 😁 (75), 😄 (74), 😊 (73), 👍 (72), 👏 (71), 🤗 (70), 🙌 (69, 65), 👋 (68), ✌️ (67), 🤞 (66), 🤝 (64), 👌 (63, 60), 🙂 (62), 😌 (61), 🤔 (58-59), 😐 (55-57, 35-37), 😑 (53-54, 38-39), 🫣 (50-52), 🤷 (48-49), 😕 (45-47, 33-34), 😶 (43-44, 40-42), 😟 (30-32, 20-22), 😞 (28-29), 😔 (25-27), 😓 (23-24), 😥 (18-19), 😢 (15-17), 😰 (13-14, 5-7), 😨 (10-12), 😱 (8-9), 😭 (3-4, 0), 💀 (1-2)
 - **Share message format**:
   ```
   briengleason.github.io/philly-fingered/ January 17
-  96🏅 100🎯 95🏅 87🎉 89🎉
+  96⭐ 100🎯 95🏅 87💎 89💎
   Final score: 467
   ```
+  Note: Scores shown are base scores (1-100), while final score uses multiplied values
 - **Clipboard API**: Automatically copies to clipboard
 - **Native Share API**: Falls back to clipboard if not available
 

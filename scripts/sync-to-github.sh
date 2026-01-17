@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Auto-sync script for Philly Fingered
+# Auto-sync script for Philly Tap
 # This script commits any changes and pushes to GitHub
 
 set -e

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Automated test runner for Philly Fingered
+# Automated test runner for Philly Tap
 # Opens the test page in a browser and runs tests
 
 set -e
