@@ -1,12 +1,36 @@
-# Philadelphia Interactive Map
+# Philly Fingered 🗺️
 
-A mobile-friendly interactive map of Philadelphia without street names or landmark identifiers.
+A daily location-guessing game for Philadelphia landmarks. Test your knowledge of Philly by finding 5 different locations each day!
 
-## Quick Start
+## 🎮 How to Play
+
+1. Select a location from the panel
+2. Tap on the map where you think it is
+3. See your score (0-100) based on how close you are
+4. Complete all 5 locations to get your total score (0-500)
+
+## 🌐 Live Site
+
+**Play now:** [https://briengleason.github.io/philly-fingered/](https://briengleason.github.io/philly-fingered/)
+
+## 🚀 Quick Start (Local)
 
 Open `index.html` in a web browser to view the interactive map.
 
-## Files
+Or run a local server:
+```bash
+python3 -m http.server 8000
+# Then visit http://localhost:8000
+```
 
-- `index.html` - Main map application
-- `.gitignore` - Git ignore rules
+## 📁 Files
+
+- `index.html` - Main application
+- `locations.yaml` - Daily locations configuration
+- `README.md` - This file
+- `DEPLOYMENT.md` - Deployment instructions
+- `context.md` - Project documentation
+
+## 🛠️ Development
+
+See `context.md` for detailed project documentation and `DEPLOYMENT.md` for deployment options.
