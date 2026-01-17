@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
     <title>Philadelphia Map</title>
     
     <!-- Leaflet CSS -->
@@ -20,14 +23,19 @@
             height: 100%;
             overflow: hidden;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            touch-action: pan-x pan-y pinch-zoom;
         }
         
         #map {
             width: 100%;
             height: 100vh;
+            height: 100dvh; /* Dynamic viewport height for mobile browsers */
             position: fixed;
             top: 0;
             left: 0;
+            z-index: 1;
         }
         
         /* Hide all map labels and text */
@@ -39,26 +47,310 @@
             image-rendering: -webkit-optimize-contrast;
             image-rendering: crisp-edges;
         }
+        
+        /* Desktop optimizations */
+        @media (min-width: 768px) {
+            .leaflet-control-zoom {
+                margin-top: 20px;
+                margin-right: 20px;
+            }
+            
+            .leaflet-control-zoom a {
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 22px;
+            }
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 767px) {
+            .leaflet-control-zoom {
+                margin-top: 10px;
+                margin-right: 10px;
+            }
+            
+            .leaflet-control-zoom a {
+                width: 44px;
+                height: 44px;
+                line-height: 44px;
+                font-size: 24px;
+            }
+            
+            /* Larger touch targets for mobile */
+            .leaflet-bar a {
+                min-width: 44px;
+                min-height: 44px;
+            }
+        }
+        
+        /* Prevent text selection on mobile */
+        .leaflet-container {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        /* Smooth scrolling for desktop */
+        @media (min-width: 768px) {
+            .leaflet-container {
+                cursor: grab;
+            }
+            
+            .leaflet-container.leaflet-dragging {
+                cursor: grabbing;
+            }
+        }
+        
+        /* Score panel */
+        #score-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            min-width: 250px;
+            max-width: 300px;
+        }
+        
+        #total-score {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        
+        #total-score-value {
+            font-size: 42px;
+            font-weight: 700;
+            color: #2563eb;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        
+        #total-score-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        #locations-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .location-item {
+            padding: 12px;
+            border-radius: 10px;
+            background: #f9fafb;
+            border: 2px solid #e5e7eb;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .location-item:hover {
+            background: #f3f4f6;
+            border-color: #d1d5db;
+        }
+        
+        .location-item.active {
+            background: #eff6ff;
+            border-color: #2563eb;
+        }
+        
+        .location-item.completed {
+            background: #f0fdf4;
+            border-color: #22c55e;
+            cursor: default;
+        }
+        
+        .location-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .location-name {
+            font-weight: 600;
+            font-size: 14px;
+            color: #111827;
+        }
+        
+        .location-score {
+            font-weight: 700;
+            font-size: 16px;
+            color: #2563eb;
+        }
+        
+        .location-status {
+            font-size: 11px;
+            color: #6b7280;
+        }
+        
+        .location-status.completed {
+            color: #22c55e;
+            font-weight: 600;
+        }
+        
+        /* Quick score popup */
+        #quick-score {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 15px 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            text-align: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
+        #quick-score.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        
+        #quick-score.hide {
+            opacity: 0;
+            transform: translateX(-50%) translateY(-20px);
+        }
+        
+        #quick-score-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #2563eb;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        
+        #quick-score-label {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        @media (max-width: 767px) {
+            #score-panel {
+                top: 10px;
+                right: 10px;
+                left: 10px;
+                max-width: none;
+                min-width: auto;
+                padding: 15px;
+            }
+            
+            #total-score-value {
+                font-size: 36px;
+            }
+            
+            #locations-list {
+                gap: 8px;
+            }
+            
+            .location-item {
+                padding: 10px;
+            }
+        }
+        
+        /* Tap marker */
+        .tap-marker {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #2563eb;
+            border: 3px solid white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transform: translate(-50%, -50%);
+            z-index: 1001;
+            pointer-events: none;
+            animation: tapPulse 0.6s ease-out;
+        }
+        
+        @keyframes tapPulse {
+            0% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(2);
+                opacity: 0;
+            }
+        }
+        
+        /* Custom pin styling */
+        .custom-pin {
+            background: transparent !important;
+            border: none !important;
+        }
+        
+        .distance-label {
+            background: transparent !important;
+            border: none !important;
+        }
     </style>
 </head>
 <body>
     <div id="map"></div>
+    <div id="score-panel">
+        <div id="total-score">
+            <div id="total-score-value">0</div>
+            <div id="total-score-label">Total Score</div>
+        </div>
+        <div id="locations-list"></div>
+    </div>
+    <div id="quick-score">
+        <div id="quick-score-value">0</div>
+        <div id="quick-score-label">Points</div>
+    </div>
     
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     
     <script>
+        // Detect if device is mobile
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+                        (window.matchMedia && window.matchMedia("(max-width: 767px)").matches);
+        
+        // Detect if device has touch capability
+        const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        
         // Initialize map centered on Philadelphia
         const map = L.map('map', {
             center: [39.9526, -75.1652], // Philadelphia coordinates
-            zoom: 13,
+            zoom: isMobile ? 12 : 13, // Slightly zoomed out on mobile for better overview
             zoomControl: true,
-            scrollWheelZoom: true,
+            scrollWheelZoom: !isMobile, // Disable scroll wheel zoom on mobile (use pinch instead)
             doubleClickZoom: true,
-            boxZoom: true,
-            keyboard: true,
+            boxZoom: !isMobile, // Box zoom only on desktop
+            keyboard: !isMobile, // Keyboard controls only on desktop
             dragging: true,
-            touchZoom: true
+            touchZoom: hasTouch,
+            tap: hasTouch,
+            tapTolerance: 15,
+            preferCanvas: false,
+            zoomAnimation: true,
+            zoomAnimationThreshold: 4,
+            fadeAnimation: true,
+            markerZoomAnimation: true
         });
         
         // Use CartoDB light_nolabels - specifically designed to have no labels
@@ -66,7 +358,9 @@
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
             subdomains: 'abcd',
             maxZoom: 19,
-            minZoom: 10
+            minZoom: 10,
+            tileSize: 256,
+            zoomOffset: 0
         }).addTo(map);
         
         // Additional CSS to hide any remaining text elements and controls
@@ -86,17 +380,519 @@
         `;
         document.head.appendChild(style);
         
-        // Prevent default touch behaviors that might interfere
-        map.getContainer().addEventListener('touchstart', function(e) {
-            if (e.touches.length > 1) {
-                e.preventDefault();
-            }
-        }, { passive: false });
+        // Handle viewport resize (especially important for mobile browsers)
+        let resizeTimer;
+        function handleResize() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                map.invalidateSize();
+            }, 100);
+        }
         
-        // Ensure map fills the screen on mobile
+        window.addEventListener('resize', handleResize);
+        window.addEventListener('orientationchange', () => {
+            setTimeout(() => {
+                map.invalidateSize();
+            }, 200);
+        });
+        
+        // Prevent default touch behaviors that might interfere (but allow pinch zoom)
+        if (hasTouch) {
+            let touchStartDistance = 0;
+            
+            map.getContainer().addEventListener('touchstart', function(e) {
+                if (e.touches.length === 2) {
+                    const touch1 = e.touches[0];
+                    const touch2 = e.touches[1];
+                    touchStartDistance = Math.hypot(
+                        touch2.clientX - touch1.clientX,
+                        touch2.clientY - touch1.clientY
+                    );
+                }
+            }, { passive: true });
+            
+            map.getContainer().addEventListener('touchmove', function(e) {
+                // Allow pinch zoom
+                if (e.touches.length === 2) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+        }
+        
+        // Ensure map fills the screen on initial load
         setTimeout(() => {
             map.invalidateSize();
         }, 100);
+        
+        // Additional mobile optimizations
+        if (isMobile) {
+            // Prevent pull-to-refresh on mobile
+            let lastTouchY = 0;
+            document.addEventListener('touchstart', (e) => {
+                lastTouchY = e.touches[0].clientY;
+            }, { passive: true });
+            
+            document.addEventListener('touchmove', (e) => {
+                const touchY = e.touches[0].clientY;
+                const touchDelta = touchY - lastTouchY;
+                
+                // Prevent pull-to-refresh when scrolling down from top
+                if (window.scrollY === 0 && touchDelta > 0) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+        }
+        
+        // Desktop keyboard shortcuts
+        if (!isMobile) {
+            document.addEventListener('keydown', (e) => {
+                // Arrow keys for panning
+                const panDistance = 100;
+                switch(e.key) {
+                    case 'ArrowUp':
+                        map.panBy([0, -panDistance]);
+                        break;
+                    case 'ArrowDown':
+                        map.panBy([0, panDistance]);
+                        break;
+                    case 'ArrowLeft':
+                        map.panBy([-panDistance, 0]);
+                        break;
+                    case 'ArrowRight':
+                        map.panBy([panDistance, 0]);
+                        break;
+                }
+            });
+        }
+        
+        // Define 5 Philadelphia locations for daily guessing
+        const locations = [
+            {
+                id: 0,
+                name: 'Liberty Bell',
+                coordinates: [39.9496, -75.1503],
+                icon: '🔔'
+            },
+            {
+                id: 1,
+                name: 'Independence Hall',
+                coordinates: [39.9489, -75.1500],
+                icon: '🏛️'
+            },
+            {
+                id: 2,
+                name: 'Philadelphia Museum of Art',
+                coordinates: [39.9656, -75.1809],
+                icon: '🎨'
+            },
+            {
+                id: 3,
+                name: 'Reading Terminal Market',
+                coordinates: [39.9531, -75.1584],
+                icon: '🍕'
+            },
+            {
+                id: 4,
+                name: 'City Hall',
+                coordinates: [39.9523, -75.1636],
+                icon: '🏢'
+            }
+        ];
+        
+        // Maximum distance for scoring (in meters) - beyond this gives 0 points
+        const MAX_DISTANCE = 5000;
+        
+        // Game state
+        let gameState = {
+            currentLocation: null,
+            guesses: {},
+            totalScore: 0
+        };
+        
+        // Initialize game state from localStorage (for daily persistence)
+        function loadGameState() {
+            const today = new Date().toDateString();
+            const saved = localStorage.getItem(`phillyGame_${today}`);
+            if (saved) {
+                gameState = JSON.parse(saved);
+            } else {
+                // Reset for new day
+                gameState = {
+                    currentLocation: null,
+                    guesses: {},
+                    totalScore: 0
+                };
+            }
+        }
+        
+        // Save game state to localStorage
+        function saveGameState() {
+            const today = new Date().toDateString();
+            localStorage.setItem(`phillyGame_${today}`, JSON.stringify(gameState));
+        }
+        
+        // Load game state on page load
+        loadGameState();
+        
+        // Calculate distance between two lat/lng points using Haversine formula
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            const R = 6371000; // Earth's radius in meters
+            const dLat = (lat2 - lat1) * Math.PI / 180;
+            const dLon = (lon2 - lon1) * Math.PI / 180;
+            const a = 
+                Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                Math.sin(dLon / 2) * Math.sin(dLon / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            return R * c; // Distance in meters
+        }
+        
+        // Calculate score based on distance (0-100)
+        function calculateScore(distance) {
+            if (distance >= MAX_DISTANCE) {
+                return 0;
+            }
+            // Linear scoring: 100 points at 0m, 0 points at MAX_DISTANCE
+            // Using exponential decay for more realistic scoring curve
+            const score = 100 * Math.pow(1 - (distance / MAX_DISTANCE), 1.5);
+            return Math.round(Math.max(0, Math.min(100, score)));
+        }
+        
+        // Format distance for display
+        function formatDistance(meters) {
+            if (meters < 1000) {
+                return Math.round(meters) + 'm';
+            } else {
+                return (meters / 1000).toFixed(2) + 'km';
+            }
+        }
+        
+        // Show quick score popup
+        function showQuickScore(score) {
+            const quickScore = document.getElementById('quick-score');
+            const quickScoreValue = document.getElementById('quick-score-value');
+            
+            quickScoreValue.textContent = score;
+            quickScore.classList.remove('hide');
+            quickScore.classList.add('show');
+            
+            setTimeout(() => {
+                quickScore.classList.remove('show');
+                quickScore.classList.add('hide');
+            }, 2000);
+        }
+        
+        // Render locations list UI
+        function renderLocationsList() {
+            const locationsList = document.getElementById('locations-list');
+            locationsList.innerHTML = '';
+            
+            locations.forEach((location, index) => {
+                const guess = gameState.guesses[location.id];
+                const isCompleted = guess !== undefined;
+                const isActive = gameState.currentLocation === location.id && !isCompleted;
+                
+                const item = document.createElement('div');
+                item.className = `location-item ${isActive ? 'active' : ''} ${isCompleted ? 'completed' : ''}`;
+                
+                if (!isCompleted) {
+                    item.addEventListener('click', () => selectLocation(location.id));
+                }
+                
+                item.innerHTML = `
+                    <div class="location-header">
+                        <span class="location-name">${location.icon} ${location.name}</span>
+                        <span class="location-score">${isCompleted ? guess.score : '-'}</span>
+                    </div>
+                    <div class="location-status ${isCompleted ? 'completed' : ''}">
+                        ${isCompleted ? `✓ ${formatDistance(guess.distance)} away` : isActive ? 'Tap on map to guess' : 'Tap to select'}
+                    </div>
+                `;
+                
+                locationsList.appendChild(item);
+            });
+        }
+        
+        // Update total score display
+        function updateTotalScore() {
+            const totalScoreValue = document.getElementById('total-score-value');
+            totalScoreValue.textContent = gameState.totalScore;
+        }
+        
+        // Select a location to guess
+        function selectLocation(locationId) {
+            if (gameState.guesses[locationId]) {
+                return; // Already guessed
+            }
+            gameState.currentLocation = locationId;
+            saveGameState();
+            renderLocationsList();
+        }
+        
+        // Make a guess for the current location
+        function makeGuess(tapLatLng) {
+            if (gameState.currentLocation === null) {
+                return; // No location selected
+            }
+            
+            const location = locations[gameState.currentLocation];
+            if (gameState.guesses[location.id]) {
+                return; // Already guessed
+            }
+            
+            // Calculate distance
+            const distance = calculateDistance(
+                location.coordinates[0],
+                location.coordinates[1],
+                tapLatLng.lat,
+                tapLatLng.lng
+            );
+            
+            // Calculate score
+            const score = calculateScore(distance);
+            
+            // Store guess (save latlng as plain object for JSON serialization)
+            gameState.guesses[location.id] = {
+                latlng: { lat: tapLatLng.lat, lng: tapLatLng.lng },
+                distance: distance,
+                score: score
+            };
+            
+            // Update total score
+            gameState.totalScore = Object.values(gameState.guesses).reduce((sum, g) => sum + g.score, 0);
+            
+            // Create markers and line
+            createMarkersAndLine(location.id, tapLatLng, distance);
+            
+            // Show quick score
+            showQuickScore(score);
+            
+            // Clear current location selection
+            gameState.currentLocation = null;
+            
+            // Save and update UI
+            saveGameState();
+            renderLocationsList();
+            updateTotalScore();
+        }
+        
+        // Restore markers for completed guesses
+        function restoreMarkers() {
+            Object.keys(gameState.guesses).forEach(locationId => {
+                const locationIdNum = parseInt(locationId);
+                const guess = gameState.guesses[locationIdNum];
+                if (guess && guess.latlng) {
+                    // Convert stored latlng back to Leaflet LatLng object
+                    const tapLatLng = L.latLng(guess.latlng.lat, guess.latlng.lng);
+                    createMarkersAndLine(
+                        locationIdNum,
+                        tapLatLng,
+                        guess.distance
+                    );
+                }
+            });
+        }
+        
+        // Initialize UI
+        renderLocationsList();
+        updateTotalScore();
+        restoreMarkers();
+        
+        // Store references to markers and lines for all locations
+        let locationMarkers = {}; // { locationId: { tapMarker, locationMarker, line, label } }
+        
+        // Create custom pin icon
+        function createPinIcon(color, isLocation = false, customIcon = null) {
+            const icon = customIcon || (isLocation ? '🔔' : '📍');
+            return L.divIcon({
+                className: 'custom-pin',
+                html: `<div style="position: relative; width: 24px; height: 32px;">
+                    <div style="
+                        width: 24px;
+                        height: 24px;
+                        background: ${color};
+                        border-radius: 50%;
+                        border: 3px solid white;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 14px;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 2;
+                    ">${icon}</div>
+                    <div style="
+                        width: 0;
+                        height: 0;
+                        border-left: 6px solid transparent;
+                        border-right: 6px solid transparent;
+                        border-top: 12px solid ${color};
+                        position: absolute;
+                        top: 20px;
+                        left: 6px;
+                        z-index: 1;
+                    "></div>
+                </div>`,
+                iconSize: [24, 32],
+                iconAnchor: [12, 32],
+                popupAnchor: [0, -32]
+            });
+        }
+        
+        // Remove markers for a specific location
+        function clearLocationMarkers(locationId) {
+            if (locationMarkers[locationId]) {
+                const markers = locationMarkers[locationId];
+                if (markers.tapMarker) map.removeLayer(markers.tapMarker);
+                if (markers.locationMarker) map.removeLayer(markers.locationMarker);
+                if (markers.line) map.removeLayer(markers.line);
+                if (markers.label) map.removeLayer(markers.label);
+                delete locationMarkers[locationId];
+            }
+        }
+        
+        // Create markers and connecting line for a location
+        function createMarkersAndLine(locationId, tapLatLng, distance) {
+            const location = locations[locationId];
+            if (!location) return;
+            
+            // Clear previous markers for this location
+            clearLocationMarkers(locationId);
+            
+            // Create pin at tap location (blue)
+            const tapMarker = L.marker(tapLatLng, {
+                icon: createPinIcon('#2563eb', false)
+            }).addTo(map);
+            
+            // Create pin at actual location (red)
+            const locationMarker = L.marker(location.coordinates, {
+                icon: createPinIcon('#dc2626', true, location.icon)
+            }).addTo(map);
+            
+            // Create line connecting the two points
+            const line = L.polyline([tapLatLng, location.coordinates], {
+                color: '#2563eb',
+                weight: 3,
+                opacity: 0.6,
+                dashArray: '10, 5'
+            }).addTo(map);
+            
+            // Calculate midpoint for distance label
+            const midLat = (tapLatLng.lat + location.coordinates[0]) / 2;
+            const midLng = (tapLatLng.lng + location.coordinates[1]) / 2;
+            
+            // Create distance label at midpoint
+            const label = L.marker([midLat, midLng], {
+                icon: L.divIcon({
+                    className: 'distance-label',
+                    html: `<div style="
+                        background: rgba(255, 255, 255, 0.95);
+                        backdrop-filter: blur(10px);
+                        padding: 6px 12px;
+                        border-radius: 20px;
+                        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                        font-size: 13px;
+                        font-weight: 600;
+                        color: #2563eb;
+                        white-space: nowrap;
+                        border: 2px solid #2563eb;
+                    ">${formatDistance(distance)}</div>`,
+                    iconSize: [null, null],
+                    iconAnchor: [0, 0]
+                })
+            }).addTo(map);
+            
+            // Store references
+            locationMarkers[locationId] = {
+                tapMarker,
+                locationMarker,
+                line,
+                label
+            };
+        }
+        
+        // Track if user is dragging to distinguish from taps
+        let isDragging = false;
+        let dragStartTime = 0;
+        let dragStartPos = null;
+        
+        // Handle map clicks/taps
+        map.on('mousedown', (e) => {
+            dragStartTime = Date.now();
+            dragStartPos = e.containerPoint;
+            isDragging = false;
+        });
+        
+        map.on('mousemove', () => {
+            if (dragStartPos) {
+                isDragging = true;
+            }
+        });
+        
+        map.on('click', (e) => {
+            // Only process if it's a click, not a drag
+            const clickDuration = Date.now() - dragStartTime;
+            if (isDragging || clickDuration > 200) {
+                return;
+            }
+            
+            const clickedLatLng = e.latlng;
+            makeGuess(clickedLatLng);
+        });
+        
+        // Handle touch events for mobile
+        let touchStartTime = 0;
+        let touchStartPos = null;
+        let touchMoved = false;
+        let touchStartLatLng = null;
+        
+        map.getContainer().addEventListener('touchstart', (e) => {
+            if (e.touches.length === 1) {
+                touchStartTime = Date.now();
+                const rect = map.getContainer().getBoundingClientRect();
+                touchStartPos = { 
+                    x: e.touches[0].clientX - rect.left, 
+                    y: e.touches[0].clientY - rect.top 
+                };
+                touchMoved = false;
+                const containerPoint = L.point(touchStartPos.x, touchStartPos.y);
+                touchStartLatLng = map.containerPointToLatLng(containerPoint);
+            }
+        }, { passive: true });
+        
+        map.getContainer().addEventListener('touchmove', (e) => {
+            if (touchStartPos && e.touches.length === 1) {
+                const moveX = Math.abs(e.touches[0].clientX - touchStartPos.x);
+                const moveY = Math.abs(e.touches[0].clientY - touchStartPos.y);
+                if (moveX > 5 || moveY > 5) {
+                    touchMoved = true;
+                }
+            }
+        }, { passive: true });
+        
+        map.getContainer().addEventListener('touchend', (e) => {
+            if (touchMoved || !touchStartPos || !touchStartLatLng) {
+                touchStartPos = null;
+                touchStartLatLng = null;
+                return;
+            }
+            
+            const touchDuration = Date.now() - touchStartTime;
+            if (touchDuration > 300) {
+                touchStartPos = null;
+                touchStartLatLng = null;
+                return;
+            }
+            
+            // Use the stored lat/lng from touchstart
+            const clickedLatLng = touchStartLatLng;
+            makeGuess(clickedLatLng);
+            
+            touchStartPos = null;
+            touchStartLatLng = null;
+        }, { passive: true });
     </script>
 </body>
 </html>
