@@ -18,14 +18,17 @@ default:
     name: Philadelphia Museum of Art
     coordinates: [39.9656, -75.1809]
     icon: 🎨
+    description: The Philadelphia Museum of Art is one of the largest art museums in the United States, housing over 240,000 works spanning 2,000 years. The building itself is an architectural marvel - when it opened in 1928, it was the largest Greek Revival structure in the world. The museum's 72 Rocky Steps were made famous by the film "Rocky" and are a beloved Philly tradition.
   - id: 3
     name: Reading Terminal Market
     coordinates: [39.9531, -75.1584]
     icon: 🍕
+    description: Reading Terminal Market is America's oldest continuously operating farmers' market, opening in 1893. Built under the Reading Railroad train shed, it features over 80 merchants selling everything from Amish baked goods to cheesesteaks. The market's distinctive Victorian architecture and bustling atmosphere make it a beloved Philadelphia institution and food destination.
   - id: 4
     name: City Hall
     coordinates: [39.9523, -75.1636]
     icon: 🏢
+    description: Philadelphia City Hall is the largest municipal building in the United States and was the tallest habitable building in the world when completed in 1901. Standing at 548 feet, it remained the tallest building in Philadelphia until 1987 due to a gentlemen's agreement. The building features 250 sculptures and a 37-foot-tall statue of William Penn at the top, making it one of the most ornate public buildings in America.
 
 # Daily locations for January 2025
 
@@ -76,274 +79,336 @@ default:
     name: Laurel Hill Cemetery
     coordinates: [39.9717, -75.1858]
     icon: ⚰️
+    description: Laurel Hill Cemetery is one of America's few remaining rural cemeteries, opened in 1836. It was the first cemetery in the country to be designated a National Historic Landmark. The cemetery is the final resting place of many notable Philadelphians including David Rittenhouse, Horace Binney, and dozens of Civil War generals. Its beautiful Victorian architecture and sculpture make it both a cemetery and an outdoor museum.
   - id: 4
     name: Wagner Free Institute of Science
     coordinates: [39.9792, -75.1528]
     icon: 🔬
+    description: The Wagner Free Institute of Science is a rare 19th-century natural history museum that has remained virtually unchanged since 1865. Founded by William Wagner, it houses over 100,000 specimens including fossils, minerals, shells, and taxidermy animals displayed in beautiful Victorian glass cases. It's considered one of the best-preserved natural history collections in the world and offers free admission, staying true to Wagner's vision of free education for all.
 
 2025-01-19:
   - id: 0
     name: Spruce Street Harbor Park
     coordinates: [39.9444, -75.1415]
     icon: 🏖️
+    description: Spruce Street Harbor Park is a seasonal urban beach park on the Delaware River waterfront. Opened in 2014, it features hammocks, colorful LED-lit trees, food vendors, and a beer garden. The park was created as a temporary pop-up but became so popular it's now a permanent summer destination. It transforms Philadelphia's waterfront into a vibrant social space with views of the Ben Franklin Bridge.
   - id: 1
     name: Dirty Frank's
     coordinates: [39.9499, -75.1590]
     icon: 🍻
+    description: Dirty Frank's is a legendary Philadelphia dive bar that's been serving drinks since 1973. Known for its eclectic decor covered in dollar bills and its famously cheap beer, it's a beloved neighborhood institution. The bar was named after a former bartender, not the politician, and has become a favorite spot for journalists, artists, and locals seeking an authentic Philly bar experience.
   - id: 2
     name: Franklin Institute
     coordinates: [39.9577, -75.1722]
     icon: 🔭
+    description: The Franklin Institute is one of America's oldest and premier centers of science education. Founded in 1824 and named after Benjamin Franklin, it houses a 60-foot walk-through model of the human heart, a massive Foucault pendulum, and an observatory. The institute's iconic 20-foot tall statue of Benjamin Franklin sitting in the rotunda is one of Philadelphia's most recognizable sculptures.
   - id: 3
     name: Powel House
     coordinates: [39.9472, -75.1500]
     icon: 🏠
+    description: The Powel House is a magnificent Georgian townhouse built in 1765 and home to Samuel Powel, Philadelphia's last colonial mayor and first post-colonial mayor. George Washington, Benjamin Franklin, and John Adams were frequent guests at lavish parties here. The house is considered one of the finest examples of 18th-century architecture in America and showcases the elegant lifestyle of Philadelphia's colonial elite.
   - id: 4
     name: Stenton Mansion
     coordinates: [40.0197, -75.1578]
     icon: 🏛️
+    description: Stenton Mansion is a preserved 18th-century country house built in 1723 by James Logan, William Penn's secretary. The mansion served as a headquarters during the Battle of Germantown in 1777 and hosted many founding fathers. It's one of the oldest surviving houses in Philadelphia and remains remarkably intact, with original woodwork, furnishings, and a beautiful formal garden that demonstrates colonial-era landscaping.
 
 2025-01-20:
   - id: 0
     name: South Street
     coordinates: [39.9419, -75.1536]
     icon: 🎸
+    description: South Street is Philadelphia's legendary entertainment and shopping district, known as "The Hippest Street in Town" since the 1960s. The street became famous for its counterculture scene, quirky shops, live music venues, and eclectic atmosphere. From its punk rock roots to today's mix of vintage stores, restaurants, and nightlife, South Street remains one of Philadelphia's most vibrant and iconic thoroughfares.
   - id: 1
     name: Jim's Steaks
     coordinates: [39.9415, -75.1493]
     icon: 🥩
+    description: Jim's Steaks is one of Philadelphia's most beloved cheesesteak institutions, opened in 1939. Located on South Street, it's famous for its classic Philly cheesesteaks with thinly sliced ribeye, melted cheese, and onions on a fresh roll. The shop has been serving locals and tourists for over 80 years and is consistently ranked among the city's best cheesesteak spots, with long lines testifying to its enduring popularity.
   - id: 2
     name: Magic Gardens
     coordinates: [39.9428, -75.1594]
     icon: 🎨
+    description: Philadelphia's Magic Gardens is a unique art environment created by mosaic artist Isaiah Zagar over 14 years. The immersive space features intricate mosaics made from tiles, bottles, bicycle wheels, mirrors, and other found objects covering walls, ceilings, and walkways. Zagar's "outsider art" installation spans half a block and includes indoor galleries, outdoor sculpture, and labyrinthine passages that celebrate community, creativity, and transformation.
   - id: 3
     name: Woodlands Cemetery
     coordinates: [39.9486, -75.2047]
     icon: 🌳
+    description: The Woodlands Cemetery is a historic rural cemetery founded in 1840, designed as an arboretum and garden. It's the final resting place of many notable Philadelphians including artist Thomas Eakins and publisher Curtis Bok. The cemetery's Victorian Gothic gatehouse and carefully planned landscape make it both a burial ground and a beautiful park. It was one of the first rural cemeteries in America, designed to be a place for both mourning and recreation.
   - id: 4
     name: 30th Street Station
     coordinates: [39.9558, -75.1832]
     icon: 🚂
+    description: 30th Street Station is one of America's grandest railroad stations, opened in 1933. The monumental Beaux-Arts building features soaring 95-foot-high ceilings, ornate chandeliers, and a striking Art Deco design. The station serves as a major Amtrak hub connecting Philadelphia to the Northeast Corridor. During World War II, it was a primary troop movement center, and today it's the third-busiest Amtrak station in the country.
 
 2025-01-21:
   - id: 0
     name: Rittenhouse Square
     coordinates: [39.9496, -75.1714]
     icon: 🌳
+    description: Rittenhouse Square is one of Philadelphia's five original public squares laid out by William Penn in 1682. The park became a fashionable address in the 19th century and remains one of the city's most prestigious neighborhoods. The square features beautiful landscaping, sculptures, a fountain, and is a popular gathering place for locals, dog walkers, and visitors seeking a peaceful urban oasis.
   - id: 1
     name: McGillin's Olde Ale House
     coordinates: [39.9523, -75.1622]
     icon: 🍺
+    description: McGillin's Olde Ale House is Philadelphia's oldest continuously operating tavern, opened in 1860. The bar has survived Prohibition, two world wars, and changing neighborhoods while maintaining its Victorian charm and character. The multi-story building is filled with historical artifacts, photos of famous patrons, and a cozy atmosphere that makes it a beloved Philadelphia institution and a favorite among locals and tourists alike.
   - id: 2
     name: Franklin Institute
     coordinates: [39.9577, -75.1722]
     icon: 🔭
+    description: The Franklin Institute is one of America's oldest and premier centers of science education. Founded in 1824 and named after Benjamin Franklin, it houses a 60-foot walk-through model of the human heart, a massive Foucault pendulum, and an observatory. The institute's iconic 20-foot tall statue of Benjamin Franklin sitting in the rotunda is one of Philadelphia's most recognizable sculptures.
   - id: 3
     name: Barnes Foundation
     coordinates: [39.9594, -75.1725]
     icon: 🖼️
+    description: The Barnes Foundation houses one of the world's greatest collections of Impressionist, Post-Impressionist, and early Modern paintings. Dr. Albert C. Barnes assembled the collection including 181 Renoirs, 69 Cézannes, 59 Matisses, and dozens of Picassos. The museum is famous for Barnes's unconventional hanging method, mixing paintings with metalwork and furniture to create what he called "ensembles." The collection moved from Merion to Philadelphia in 2012 in a controversial relocation.
   - id: 4
     name: John Heinz Wildlife Refuge
     coordinates: [39.8928, -75.2458]
     icon: 🦅
+    description: The John Heinz National Wildlife Refuge at Tinicum is America's first urban wildlife refuge, established in 1972. The 1,000-acre preserve protects one of the largest remaining freshwater tidal marshes in Pennsylvania, providing critical habitat for over 300 bird species and other wildlife. The refuge offers hiking trails, bird watching opportunities, and a chance to experience nature just minutes from downtown Philadelphia.
 
 2025-01-22:
   - id: 0
     name: Ben Franklin Bridge
     coordinates: [39.9531, -75.1375]
     icon: 🌉
+    description: The Benjamin Franklin Bridge is a magnificent suspension bridge spanning the Delaware River, connecting Philadelphia to Camden, New Jersey. Opened in 1926, it was the longest suspension bridge in the world at the time of its completion. The bridge features distinctive neo-classical pylons and elegant Art Deco detailing. It's named after Benjamin Franklin and offers pedestrian walkways with stunning views of both cities.
   - id: 1
     name: Tattooed Mom
     coordinates: [39.9419, -75.1603]
     icon: 💉
+    description: Tattooed Mom is a beloved South Street dive bar and art gallery known for its vibrant street art, eclectic decor, and alternative music scene. The bar features colorful murals, retro furniture, and a laid-back atmosphere that attracts artists, musicians, and creatives. Famous for its "Upstairs at Mom's" events and its role in Philadelphia's counterculture scene, it's a true local institution.
   - id: 2
     name: Please Touch Museum
     coordinates: [39.9775, -75.2117]
     icon: 🎪
+    description: The Please Touch Museum is a children's museum in Fairmount Park focused on hands-on learning through play. Housed in the historic Memorial Hall from the 1876 Centennial Exposition, the museum features interactive exhibits, a historic carousel from 1908, and educational programs. The museum's motto "Learning through play" reflects its mission to make learning fun and accessible for children and families.
   - id: 3
     name: Old City District
     coordinates: [39.9503, -75.1458]
     icon: 🏛️
+    description: Old City is Philadelphia's historic district, home to many of America's most significant historic sites including Independence Hall, the Liberty Bell, and the Betsy Ross House. The neighborhood features cobblestone streets, 18th-century architecture, world-class museums, and an eclectic mix of art galleries, restaurants, and shops. It's considered the birthplace of American democracy and one of the most walkable historic districts in America.
   - id: 4
     name: Woodford Mansion
     coordinates: [39.9814, -75.1761]
     icon: 🏰
+    description: Woodford Mansion is one of the grandest Georgian mansions in Philadelphia, built in 1756 as a summer home for a wealthy Quaker merchant. The mansion features beautiful 18th-century furniture, artwork, and decorative arts, with original period rooms that showcase colonial-era life. The house is part of Fairmount Park's collection of historic mansions and offers a glimpse into the elegant lifestyle of Philadelphia's colonial elite.
 
 2025-01-23:
   - id: 0
     name: Spruce Street Harbor Park
     coordinates: [39.9444, -75.1415]
     icon: 🏖️
+    description: Spruce Street Harbor Park is a seasonal urban beach park on the Delaware River waterfront. Opened in 2014, it features hammocks, colorful LED-lit trees, food vendors, and a beer garden. The park was created as a temporary pop-up but became so popular it's now a permanent summer destination. It transforms Philadelphia's waterfront into a vibrant social space with views of the Ben Franklin Bridge.
   - id: 1
     name: Pat's King of Steaks
     coordinates: [39.9333, -75.1594]
     icon: 🥩
+    description: Pat's King of Steaks claims to be the birthplace of the cheesesteak, invented by Pat Olivieri in 1930. The legendary stand is located at the intersection with Geno's Steaks across the street, creating one of Philadelphia's most famous food rivalries. Pat's original location and classic preparation have made it a must-visit destination for cheesesteak lovers from around the world.
   - id: 2
     name: Elfreth's Alley
     coordinates: [39.9527, -75.1424]
     icon: 🏘️
+    description: Elfreth's Alley is America's oldest residential street, with houses dating from 1728 to 1836. The charming cobblestone alley features 32 houses that have been continuously inhabited for over 300 years. Named after blacksmith and property owner Jeremiah Elfreth, it's a National Historic Landmark and offers a rare glimpse into 18th-century urban life in America.
   - id: 3
     name: Stenton Mansion
     coordinates: [40.0197, -75.1578]
     icon: 🏛️
+    description: Stenton Mansion is a preserved 18th-century country house built in 1723 by James Logan, William Penn's secretary. The mansion served as a headquarters during the Battle of Germantown in 1777 and hosted many founding fathers. It's one of the oldest surviving houses in Philadelphia and remains remarkably intact, with original woodwork, furnishings, and a beautiful formal garden that demonstrates colonial-era landscaping.
   - id: 4
     name: John Bartram House
     coordinates: [39.9231, -75.2064]
     icon: 🏡
+    description: The John Bartram House is the 18th-century home of America's first botanist, John Bartram, who founded Bartram's Garden in 1728. The stone house, built in 1731, is a National Historic Landmark and showcases colonial-era architecture. Bartram corresponded with many European naturalists and was appointed "Royal Botanist" by King George III, helping establish America's scientific reputation.
 
 2025-01-24:
   - id: 0
     name: Italian Market
     coordinates: [39.9369, -75.1592]
     icon: 🍝
+    description: The Italian Market is America's oldest continuously operating outdoor market, dating back to the 1880s. Spanning several blocks on 9th Street, it features dozens of vendors selling fresh produce, meats, cheeses, spices, and specialty Italian foods. The market has been a cultural hub for Philadelphia's Italian-American community for over a century and remains one of the city's most vibrant and authentic food destinations.
   - id: 1
     name: Geno's Steaks
     coordinates: [39.9331, -75.1592]
     icon: 🥪
+    description: Geno's Steaks is one of Philadelphia's most famous cheesesteak joints, opened in 1966 across the street from Pat's King of Steaks. The rivalry between the two stands has become legendary, with locals fiercely debating which serves the better cheesesteak. Geno's neon-lit exterior, 24-hour service, and classic preparation have made it an iconic Philadelphia destination featured in countless films and TV shows.
   - id: 2
     name: Rodin Museum
     coordinates: [39.9642, -75.1725]
     icon: 🗿
+    description: The Rodin Museum houses one of the largest collections of Auguste Rodin's sculptures outside of France. Opened in 1929, the museum was a gift from movie theater magnate Jules Mastbaum, who collected Rodin's works and commissioned architect Paul Cret to design the beautiful Beaux-Arts building. The museum features 150 bronze, marble, and plaster works including "The Thinker" and "The Gates of Hell."
   - id: 3
     name: Powel House
     coordinates: [39.9472, -75.1500]
     icon: 🏠
+    description: The Powel House is a magnificent Georgian townhouse built in 1765 and home to Samuel Powel, Philadelphia's last colonial mayor and first post-colonial mayor. George Washington, Benjamin Franklin, and John Adams were frequent guests at lavish parties here. The house is considered one of the finest examples of 18th-century architecture in America and showcases the elegant lifestyle of Philadelphia's colonial elite.
   - id: 4
     name: Strawberry Mansion
     coordinates: [39.9814, -75.1933]
     icon: 🍓
+    description: Strawberry Mansion is a restored Federal-style mansion in Fairmount Park, built in 1789 as a summer home for wealthy merchant Judge William Lewis. The mansion is one of Philadelphia's grandest historic homes, featuring elegant period rooms, original furnishings, and beautiful gardens. It's part of Fairmount Park's collection of historic mansions and offers a glimpse into early 19th-century Philadelphia society.
 
 2025-01-25:
   - id: 0
     name: Washington Square
     coordinates: [39.9472, -75.1531]
     icon: 🌳
+    description: Washington Square is one of Philadelphia's five original public squares laid out by William Penn in 1682. The park served as a burial ground during colonial times and is home to the Tomb of the Unknown Revolutionary War Soldier, honoring fallen soldiers. The square features beautiful landscaping, benches, and is a peaceful oasis in the heart of Old City, perfect for reflection and relaxation.
   - id: 1
     name: Franklin Fountain
     coordinates: [39.9496, -75.1429]
     icon: 🍦
+    description: Franklin Fountain is an authentic Victorian-style ice cream parlor in Old City, opened in 2004. The shop features beautiful tin ceilings, period-appropriate fixtures, and classic American sodas made with house-made syrups. The fountain serves traditional ice cream flavors, sundaes, milkshakes, and phosphates, recreating the experience of a 1920s ice cream parlor with modern attention to quality and detail.
   - id: 2
     name: Fairmount Water Works
     coordinates: [39.9669, -75.1831]
     icon: 💧
+    description: The Fairmount Water Works was one of America's first municipal water treatment facilities, operating from 1815 to 1909. The Greek Revival buildings on the Schuylkill River were an engineering marvel and a major tourist attraction in the 19th century, drawing visitors from around the world. Today, the complex houses an interpretive center, restaurant, and serves as a beautiful backdrop for Philadelphia's riverfront.
   - id: 3
     name: Cliveden
     coordinates: [40.0383, -75.1875]
     icon: 🏛️
+    description: Cliveden is a grand Georgian mansion built in 1763 by Benjamin Chew, Chief Justice of Pennsylvania. The house was the site of the Battle of Germantown in 1777, where it served as a British stronghold and still bears bullet holes from the fighting. The mansion is one of Philadelphia's finest examples of colonial architecture and houses an impressive collection of 18th-century furnishings and decorative arts.
   - id: 4
     name: Wissahickon Gorge
     coordinates: [40.0175, -75.1944]
     icon: 🏔️
+    description: The Wissahickon Gorge is a beautiful natural area in Fairmount Park, featuring a 7-mile trail along the Wissahickon Creek. The gorge is home to diverse wildlife, waterfalls, historic stone bridges, and stunning rock formations. The area has been protected since 1868 and offers Philadelphia residents and visitors a chance to experience wilderness hiking just minutes from the city. It's considered one of Philadelphia's greatest natural treasures.
 
 2025-01-26:
   - id: 0
     name: Boathouse Row
     coordinates: [39.9692, -75.1917]
     icon: 🚣
+    description: Boathouse Row is a series of 15 historic boathouses along the Schuylkill River, home to Philadelphia's rowing clubs since the 1850s. The Victorian-era boathouses are illuminated with thousands of lights each night, creating one of Philadelphia's most iconic and beautiful sights. The row clubs here have produced numerous Olympic champions and continue to be a center of competitive rowing in America.
   - id: 1
     name: Dirty Frank's
     coordinates: [39.9499, -75.1590]
     icon: 🍻
+    description: Dirty Frank's is a legendary Philadelphia dive bar that's been serving drinks since 1973. Known for its eclectic decor covered in dollar bills and its famously cheap beer, it's a beloved neighborhood institution. The bar was named after a former bartender, not the politician, and has become a favorite spot for journalists, artists, and locals seeking an authentic Philly bar experience.
   - id: 2
     name: Philadelphia Zoo
     coordinates: [39.9717, -75.1960]
     icon: 🦁
+    description: The Philadelphia Zoo is America's first zoo, opened in 1874. The zoo is home to over 1,300 animals, including rare and endangered species. It was the first zoo in the world to develop a modern zoo design, and continues to innovate with its Zoo360 animal exploration trail system, allowing animals to roam above visitor pathways. The zoo's Victorian-era architecture and beautiful gardens make it both a conservation center and a historic landmark.
   - id: 3
     name: Laurel Hill East Cemetery
     coordinates: [40.0048, -75.1902]
     icon: ⚱️
+    description: Laurel Hill East Cemetery is the eastern section of the Laurel Hill Cemetery complex, opened in 1861. The cemetery is the final resting place of many notable Philadelphians and features beautiful Victorian architecture and sculpture. As one of America's few remaining rural cemeteries, it serves as both a burial ground and an outdoor museum, showcasing 19th-century funerary art and landscaping.
   - id: 4
     name: Glen Foerd Mansion
     coordinates: [40.0178, -75.0275]
     icon: 🏰
+    description: Glen Foerd Mansion is a magnificent Italianate villa built in 1850, located along the Delaware River. The mansion features beautiful period rooms, original furnishings, and stunning river views. The 18-acre estate includes formal gardens, meadows, and tidal wetlands. The mansion is open for tours and events, offering visitors a chance to experience 19th-century estate life on Philadelphia's waterfront.
 
 2025-01-27:
   - id: 0
     name: Convention Center
     coordinates: [39.9550, -75.1602]
     icon: 🏢
+    description: The Pennsylvania Convention Center is one of America's largest convention facilities, spanning 1.1 million square feet. Opened in 1993, it hosts major conventions, trade shows, and events that bring thousands of visitors to Philadelphia each year. The center's grand hallways, multiple exhibit halls, and state-of-the-art facilities make it a premier destination for conventions and a major economic driver for the city.
   - id: 1
     name: Oyster House
     coordinates: [39.9503, -75.1665]
     icon: 🦪
+    description: Oyster House is a classic Philadelphia seafood restaurant, opened in 1947. The restaurant serves fresh oysters, seafood, and classic American dishes in a traditional setting. The restaurant has been a Philadelphia institution for over 75 years, serving locals and visitors in the heart of Center City and maintaining its reputation for quality seafood and hospitality.
   - id: 2
     name: Betsy Ross House
     coordinates: [39.9525, -75.1433]
     icon: 🪡
+    description: The Betsy Ross House is the historic home where legend says Betsy Ross sewed the first American flag. Built around 1740, the house is where Ross allegedly met with George Washington, Robert Morris, and George Ross to discuss the flag design. While historians debate the legend's accuracy, the house is a beloved American landmark and offers visitors a glimpse into 18th-century life and the story of America's first flag.
   - id: 3
     name: Fort Mifflin
     coordinates: [39.8744, -75.2175]
     icon: 🏰
+    description: Fort Mifflin is a preserved 18th-century fort on the Delaware River, built in 1771 to protect Philadelphia. The fort played a crucial role in the Revolutionary War, holding off the British Navy for six weeks in 1777 to allow Washington's army to escape. The fort is one of the only intact Revolutionary War forts in America and offers living history programs, ghost tours, and a chance to experience America's military history firsthand.
   - id: 4
     name: Manayunk Bridge
     coordinates: [40.0247, -75.2167]
     icon: 🌉
+    description: The Manayunk Bridge is a historic railroad bridge spanning the Schuylkill River, opened in 1918. The bridge was converted to a pedestrian and bicycle path in 2015, connecting the Manayunk neighborhood to the Schuylkill River Trail. The bridge offers stunning views of the river and surrounding areas, and is part of Philadelphia's expanding network of trails for pedestrians and cyclists.
 
 2025-01-28:
   - id: 0
     name: Penn's Landing
     coordinates: [39.9456, -75.1407]
     icon: ⚓
+    description: Penn's Landing is Philadelphia's waterfront park on the Delaware River, named after William Penn who first landed here in 1682. The park features festivals, concerts, and events throughout the year, including the famous summer concert series. The waterfront offers beautiful views of the Ben Franklin Bridge and is home to historic ships including the USS Olympia, the world's oldest floating steel warship.
   - id: 1
     name: Woody's
     coordinates: [39.9492, -75.1675]
     icon: 🏳️‍🌈
+    description: Woody's is one of Philadelphia's most famous LGBTQ+ bars and nightlife destinations, opened in 1980. The bar has been a cornerstone of Philadelphia's gay community for over 40 years, hosting drag shows, dance parties, and community events. The bar's vibrant atmosphere and welcoming environment make it a beloved institution in Philadelphia's LGBTQ+ neighborhood and a must-visit destination for nightlife.
   - id: 2
     name: Academy of Natural Sciences
     coordinates: [39.9575, -75.1725]
     icon: 🦖
+    description: The Academy of Natural Sciences of Drexel University is America's oldest natural science research institution and museum, founded in 1812. The museum features impressive dinosaur exhibits, a live butterfly garden, dioramas of wildlife from around the world, and extensive scientific collections. The academy has been at the forefront of natural science research and education for over 200 years, making it a Philadelphia institution.
   - id: 3
     name: Grumblethorpe
     coordinates: [39.9775, -75.1656]
     icon: 🏠
+    description: Grumblethorpe is a preserved 18th-century farmhouse built in 1744 by John Wister, a wealthy merchant. The house served as a headquarters during the Battle of Germantown in 1777, and bullet holes from the fighting are still visible. The mansion features original furnishings, period rooms, and beautiful gardens, offering visitors a glimpse into 18th-century farm life in Philadelphia.
   - id: 4
     name: Wissahickon Valley Park
     coordinates: [40.0169, -75.1975]
     icon: 🏞️
+    description: Wissahickon Valley Park is a 1,800-acre natural area in Fairmount Park, featuring the Wissahickon Creek and miles of hiking and biking trails. The park has been protected since 1868 and offers Philadelphia residents and visitors a chance to experience wilderness just minutes from the city. The park features historic stone bridges, waterfalls, rock formations, and diverse wildlife, making it one of Philadelphia's greatest natural treasures.
 
 2025-01-29:
   - id: 0
     name: Chinatown Gate
     coordinates: [39.9542, -75.1556]
     icon: 🚪
+    description: The Chinatown Friendship Gate is a colorful 40-foot-tall gateway that marks the entrance to Philadelphia's Chinatown neighborhood. Built in 1984 as a gift from the city of Tianjin, China, it was the first authentic Chinese gate built in America by Chinese artisans. The gate features traditional Chinese architecture with elaborate decorations, dragons, and phoenixes, symbolizing friendship between Philadelphia and China.
   - id: 1
     name: Nomad Pizza
     coordinates: [39.9478, -75.1625]
     icon: 🍕
+    description: Nomad Pizza is a beloved Philadelphia pizzeria known for its wood-fired Neapolitan-style pizzas, opened in 2009. The restaurant was founded in a mobile wood-fired oven before opening brick-and-mortar locations. Nomad Pizza has won numerous awards and is consistently ranked among Philadelphia's best pizza places, known for its quality ingredients, authentic preparation, and creative flavor combinations.
   - id: 2
     name: Fabric Workshop & Museum
     coordinates: [39.9528, -75.1597]
     icon: 🧵
+    description: The Fabric Workshop and Museum is a contemporary art museum and artist residency program, founded in 1977. The museum focuses on fabric and textile arts, offering residencies to artists working with textiles and other materials. The museum features exhibitions, workshops, and educational programs, showcasing contemporary art that explores the relationship between art, craft, and technology.
   - id: 3
     name: Morris Arboretum
     coordinates: [40.0736, -75.2319]
     icon: 🌲
+    description: The Morris Arboretum is a 92-acre Victorian landscape garden and arboretum, part of the University of Pennsylvania. Founded in 1887 by John and Lydia Morris as their private estate, it features over 13,000 plants including rare and endangered species. The arboretum is home to the Garden Railway, a model train display, and the Out on a Limb tree canopy walk, offering visitors unique perspectives on the natural world.
   - id: 4
     name: La Salle University Art Museum
     coordinates: [40.0372, -75.1569]
     icon: 🎨
+    description: The La Salle University Art Museum is a small but distinguished art museum featuring European and American paintings, sculptures, and decorative arts. The collection includes works by artists such as Goya, Rubens, and Degas, spanning from the Middle Ages to the 20th century. The museum is housed in a beautiful historic building and offers free admission, making it an accessible cultural destination in Philadelphia.
 
 2025-01-30:
   - id: 0
     name: Market East Station
     coordinates: [39.9531, -75.1575]
     icon: 🚇
+    description: Market East Station (now Jefferson Station) is a major SEPTA regional rail and subway station in Center City Philadelphia. The station serves as a transportation hub connecting commuters to suburban areas and other parts of the city. The station is part of Philadelphia's extensive public transportation network and serves as a gateway to Center City for thousands of daily commuters.
   - id: 1
     name: Standard Tap
     coordinates: [39.9642, -75.1405]
     icon: 🍺
+    description: Standard Tap is a neighborhood gastropub in Northern Liberties, opened in 2000. The bar helped pioneer Philadelphia's craft beer scene, focusing on local and regional beers served from casks. The restaurant features a menu of elevated pub food and has become a beloved neighborhood institution, known for its quality beer selection, friendly atmosphere, and commitment to supporting local breweries.
   - id: 2
     name: Christ Church
     coordinates: [39.9507, -75.1439]
     icon: ⛪
+    description: Christ Church is a historic Episcopal church founded in 1695, known as the "Nation's Church" because many founding fathers were members. George Washington, Benjamin Franklin, and Betsy Ross worshipped here. The church's elegant Georgian architecture and beautiful interior make it one of America's finest colonial churches. The church's 196-foot-tall steeple was the tallest structure in America when completed in 1754.
   - id: 3
     name: Germantown Friends Meeting
     coordinates: [40.0317, -75.1731]
     icon: 🙏
+    description: Germantown Friends Meeting is a historic Quaker meetinghouse, founded in 1683 and one of the oldest Quaker meetinghouses in America. The meetinghouse played a role in the abolitionist movement and served as a hospital during the Battle of Germantown in 1777. The simple, elegant building reflects Quaker values and continues to serve as a place of worship and community gathering for Philadelphia's Quaker community.
   - id: 4
     name: Mt. Moriah Cemetery
     coordinates: [39.9203, -75.2261]
     icon: ⚰️
+    description: Mount Moriah Cemetery is a historic 380-acre cemetery in Southwest Philadelphia, opened in 1855. The cemetery is the final resting place of many notable Philadelphians including Betsy Ross, and features beautiful Victorian architecture and sculpture. The cemetery fell into disrepair in the late 20th century but has been restored by volunteers, showcasing Philadelphia's commitment to preserving its historic cemeteries.
 
 2025-01-31:
   - id: 0
