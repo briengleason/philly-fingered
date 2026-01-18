@@ -49,6 +49,17 @@
 - Organized code into logical directory structure
 - Created comprehensive documentation
 
+### Phase 8: UI Enhancements & Location Information
+- Added location descriptions to YAML configuration
+- Implemented clickable location pins to show descriptions after guessing
+- Made completion screen table rows clickable to view location info
+- Added transparent modal/bottom sheet for location information
+- Implemented minimized scorecard that shows score in top-right corner
+- Added minimize/expand functionality for scorecard
+- Updated language from "finding locations" to "guessing locations"
+- Made all UI elements transparent to keep map as focal point
+- Reduced scorecard size and clutter
+
 ## Project Structure
 
 ```
@@ -380,12 +391,15 @@ All locations are unique across the entire configuration - no location appears t
 
 ### YAML Structure
 
+Locations can optionally include a `description` field for educational information that appears after guessing:
+
 ```yaml
 default:
   - id: 0
     name: Liberty Bell
     coordinates: [39.9496, -75.1503]
     icon: 🔔
+    description: The Liberty Bell is an iconic symbol of American independence. Originally hung in the Pennsylvania State House (now Independence Hall) in 1753, the bell gained its famous crack and became a symbol of freedom and abolition.
 
 2025-01-20:
   - id: 0
@@ -410,6 +424,11 @@ default:
     icon: 🚂
 ```
 
+**Description Field:**
+- Optional field that provides educational information about each location
+- Displayed in a transparent modal/bottom sheet when users click on guessed location pins or completion screen table rows
+- Helps users learn about Philadelphia landmarks after playing
+
 ### Default Location Coordinates
 
 All coordinates are in [latitude, longitude] format:
@@ -424,7 +443,7 @@ All coordinates are in [latitude, longitude] format:
 
 ### Test Suite Overview
 
-The project includes a comprehensive test suite with **65+ tests** covering:
+The project includes a comprehensive test suite with **75+ tests** covering:
 
 1. **Core Game Logic (25 tests)**
    - Distance calculations (3 tests)
@@ -447,6 +466,13 @@ The project includes a comprehensive test suite with **65+ tests** covering:
    - Interaction handling (3 tests)
    - Viewport handling (2 tests)
    - Style checks (2 tests)
+
+4. **UI Features & Location Information (10 tests)**
+   - Location info modal functionality (3 tests)
+   - Minimize/expand functionality (1 test)
+   - Score display in minimized state (2 tests)
+   - Description handling (2 tests)
+   - Minimized state UI elements (2 tests)
 
 ### Test Execution
 
@@ -576,6 +602,26 @@ Example:
 ```
 
 The app automatically loads the correct locations based on today's date.
+
+### Location Information & UI Features
+
+**Location Descriptions:**
+- Add optional `description` field to locations in YAML for educational content
+- Descriptions appear in a transparent modal/bottom sheet after guessing
+- Accessible by clicking guessed location pins on the map or table rows in completion screen
+- Modal is easily dismissible (click X button or outside modal)
+
+**Minimized Scorecard:**
+- Scorecard starts minimized in top-right corner showing only the score
+- Click "+" button to expand and see full details
+- Click "−" button to minimize again
+- When minimized after completion, shows "Final Score" label, score value, and share button
+- Transparent background keeps map as focal point
+
+**Transparent UI:**
+- All UI elements (scorecard, modals) use transparent backgrounds with blur effect
+- Map remains the center of attention
+- Reduced visual clutter for better gameplay experience
 
 ### Changing Scoring
 Modify `MAX_DISTANCE` (default: 5000 meters) and `calculateScore()` function in `index.html`.

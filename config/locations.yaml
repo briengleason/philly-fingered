@@ -8,10 +8,12 @@ default:
     name: Liberty Bell
     coordinates: [39.9496, -75.1503]
     icon: 🔔
+    description: The Liberty Bell is an iconic symbol of American independence. Originally hung in the Pennsylvania State House (now Independence Hall) in 1753, the bell gained its famous crack and became a symbol of freedom and abolition. Today it's displayed in the Liberty Bell Center, where visitors can learn about its history and significance.
   - id: 1
     name: Independence Hall
     coordinates: [39.9489, -75.1500]
     icon: 🏛️
+    description: Independence Hall is where both the Declaration of Independence (1776) and the U.S. Constitution (1787) were debated and adopted. This UNESCO World Heritage Site in Old City is considered the birthplace of America. The building served as the meeting place for the Second Continental Congress during the American Revolution.
   - id: 2
     name: Philadelphia Museum of Art
     coordinates: [39.9656, -75.1809]
@@ -32,36 +34,44 @@ default:
     name: Love Park
     coordinates: [39.9544, -75.1661]
     icon: ❤️
+    description: Love Park (officially John F. Kennedy Plaza) is a public park in Center City Philadelphia. It's famous for the iconic LOVE sculpture created by artist Robert Indiana in 1976. The sculpture has become one of Philadelphia's most recognizable symbols and a popular spot for photos.
   - id: 1
     name: Bob & Barbara's
     coordinates: [39.9440, -75.1675]
     icon: 🍻
+    description: Bob & Barbara's is a legendary dive bar on South Street that's been serving drinks since 1969. Famous for its classic cocktails and the Friday night drag show, it's one of Philadelphia's most authentic neighborhood bars and a true local institution.
   - id: 2
     name: Mutter Museum
     coordinates: [39.9533, -75.1765]
     icon: 🩺
+    description: The Mutter Museum is a medical history museum featuring anatomical specimens, medical instruments, and pathological collections. Part of The College of Physicians of Philadelphia, it's known for its fascinating and sometimes unsettling displays that showcase the history of medicine.
   - id: 3
     name: Shofuso Japanese House
     coordinates: [39.9814, -75.2128]
     icon: 🏯
+    description: Shofuso is a 17th-century style Japanese house and garden located in West Fairmount Park. Built in 1953 and originally displayed at MoMA in New York, it was moved to Philadelphia in 1958. The house features traditional Japanese architecture and a beautiful surrounding garden.
   - id: 4
     name: Bartram's Garden
     coordinates: [39.9321, -75.2124]
     icon: 🌸
+    description: Bartram's Garden is America's oldest surviving botanic garden, founded in 1728 by John Bartram. The historic site spans 46 acres along the Schuylkill River and includes the original 18th-century stone house, formal gardens, meadows, and tidal wetlands. It's a National Historic Landmark.
 
 2025-01-18:
   - id: 0
     name: Rocky Steps
     coordinates: [39.9648, -75.1800]
     icon: 🏃
+    description: The Rocky Steps are the 72 stone steps leading to the entrance of the Philadelphia Museum of Art. Made famous by Sylvester Stallone running up them in the film "Rocky" (1976), the steps have become a symbol of Philadelphia and a popular tourist attraction where visitors recreate the iconic run.
   - id: 1
     name: Monk's Cafe
     coordinates: [39.9477, -75.1683]
     icon: 🍺
+    description: Monk's Cafe is a Belgian beer bar and restaurant known for its extensive beer selection and mussels. Opened in 1997, it's one of Philadelphia's pioneering craft beer establishments and helped popularize Belgian beer culture in the city. The cozy atmosphere makes it a favorite among beer enthusiasts.
   - id: 2
     name: Eastern State Penitentiary
     coordinates: [39.9683, -75.1727]
     icon: 👻
+    description: Eastern State Penitentiary was once the most famous and expensive prison in the world. Operating from 1829 until 1971, it was designed as a radical experiment in rehabilitation through solitary confinement. Today it's a historic site and museum, known for its haunting architecture and its annual Terror Behind the Walls Halloween attraction.
   - id: 3
     name: Laurel Hill Cemetery
     coordinates: [39.9717, -75.1858]

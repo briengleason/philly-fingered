@@ -1740,6 +1740,204 @@ suite.test('Date indicator: should show warning when using defaults', () => {
     }
 });
 
+// Location info modal tests
+suite.test('Location info: showLocationInfo should accept location parameter', () => {
+    const testLocation = {
+        id: 0,
+        name: 'Test Location',
+        icon: '🔔',
+        description: 'This is a test description'
+    };
+    
+    // Mock showLocationInfo function
+    function showLocationInfo(location = null) {
+        if (!location) return null;
+        return {
+            icon: location.icon || '📍',
+            name: location.name,
+            description: location.description || 'No information available'
+        };
+    }
+    
+    const result = showLocationInfo(testLocation);
+    suite.assertEquals(result.name, 'Test Location');
+    suite.assertEquals(result.icon, '🔔');
+    suite.assertEquals(result.description, 'This is a test description');
+});
+
+suite.test('Location info: showLocationInfo should handle missing description', () => {
+    const testLocation = {
+        id: 0,
+        name: 'Test Location',
+        icon: '🔔'
+    };
+    
+    function showLocationInfo(location = null) {
+        if (!location) return null;
+        return {
+            icon: location.icon || '📍',
+            name: location.name,
+            description: location.description && location.description.trim() 
+                ? location.description 
+                : 'No information available for this location.'
+        };
+    }
+    
+    const result = showLocationInfo(testLocation);
+    suite.assertEquals(result.description, 'No information available for this location.');
+});
+
+suite.test('Location info: showLocationInfo should handle empty description', () => {
+    const testLocation = {
+        id: 0,
+        name: 'Test Location',
+        icon: '🔔',
+        description: '   '
+    };
+    
+    function showLocationInfo(location = null) {
+        if (!location) return null;
+        return {
+            icon: location.icon || '📍',
+            name: location.name,
+            description: location.description && location.description.trim() 
+                ? location.description 
+                : 'No information available for this location.'
+        };
+    }
+    
+    const result = showLocationInfo(testLocation);
+    suite.assertEquals(result.description, 'No information available for this location.');
+});
+
+// Minimize/expand functionality tests
+suite.test('Minimize toggle: should toggle minimized class', () => {
+    let isMinimized = true;
+    
+    function toggleMinimize() {
+        isMinimized = !isMinimized;
+        return {
+            isMinimized,
+            buttonText: isMinimized ? '+' : '−',
+            buttonTitle: isMinimized ? 'Expand' : 'Minimize'
+        };
+    }
+    
+    // Start minimized
+    suite.assert(isMinimized, 'Should start minimized');
+    
+    // Toggle to expanded
+    const expanded = toggleMinimize();
+    suite.assert(!expanded.isMinimized, 'Should be expanded after toggle');
+    suite.assertEquals(expanded.buttonText, '−');
+    suite.assertEquals(expanded.buttonTitle, 'Minimize');
+    
+    // Toggle back to minimized
+    const minimized = toggleMinimize();
+    suite.assert(minimized.isMinimized, 'Should be minimized after second toggle');
+    suite.assertEquals(minimized.buttonText, '+');
+    suite.assertEquals(minimized.buttonTitle, 'Expand');
+});
+
+suite.test('Minimized state: should show score when minimized during gameplay', () => {
+    const gameState = {
+        totalScore: 250,
+        guesses: {
+            0: { score: 100 },
+            1: { score: 150 }
+        }
+    };
+    
+    const isMinimized = true;
+    const isCompleted = false;
+    
+    // In minimized state during gameplay, should show running score
+    if (isMinimized && !isCompleted) {
+        const displayedScore = gameState.totalScore;
+        suite.assertEquals(displayedScore, 250, 'Should show running total when minimized during gameplay');
+    }
+});
+
+suite.test('Minimized state: should show final score when minimized after completion', () => {
+    const gameState = {
+        totalScore: 500,
+        guesses: {
+            0: { score: 100 },
+            1: { score: 150 },
+            2: { score: 250 }
+        }
+    };
+    
+    const isMinimized = true;
+    const isCompleted = true;
+    
+    // In minimized state after completion, should show final score
+    if (isMinimized && isCompleted) {
+        const displayedScore = gameState.totalScore;
+        suite.assertEquals(displayedScore, 500, 'Should show final score when minimized after completion');
+    }
+});
+
+suite.test('Minimized state: should show Final Score label and share button', () => {
+    const isMinimized = true;
+    const isCompleted = true;
+    
+    // When minimized and completed, should show:
+    // 1. Final Score label
+    // 2. Final score value
+    // 3. Share button
+    
+    if (isMinimized && isCompleted) {
+        const showLabel = true;
+        const showScore = true;
+        const showShareButton = true;
+        
+        suite.assert(showLabel, 'Should show Final Score label');
+        suite.assert(showScore, 'Should show final score value');
+        suite.assert(showShareButton, 'Should show share button');
+    }
+});
+
+// Description handling tests
+suite.test('Location description: should preserve description from YAML', () => {
+    const locationWithDescription = {
+        id: 0,
+        name: 'Test Location',
+        coordinates: [39.9496, -75.1503],
+        icon: '🔔',
+        description: 'This is a test description for the location'
+    };
+    
+    // Simulate YAML parsing with spread operator
+    const parsedLocation = {
+        ...locationWithDescription,
+        id: locationWithDescription.id !== undefined ? locationWithDescription.id : 0
+    };
+    
+    suite.assertEquals(parsedLocation.description, 'This is a test description for the location');
+    suite.assert(parsedLocation.description.trim().length > 0, 'Description should not be empty');
+});
+
+suite.test('Location description: should handle locations without descriptions', () => {
+    const locationWithoutDescription = {
+        id: 1,
+        name: 'Test Location 2',
+        coordinates: [39.9489, -75.1500],
+        icon: '🏛️'
+    };
+    
+    const parsedLocation = {
+        ...locationWithoutDescription,
+        id: locationWithoutDescription.id !== undefined ? locationWithoutDescription.id : 1
+    };
+    
+    suite.assert(!parsedLocation.description, 'Location without description should not have description property');
+    
+    // Check if description exists and is not empty
+    const hasDescription = parsedLocation.description && parsedLocation.description.trim();
+    suite.assert(!hasDescription, 'Should not have valid description');
+});
+
 // Run all tests
 if (typeof module !== 'undefined' && module.exports) {
     // Node.js

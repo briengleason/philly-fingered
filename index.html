@@ -110,14 +110,110 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
             border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             z-index: 1000;
-            min-width: 280px;
-            max-width: 320px;
+            min-width: 240px;
+            max-width: 280px;
+            transition: all 0.3s ease;
+        }
+        
+        #game-panel.minimized {
+            padding: 12px 15px;
+            min-width: auto;
+            max-width: 140px;
+            right: 20px;
+            left: auto;
+        }
+        
+        #game-panel.minimized #completion-screen #results-table,
+        #game-panel.minimized #completion-screen #share-feedback,
+        #game-panel.minimized #game-content > *:not(#minimize-btn):not(#running-score) {
+            display: none;
+        }
+        
+        /* Show final score label and share button when minimized */
+        #game-panel.minimized #completion-screen.show .running-score-label,
+        #game-panel.minimized #completion-screen.show #share-score-btn {
+            display: block !important;
+        }
+        
+        #game-panel.minimized #completion-screen.show .running-score-label {
+            font-size: 10px;
+            margin-bottom: 4px;
+            margin-top: 0;
+            text-align: center;
+        }
+        
+        #game-panel.minimized #completion-screen.show #share-score-btn {
+            margin-top: 8px;
+            padding: 6px 12px;
+            font-size: 11px;
+            width: 100%;
+        }
+        
+        /* In minimized state, show score but hide label */
+        #game-panel.minimized #running-score {
+            display: block !important;
+            text-align: center;
+            margin: 0;
+            padding-top: 20px;
+        }
+        
+        /* Hide running score label in game-content when minimized, but keep it in completion-screen */
+        #game-panel.minimized #game-content #running-score-label {
+            display: none;
+        }
+        
+        #game-panel.minimized #running-score-value {
+            display: block !important;
+            font-size: 24px;
+            margin: 0;
+            line-height: 1;
+        }
+        
+        /* Show final score in minimized state after completion */
+        #game-panel.minimized #completion-screen.show #final-score {
+            display: block !important;
+            font-size: 20px;
+            margin: 4px 0;
+            text-align: center;
+            line-height: 1;
+        }
+        
+        #game-panel.minimized #completion-screen.show {
+            padding-top: 20px;
+        }
+        
+        #game-panel.minimized #minimize-btn {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            padding: 2px 6px;
+            font-size: 10px;
+        }
+        
+        #minimize-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+            padding: 4px 8px;
+            cursor: pointer;
+            font-size: 12px;
+            color: #6b7280;
+            z-index: 1001;
+            transition: all 0.2s ease;
+        }
+        
+        #minimize-btn:hover {
+            background: rgba(255, 255, 255, 0.8);
+            color: #111827;
         }
         
         #date-indicator {
@@ -209,11 +305,168 @@
             font-weight: 700;
             color: #111827;
             margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        #location-info-btn {
+            font-size: 16px;
+            color: #6b7280;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: rgba(107, 114, 128, 0.1);
+        }
+        
+        #location-info-btn:hover {
+            background: rgba(107, 114, 128, 0.2);
+            color: #2563eb;
+        }
+        
+        #location-info-btn:active {
+            transform: scale(0.95);
         }
         
         #current-location-instruction {
             font-size: 14px;
             color: #6b7280;
+        }
+        
+        /* Location info modal/bottom sheet */
+        #location-info-modal {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 20px 20px 0 0;
+            padding: 25px;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+            z-index: 2000;
+            max-height: 70vh;
+            overflow-y: auto;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            pointer-events: none;
+            opacity: 0;
+        }
+        
+        #location-info-modal.show {
+            transform: translateY(0);
+            pointer-events: auto;
+            opacity: 1;
+        }
+        
+        #location-info-modal::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 4px;
+            background: #d1d5db;
+            border-radius: 2px;
+        }
+        
+        #location-info-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        
+        #location-info-icon {
+            font-size: 36px;
+            margin-right: 12px;
+        }
+        
+        #location-info-title {
+            flex: 1;
+            font-size: 20px;
+            font-weight: 700;
+            color: #111827;
+        }
+        
+        #location-info-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #6b7280;
+            cursor: pointer;
+            padding: 4px;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        
+        #location-info-close:hover {
+            background: #f3f4f6;
+            color: #111827;
+        }
+        
+        #location-info-content {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #374151;
+        }
+        
+        #location-info-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        #location-info-overlay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        /* Desktop: centered modal instead of bottom sheet */
+        @media (min-width: 768px) {
+            #location-info-modal {
+                top: 50%;
+                left: 50%;
+                right: auto;
+                bottom: auto;
+                transform: translate(-50%, -50%) scale(0.95);
+                border-radius: 20px;
+                max-width: 500px;
+                max-height: 80vh;
+                opacity: 0;
+                pointer-events: none;
+            }
+            
+            #location-info-modal.show {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+                pointer-events: auto;
+            }
+            
+            #location-info-modal::before {
+                display: none;
+            }
         }
         
         /* Transition overlay for next location */
@@ -308,10 +561,10 @@
         }
         
         #final-score {
-            font-size: 56px;
+            font-size: 42px;
             font-weight: 700;
             color: #2563eb;
-            margin: 20px 0;
+            margin: 15px 0;
         }
         
         #completion-message {
@@ -322,9 +575,9 @@
         
         #results-table {
             width: 100%;
-            margin-top: 20px;
+            margin-top: 12px;
             border-collapse: collapse;
-            font-size: 13px;
+            font-size: 11px;
         }
         
         #results-table thead {
@@ -332,20 +585,29 @@
         }
         
         #results-table th {
-            padding: 10px 8px;
+            padding: 6px 6px;
             text-align: left;
             font-weight: 600;
             color: #374151;
-            border-bottom: 2px solid #e5e7eb;
+            border-bottom: 2px solid rgba(229, 231, 235, 0.6);
         }
         
         #results-table td {
-            padding: 10px 8px;
-            border-bottom: 1px solid #e5e7eb;
+            padding: 6px 6px;
+            border-bottom: 1px solid rgba(229, 231, 235, 0.6);
+        }
+        
+        #results-table tbody tr {
+            cursor: pointer;
+            transition: background 0.2s ease;
         }
         
         #results-table tbody tr:hover {
-            background: #f9fafb;
+            background: #f3f4f6;
+        }
+        
+        #results-table tbody tr:active {
+            background: #e5e7eb;
         }
         
         #results-table .location-icon {
@@ -373,13 +635,13 @@
             background: #10b981;
             color: white;
             border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 12px;
             font-weight: 600;
             cursor: pointer;
             transition: background 0.2s ease;
-            margin-top: 20px;
+            margin-top: 12px;
         }
         
         #share-score-btn:hover {
@@ -447,10 +709,16 @@
             #game-panel {
                 top: 10px;
                 right: 10px;
-                left: 10px;
+                left: auto;
                 max-width: none;
                 min-width: auto;
                 padding: 20px;
+            }
+            
+            #game-panel.minimized {
+                left: auto;
+                right: 10px;
+                max-width: 80px;
             }
             
             #current-location-icon {
@@ -526,7 +794,8 @@
 </head>
 <body>
     <div id="map"></div>
-    <div id="game-panel">
+    <div id="game-panel" class="minimized">
+        <button id="minimize-btn" onclick="toggleMinimize()" title="Expand">+</button>
         <div id="game-content">
             <div id="date-indicator">
                 <div class="date-value" id="date-display">Loading date...</div>
@@ -535,7 +804,10 @@
             <div id="progress-indicator">Location <span id="current-location-number">1</span> of <span id="total-locations">5</span></div>
             <div id="current-location">
                 <div id="current-location-icon">🔔</div>
-                <div id="current-location-name">Loading...</div>
+                <div id="current-location-name">
+                    <span>Loading...</span>
+                    <span id="location-info-btn" style="display: none;" onclick="showLocationInfo()" title="Learn more">ℹ️</span>
+                </div>
                 <div id="current-location-instruction">Tap on the map to find this location</div>
             </div>
             <div id="running-score">
@@ -544,7 +816,6 @@
             </div>
         </div>
         <div id="completion-screen">
-            <div id="completion-message">🎉 All locations found! 🎉</div>
             <div id="final-score">0</div>
             <div id="running-score-label">Final Score</div>
             <table id="results-table">
@@ -568,6 +839,19 @@
         <div id="next-location-message">Next Location!</div>
         <div id="next-location-icon">🔔</div>
         <div id="next-location-name">Loading...</div>
+    </div>
+    
+    <!-- Location info modal/bottom sheet -->
+    <div id="location-info-overlay" onclick="hideLocationInfo()"></div>
+    <div id="location-info-modal">
+        <div id="location-info-header">
+            <div style="display: flex; align-items: center;">
+                <span id="location-info-icon">🔔</span>
+                <div id="location-info-title">Location Name</div>
+            </div>
+            <button id="location-info-close" onclick="hideLocationInfo()" aria-label="Close">×</button>
+        </div>
+        <div id="location-info-content">No information available for this location.</div>
     </div>
     <div id="quick-score">
         <div id="quick-score-value">0</div>
@@ -846,7 +1130,7 @@
                     throw new Error('No locations found in YAML file');
                 }
                 
-                // Ensure all locations have IDs
+                // Ensure all locations have IDs and preserve all fields (including description)
                 locations = locations.map((loc, index) => ({
                     ...loc,
                     id: loc.id !== undefined ? loc.id : index
@@ -1134,18 +1418,114 @@
             
             // Update current location display
             iconEl.textContent = location.icon;
-            document.getElementById('current-location-name').textContent = location.name;
+            
+            // Update location name with info button
+            const locationNameEl = document.getElementById('current-location-name');
+            const nameSpan = locationNameEl.querySelector('span:first-child');
+            let currentInfoBtn = document.getElementById('location-info-btn');
+            
+            // Update name text
+            if (nameSpan) {
+                nameSpan.textContent = location.name;
+            } else {
+                // Shouldn't happen, but create structure if missing
+                locationNameEl.innerHTML = `<span>${location.name}</span><span id="location-info-btn" style="display: none;" onclick="showLocationInfo()" title="Learn more">ℹ️</span>`;
+                currentInfoBtn = document.getElementById('location-info-btn');
+            }
+            
+            // Ensure info button exists (create if missing)
+            if (!currentInfoBtn) {
+                const infoBtnSpan = document.createElement('span');
+                infoBtnSpan.id = 'location-info-btn';
+                infoBtnSpan.textContent = 'ℹ️';
+                infoBtnSpan.setAttribute('onclick', 'showLocationInfo()');
+                infoBtnSpan.setAttribute('title', 'Learn more');
+                infoBtnSpan.style.display = 'none';
+                locationNameEl.appendChild(infoBtnSpan);
+                currentInfoBtn = infoBtnSpan;
+            }
+            
+            // Hide info button during gameplay - descriptions only shown on completion screen
+            if (currentInfoBtn) {
+                currentInfoBtn.style.display = 'none';
+            }
             
             // Check if already guessed
             const guess = gameState.guesses[location.id];
             if (guess) {
                 document.getElementById('current-location-instruction').textContent = 
-                    `✓ Found! ${formatDistance(guess.distance)} away - ${guess.score} points`;
+                    `✓ ${formatDistance(guess.distance)} away - ${guess.score} points`;
             } else {
                 document.getElementById('current-location-instruction').textContent = 
-                    'Tap on the map to find this location';
+                    'Tap on the map to guess where this location is';
             }
         }
+        
+        // Show location info modal
+        function showLocationInfo(location = null) {
+            // If no location provided, try to get current location
+            if (!location) {
+                location = getCurrentLocation();
+            }
+            if (!location) return;
+            
+            const modal = document.getElementById('location-info-modal');
+            const overlay = document.getElementById('location-info-overlay');
+            const title = document.getElementById('location-info-title');
+            const icon = document.getElementById('location-info-icon');
+            const content = document.getElementById('location-info-content');
+            
+            // Update modal content
+            icon.textContent = location.icon || '📍';
+            title.textContent = location.name;
+            
+            // Show description if available, otherwise show default message
+            if (location.description && location.description.trim()) {
+                content.textContent = location.description;
+            } else {
+                content.textContent = 'No information available for this location.';
+            }
+            
+            // Show modal and overlay
+            overlay.classList.add('show');
+            modal.classList.add('show');
+            
+            // Prevent body scroll on mobile
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Hide location info modal
+        function hideLocationInfo() {
+            const modal = document.getElementById('location-info-modal');
+            const overlay = document.getElementById('location-info-overlay');
+            
+            if (modal) modal.classList.remove('show');
+            if (overlay) overlay.classList.remove('show');
+            
+            // Restore body scroll
+            document.body.style.overflow = '';
+        }
+        
+        // Toggle minimize state of game panel
+        function toggleMinimize() {
+            const gamePanel = document.getElementById('game-panel');
+            const minimizeBtn = document.getElementById('minimize-btn');
+            
+            if (gamePanel.classList.contains('minimized')) {
+                gamePanel.classList.remove('minimized');
+                minimizeBtn.textContent = '−';
+                minimizeBtn.title = 'Minimize';
+            } else {
+                gamePanel.classList.add('minimized');
+                minimizeBtn.textContent = '+';
+                minimizeBtn.title = 'Expand';
+            }
+        }
+        
+        // Make functions globally accessible for inline onclick handlers
+        window.showLocationInfo = showLocationInfo;
+        window.hideLocationInfo = hideLocationInfo;
+        window.toggleMinimize = toggleMinimize;
         
         // Show transition overlay for next location
         function showNextLocationTransition(nextLocation) {
@@ -1334,6 +1714,12 @@
                         <td class="distance">${formatDistance(guess.distance)}</td>
                         <td class="score">${guess.score}</td>
                     `;
+                    
+                    // Make row clickable to show location info
+                    row.addEventListener('click', () => {
+                        showLocationInfo(location);
+                    });
+                    
                     tableBody.appendChild(row);
                 }
             });
@@ -1591,6 +1977,28 @@
             }, 1000);
         }
         
+        // Set up location info modal event handlers
+        const modalEl = document.getElementById('location-info-modal');
+        const overlayEl = document.getElementById('location-info-overlay');
+        const closeBtn = document.getElementById('location-info-close');
+        
+        if (modalEl) {
+            // Prevent modal from closing when clicking inside it
+            modalEl.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        }
+        
+        if (overlayEl) {
+            // Close on overlay click (backup to onclick)
+            overlayEl.addEventListener('click', hideLocationInfo);
+        }
+        
+        if (closeBtn) {
+            // Close on close button click (backup to onclick)
+            closeBtn.addEventListener('click', hideLocationInfo);
+        }
+        
         // Start loading locations when page loads
         loadLocations();
         
@@ -1659,10 +2067,24 @@
                 icon: createPinIcon('#2563eb', false)
             }).addTo(map);
             
-            // Create pin at actual location (red)
+            // Create pin at actual location (red) - make it clickable to show description
             const locationMarker = L.marker(location.coordinates, {
                 icon: createPinIcon('#dc2626', true, location.icon)
             }).addTo(map);
+            
+            // Add click handler to show location description (only for guessed locations)
+            locationMarker.on('click', (e) => {
+                e.originalEvent.stopPropagation(); // Prevent map click
+                showLocationInfo(location);
+            });
+            
+            // Add cursor pointer style to indicate it's clickable
+            locationMarker.on('mouseover', () => {
+                map.getContainer().style.cursor = 'pointer';
+            });
+            locationMarker.on('mouseout', () => {
+                map.getContainer().style.cursor = '';
+            });
             
             // Create line connecting the two points
             const line = L.polyline([tapLatLng, location.coordinates], {
@@ -1728,6 +2150,13 @@
             // Only process if it's a click, not a drag
             const clickDuration = Date.now() - dragStartTime;
             if (isDragging || clickDuration > 200) {
+                return;
+            }
+            
+            // Don't process map clicks if clicking on a marker (markers handle their own clicks)
+            if (e.originalEvent && e.originalEvent.target && 
+                (e.originalEvent.target.closest('.leaflet-marker-icon') || 
+                 e.originalEvent.target.closest('.custom-pin'))) {
                 return;
             }
             
