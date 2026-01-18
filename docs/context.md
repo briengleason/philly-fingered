@@ -36,7 +36,7 @@
 - Generated formatted share messages: `briengleason.github.io/philly-tap/ January 17 96🏅 100🎯...`
 
 ### Phase 6: Testing & Quality Assurance
-- Built comprehensive test suite (70+ tests)
+- Built comprehensive test suite (119+ tests)
 - Added tests for all game logic, share functionality, and map rendering
 - Created pre-commit hooks to automatically run tests before commits
 - Established test-first development workflow
@@ -71,11 +71,39 @@
 - Green confirmation button with checkmark icon positioned at bottom center
 - Confirmation button automatically hides after guess is processed
 
+### Phase 10: Code Organization & Refactoring
+- Extracted CSS from inline styles to `css/styles.css` (858 lines)
+- Organized JavaScript into 8 modular files with clear separation of concerns:
+  - `js/config.js` - Configuration constants (device detection, MAX_DISTANCE, DEV_MODE)
+  - `js/utils.js` - Utility functions (distance, score, formatting, emoji mapping)
+  - `js/gameState.js` - Game state management (localStorage, save/load, cleanup)
+  - `js/locations.js` - Location loading from YAML and date management
+  - `js/map.js` - Map initialization, pin icons, marker management, map events
+  - `js/ui.js` - UI updates (modals, displays, share, completion screen)
+  - `js/gameLogic.js` - Core game logic (guessing, preview, confirmation, progression)
+  - `js/main.js` - Initialization and event handlers setup
+- Reduced `index.html` from 2,423 lines to ~106 lines
+- Maintained all functionality while improving code maintainability
+- All global functions properly exposed for HTML onclick handlers
+- Scripts load in correct dependency order
+- Fixed `formatDistance` threshold issue (now uses `meters < 1609` instead of `feet < 5280`)
+
 ## Project Structure
 
 ```
 philly-tap/
-├── index.html                 # Main application (root - required for GitHub Pages)
+├── index.html                 # Main application (root - required for GitHub Pages, now ~106 lines)
+├── css/
+│   └── styles.css             # All CSS styles (858 lines, extracted from index.html)
+├── js/
+│   ├── config.js              # Configuration constants (device detection, MAX_DISTANCE)
+│   ├── utils.js               # Utility functions (distance, score, formatting, emoji)
+│   ├── gameState.js           # Game state management (localStorage, save/load)
+│   ├── locations.js           # Location loading from YAML and date management
+│   ├── map.js                 # Map initialization, pin icons, marker management
+│   ├── ui.js                  # UI updates (modals, displays, share, completion)
+│   ├── gameLogic.js           # Core game logic (guessing, confirmation, progression)
+│   └── main.js                # Initialization and event handlers setup
 ├── config/
 │   └── locations.yaml         # Daily locations configuration (YAML format)
 ├── docs/
@@ -88,7 +116,7 @@ philly-tap/
 ├── scripts/
 │   └── sync-to-github.sh      # Manual GitHub sync script
 ├── test/
-│   ├── game-tests.js          # Comprehensive test suite (65+ tests)
+│   ├── game-tests.js          # Comprehensive test suite (119+ tests)
 │   ├── run-tests-automated.html  # Browser test runner (auto-run)
 │   ├── run-tests-sync.js      # Node.js test runner (for pre-commit)
 │   ├── run-tests.sh           # Automated test runner script
@@ -104,12 +132,13 @@ philly-tap/
 ## Technology Stack
 
 - **Frontend**: Pure HTML, CSS, JavaScript (no frameworks)
+- **Code Organization**: Modular JavaScript structure (8 modules), separated CSS
 - **Mapping**: Leaflet.js (open-source mapping library)
-- **Map Tiles**: CartoDB light_nolabels (no street names/labels)
+- **Map Tiles**: CartoDB Voyager NoLabels (vibrant tiles without labels)
 - **Storage**: localStorage (for daily game state persistence)
 - **Configuration**: YAML file for daily locations (`config/locations.yaml`)
 - **YAML Parser**: js-yaml (loaded from CDN)
-- **Testing**: Custom test framework (browser-based)
+- **Testing**: Custom test framework (browser-based, 119+ tests)
 - **Deployment**: GitHub Pages (static hosting)
 
 ## Core Features
@@ -725,10 +754,16 @@ All CSS is embedded in `<style>` tag in `index.html`.
 ## Last Updated
 
 **Generated**: 2026-01-17  
-**Last Updated**: 2026-01-17 - Comprehensive coordinate verification and correction  
+**Last Updated**: 2026-01-17 - Code organization and refactoring  
 **Last commit**: Check `git log` for latest changes
 
 **Recent Updates:**
+- **Code Refactoring (2026-01-17)**: Organized codebase into modular structure
+  - Extracted CSS to `css/styles.css` (858 lines)
+  - Split JavaScript into 8 logical modules in `js/` directory
+  - Reduced `index.html` from 2,423 lines to ~106 lines
+  - Maintained all functionality while improving maintainability
+  - Fixed `formatDistance` threshold issue (uses `meters < 1609` for accurate mile conversion)
 - Added location sets for January 18-31, 2025 (14 days)
 - Added location set for 2026-01-17
 - Implemented difficulty progression system (id 0 = easiest, id 4 = hardest)
