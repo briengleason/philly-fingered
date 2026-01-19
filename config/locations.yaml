@@ -116,24 +116,24 @@ default:
 2026-01-20:
   - id: 0
     name: 30th Street Station
-    coordinates: [39.9558, -75.1832]
+    coordinates: [39.9560, -75.1819]
     icon: 🚂
     description: 30th Street Station is one of America's grandest railroad stations, opened in 1933. The monumental Beaux-Arts building features soaring 95-foot-high ceilings, ornate chandeliers, and a striking Art Deco design. The station serves as a major Amtrak hub connecting Philadelphia to the Northeast Corridor. During World War II, it was a primary troop movement center, and today it's the third-busiest Amtrak station in the country.
   - id: 1
     name: Jim's Steaks
-    coordinates: [39.9415, -75.1493]
+    coordinates: [39.9415536, -75.1493134]
     icon: 🥩
     description: Jim's Steaks is one of Philadelphia's most beloved cheesesteak institutions, opened in 1939. Located on South Street, it's famous for its classic Philly cheesesteaks with thinly sliced ribeye, melted cheese, and onions on a fresh roll. The shop has been serving locals and tourists for over 80 years and is consistently ranked among the city's best cheesesteak spots, with long lines testifying to its enduring popularity.
   - id: 2
     name: Magic Gardens
-    coordinates: [39.9428, -75.1594]
+    coordinates: [39.9426127, -75.1593570]
     icon: 🎨
     description: Philadelphia's Magic Gardens is a unique art environment created by mosaic artist Isaiah Zagar over 14 years. The immersive space features intricate mosaics made from tiles, bottles, bicycle wheels, mirrors, and other found objects covering walls, ceilings, and walkways. Zagar's "outsider art" installation spans half a block and includes indoor galleries, outdoor sculpture, and labyrinthine passages that celebrate community, creativity, and transformation.
   - id: 3
-    name: The Northernmost Home Depot in Philadelphia  
-    coordinates: [40.0295861, -75.222702]
-    icon: 🌳
-    description: This Home Depot located near Tacony Creek Park is the most northern Home Depot in Philadelhpia. It is a 22 minute drive from City Hall.
+    name: Northernmost Stop on the Broad Street Line
+    coordinates: [40.0411435, -75.1394857]
+    icon: 🏛️
+    description: The Fern Rock Transportation Center serves as the northernmost stop and yard for SEPTA's Broad Street Line, marking the line's physical end before it dives underground into North Philadelphia, connecting local transit with Regional Rail lines and bus services.
   - id: 4
     name: Grace Kelly's childhood home
     coordinates: [40.018142, -75.1891421]
@@ -184,10 +184,10 @@ default:
     icon: 🎪
     description: The Please Touch Museum is a children's museum in Fairmount Park focused on hands-on learning through play. Housed in the historic Memorial Hall from the 1876 Centennial Exposition, the museum features interactive exhibits, a historic carousel from 1908, and educational programs. The museum's motto "Learning through play" reflects its mission to make learning fun and accessible for children and families.
   - id: 3
-    name: Old City District
-    coordinates: [39.9503, -75.1458]
-    icon: 🏛️
-    description: Old City is Philadelphia's historic district, home to many of America's most significant historic sites including Independence Hall, the Liberty Bell, and the Betsy Ross House. The neighborhood features cobblestone streets, 18th-century architecture, world-class museums, and an eclectic mix of art galleries, restaurants, and shops. It's considered the birthplace of American democracy and one of the most walkable historic districts in America.
+    name: The Northernmost Home Depot in Philadelphia  
+    coordinates: [40.0295861, -75.222702]
+    icon: 🌳
+    description: This Home Depot located near Tacony Creek Park is the most northern Home Depot in Philadelhpia. It is a 22 minute drive from City Hall.
   - id: 4
     name: Woodford Mansion
     coordinates: [39.9814, -75.1761]
