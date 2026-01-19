@@ -99,12 +99,12 @@ default:
     description: The Franklin Institute is one of America's oldest and premier centers of science education. Founded in 1824 and named after Benjamin Franklin, it houses a 60-foot walk-through model of the human heart, a massive Foucault pendulum, and an observatory. The institute's iconic 20-foot tall statue of Benjamin Franklin sitting in the rotunda is one of Philadelphia's most recognizable sculptures.
   - id: 2
     name: Dirty Frank's
-    coordinates: [39.9582109, -75.1731347]
+    coordinates: [39.9453747, -75.1628123]
     icon: 🍻
     description: Dirty Frank's is a legendary Philadelphia dive bar that's been serving drinks since 1973. Known for its eclectic decor covered in dollar bills and its famously cheap beer, it's a beloved neighborhood institution. The bar was named after a former bartender, not the politician, and has become a favorite spot for journalists, artists, and locals seeking an authentic Philly bar experience.
   - id: 3
     name: Philadelphia's Tallest Residential Apartment Building
-    coordinates: [39.9453747, -75.1628123]
+    coordinates: [39.9506014, -75.1727323]
     icon: 🏠
     description: The Laurel at 1911 Walnut St is the city's tallest residential building. It is known for its $25 million penthouse listing, setting a new record for price per square foot in the region. The condos feature kitchens with rare "tribal makasar" wood, which has been touted as the most expensive in the world.
   - id: 4
