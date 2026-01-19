@@ -764,10 +764,14 @@ All CSS is embedded in `<style>` tag in `index.html`.
 ## Last Updated
 
 **Generated**: 2026-01-17  
-**Last Updated**: 2026-01-18 - Multiplier visibility and score transparency  
+**Last Updated**: 2026-01-18 - Multiplier visibility and UI improvements  
 **Last commit**: Check `git log` for latest changes
 
 **Recent Updates:**
+- **UI Improvements (2026-01-18)**: Added hint message to scorecard and adjusted location card sizing
+  - Added "Tap any location to learn more" hint below share button on scorecard
+  - Styled hint to match "FINAL SCORE" label styling (uppercase, same font)
+  - Adjusted location card sizing: smaller emoji (32px), larger progress/multiplier text
 - **Multiplier Visibility (2026-01-18)**: Added multiplier indicators to help users understand scoring
   - Multiplier shown under "Location X of 5" progress indicator during gameplay
   - Final scorecard displays "baseScore × multiplier = finalScore" format for clarity
