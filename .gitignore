@@ -16,3 +16,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Admin interface with API keys
+admin/admin.html
