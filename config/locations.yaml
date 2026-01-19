@@ -89,7 +89,7 @@ default:
 2026-01-19:
   - id: 0
     name: Spruce Street Harbor Park
-    coordinates: [39.9444, -75.1440582]
+    coordinates: [39.9443944, -75.1414833]
     icon: 🏖️
     description: Spruce Street Harbor Park is a seasonal urban beach park on the Delaware River waterfront. Opened in 2014, it features hammocks, colorful LED-lit trees, food vendors, and a beer garden. The park was created as a temporary pop-up but became so popular it's now a permanent summer destination. It transforms Philadelphia's waterfront into a vibrant social space with views of the Ben Franklin Bridge.
   - id: 1
