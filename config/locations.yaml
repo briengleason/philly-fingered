@@ -116,83 +116,83 @@ default:
 2026-01-20:
   - id: 0
     name: 30th Street Station
-    coordinates: [39.9558, -75.1832]
+    coordinates: [39.956000, -75.181900]
     icon: 🚂
     description: 30th Street Station is one of America's grandest railroad stations, opened in 1933. The monumental Beaux-Arts building features soaring 95-foot-high ceilings, ornate chandeliers, and a striking Art Deco design. The station serves as a major Amtrak hub connecting Philadelphia to the Northeast Corridor. During World War II, it was a primary troop movement center, and today it's the third-busiest Amtrak station in the country.
   - id: 1
-    name: Jim's Steaks
-    coordinates: [39.9415, -75.1493]
-    icon: 🥩
-    description: Jim's Steaks is one of Philadelphia's most beloved cheesesteak institutions, opened in 1939. Located on South Street, it's famous for its classic Philly cheesesteaks with thinly sliced ribeye, melted cheese, and onions on a fresh roll. The shop has been serving locals and tourists for over 80 years and is consistently ranked among the city's best cheesesteak spots, with long lines testifying to its enduring popularity.
+    name: The Palestra
+    coordinates: [39.951391, -75.188703]
+    icon: 🏀
+    description: The Palestra is a historic, intimate arena at the University of Pennsylvania, nicknamed the "Cathedral of College Basketball," famous for its close-to-the-court seating that puts fans right on top of the action, hosting legendary Big 5 rivalry games and more NCAA tournaments than any other U.S. college facility.
   - id: 2
     name: Magic Gardens
-    coordinates: [39.9428, -75.1594]
+    coordinates: [39.942613, -75.159357]
     icon: 🎨
     description: Philadelphia's Magic Gardens is a unique art environment created by mosaic artist Isaiah Zagar over 14 years. The immersive space features intricate mosaics made from tiles, bottles, bicycle wheels, mirrors, and other found objects covering walls, ceilings, and walkways. Zagar's "outsider art" installation spans half a block and includes indoor galleries, outdoor sculpture, and labyrinthine passages that celebrate community, creativity, and transformation.
   - id: 3
-    name: The Northernmost Home Depot in Philadelphia  
-    coordinates: [40.0295861, -75.222702]
-    icon: 🌳
-    description: This Home Depot located near Tacony Creek Park is the most northern Home Depot in Philadelhpia. It is a 22 minute drive from City Hall.
+    name: Northernmost Stop on Broad Street Line
+    coordinates: [40.041517, -75.136775]
+    icon: 🚇
+    description: The Fern Rock Transportation Center serves as the northernmost stop and yard for SEPTA's Broad Street Line, marking the line's physical end before it dives underground into North Philadelphia, connecting local transit with Regional Rail lines and bus services.
   - id: 4
     name: Grace Kelly's childhood home
-    coordinates: [40.018142, -75.1891421]
-    icon: 🚂
+    coordinates: [40.018142, -75.189142]
+    icon: 👸
     description: The Kelly Family Home belonged to the famous Kelly family of Philadelphia who lived in the East Falls section of the city.  The Kelly house was built by John B. Kelly, Sr. (October 4, 1889 – June 20, 1960), who was affectionately known as Jack.  Jack was a very successful businessman in bricklaying and construction, and he was also active in Philadelphia politics. Jack was a 3-time Olympic Gold Medalist in the 1920s for rowing, winning 2 Gold Medals in Antwerp, Belgium in 1920 and one Gold Medal in Paris, France in 1924.
-    
+
 2026-01-21:
   - id: 0
     name: Rittenhouse Square
-    coordinates: [39.9496, -75.1714]
+    coordinates: [39.949462, -75.171892]
     icon: 🌳
     description: Rittenhouse Square is one of Philadelphia's five original public squares laid out by William Penn in 1682. The park became a fashionable address in the 19th century and remains one of the city's most prestigious neighborhoods. The square features beautiful landscaping, sculptures, a fountain, and is a popular gathering place for locals, dog walkers, and visitors seeking a peaceful urban oasis.
   - id: 1
     name: McGillin's Olde Ale House
-    coordinates: [39.9523, -75.1622]
+    coordinates: [39.950176, -75.162613]
     icon: 🍺
     description: McGillin's Olde Ale House is Philadelphia's oldest continuously operating tavern, opened in 1860. The bar has survived Prohibition, two world wars, and changing neighborhoods while maintaining its Victorian charm and character. The multi-story building is filled with historical artifacts, photos of famous patrons, and a cozy atmosphere that makes it a beloved Philadelphia institution and a favorite among locals and tourists alike.
   - id: 2
     name: Barnes Foundation
-    coordinates: [39.9594, -75.1725]
+    coordinates: [39.960643, -75.172807]
     icon: 🖼️
     description: The Barnes Foundation houses one of the world's greatest collections of Impressionist, Post-Impressionist, and early Modern paintings. Dr. Albert C. Barnes assembled the collection including 181 Renoirs, 69 Cézannes, 59 Matisses, and dozens of Picassos. The museum is famous for Barnes's unconventional hanging method, mixing paintings with metalwork and furniture to create what he called "ensembles." The collection moved from Merion to Philadelphia in 2012 in a controversial relocation.
   - id: 3
     name: Philly Chicken Man Pier
-    coordinates: [39.92586, -75.1412429]
-    icon: 🖼️
-    description: The Philly Rotisserie Chicken Guy, Alexander Tominsky, gained viral fame in 2022 for eating a rotisserie chicken every day for 40 days, culminating in a public event on a South Philly pier that drew hundreds of cheering onlookers. Documenting his feat on social media, he completed the challenge, ending with triumphant shouts and Springsteen's "Streets of Philadelphia," using the attention to promote city causes. 
+    coordinates: [39.928514, -75.139829]
+    icon: 🍗
+    description: The Philly Rotisserie Chicken Guy, Alexander Tominsky, gained viral fame in 2022 for eating a rotisserie chicken every day for 40 days, culminating in a public event on a South Philly pier that drew hundreds of cheering onlookers. Documenting his feat on social media, he completed the challenge, ending with triumphant shouts and Springsteen's "Streets of Philadelphia," using the attention to promote city causes.
   - id: 4
-    name: John Heinz Wildlife Refuge
-    coordinates: [39.8928, -75.2458]
-    icon: 🦅
-    description: The John Heinz National Wildlife Refuge at Tinicum is America's first urban wildlife refuge, established in 1972. The 1,000-acre preserve protects one of the largest remaining freshwater tidal marshes in Pennsylvania, providing critical habitat for over 300 bird species and other wildlife. The refuge offers hiking trails, bird watching opportunities, and a chance to experience nature just minutes from downtown Philadelphia.
+    name: Brewery Site of America's First Lager
+    coordinates: [39.964629, -75.141587]
+    icon: 🍺
+    description: John Wagner, a brewmaster from Bavaria, did beer-drinking Philadelphians a favor by bringing lager yeast to Philly in 1840. (All previous beer here had been made using ale yeast.) Wagner brewed America’s first lager — clean and crisp, compared to ale — at his home in Northern Liberties at the corner of Poplar and American streets.
 
 2026-01-22:
   - id: 0
-    name: Ben Franklin Bridge
-    coordinates: [39.9531, -75.1375]
+    name: Liberty Bell
+    coordinates: [39.949610, -75.150282]
     icon: 🌉
     description: The Benjamin Franklin Bridge is a magnificent suspension bridge spanning the Delaware River, connecting Philadelphia to Camden, New Jersey. Opened in 1926, it was the longest suspension bridge in the world at the time of its completion. The bridge features distinctive neo-classical pylons and elegant Art Deco detailing. It's named after Benjamin Franklin and offers pedestrian walkways with stunning views of both cities.
   - id: 1
     name: Tattooed Mom
-    coordinates: [39.9419, -75.1603]
+    coordinates: [39.941880, -75.151834]
     icon: 💉
     description: Tattooed Mom is a beloved South Street dive bar and art gallery known for its vibrant street art, eclectic decor, and alternative music scene. The bar features colorful murals, retro furniture, and a laid-back atmosphere that attracts artists, musicians, and creatives. Famous for its "Upstairs at Mom's" events and its role in Philadelphia's counterculture scene, it's a true local institution.
   - id: 2
     name: Please Touch Museum
-    coordinates: [39.9775, -75.2117]
+    coordinates: [39.979496, -75.209147]
     icon: 🎪
     description: The Please Touch Museum is a children's museum in Fairmount Park focused on hands-on learning through play. Housed in the historic Memorial Hall from the 1876 Centennial Exposition, the museum features interactive exhibits, a historic carousel from 1908, and educational programs. The museum's motto "Learning through play" reflects its mission to make learning fun and accessible for children and families.
   - id: 3
-    name: Old City District
-    coordinates: [39.9503, -75.1458]
-    icon: 🏛️
-    description: Old City is Philadelphia's historic district, home to many of America's most significant historic sites including Independence Hall, the Liberty Bell, and the Betsy Ross House. The neighborhood features cobblestone streets, 18th-century architecture, world-class museums, and an eclectic mix of art galleries, restaurants, and shops. It's considered the birthplace of American democracy and one of the most walkable historic districts in America.
+    name: Northernmost Home Depot in Philadelphia
+    coordinates: [39.992480, -75.091472]
+    icon: 🌳
+    description: This Home Depot located near Tacony Creek Park is the most northern Home Depot in Philadelhpia. It is a 22 minute drive from City Hall.
   - id: 4
-    name: Woodford Mansion
-    coordinates: [39.9814, -75.1761]
-    icon: 🏰
-    description: Woodford Mansion is one of the grandest Georgian mansions in Philadelphia, built in 1756 as a summer home for a wealthy Quaker merchant. The mansion features beautiful 18th-century furniture, artwork, and decorative arts, with original period rooms that showcase colonial-era life. The house is part of Fairmount Park's collection of historic mansions and offers a glimpse into the elegant lifestyle of Philadelphia's colonial elite.
+    name: First Skyscraper in Philadelphia
+    coordinates: [39.951599, -75.160267]
+    icon: 🏙
+    description: The Loews Philadelphia Hotel, formerly known as the PSFS Building, located at 1200 Market Street in the Market East section of Center City, is a remarkable skyscraper for Philadelphia as the building was ahead of its time when it was built. Upon completion, it was the most massive structure in the skyline as the large, T-shaped tower rose almost as high as the clock tower of City Hall. The 36-story building originally stood at a height of 491 feet, the first skyscraper to be built just under the informal Gentleman’s Agreement height limit.
 
 2026-01-23:
   - id: 0
