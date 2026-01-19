@@ -94,17 +94,17 @@ default:
     description: Spruce Street Harbor Park is a seasonal urban beach park on the Delaware River waterfront. Opened in 2014, it features hammocks, colorful LED-lit trees, food vendors, and a beer garden. The park was created as a temporary pop-up but became so popular it's now a permanent summer destination. It transforms Philadelphia's waterfront into a vibrant social space with views of the Ben Franklin Bridge.
   - id: 1
     name: Franklin Institute
-    coordinates: [39.9577, -75.1757096]
+    coordinates: [39.9582109, -75.1731347]
     icon: 🔭
     description: The Franklin Institute is one of America's oldest and premier centers of science education. Founded in 1824 and named after Benjamin Franklin, it houses a 60-foot walk-through model of the human heart, a massive Foucault pendulum, and an observatory. The institute's iconic 20-foot tall statue of Benjamin Franklin sitting in the rotunda is one of Philadelphia's most recognizable sculptures.
   - id: 2
     name: Dirty Frank's
-    coordinates: [39.9453747, -75.1653872]
+    coordinates: [39.9582109, -75.1731347]
     icon: 🍻
     description: Dirty Frank's is a legendary Philadelphia dive bar that's been serving drinks since 1973. Known for its eclectic decor covered in dollar bills and its famously cheap beer, it's a beloved neighborhood institution. The bar was named after a former bartender, not the politician, and has become a favorite spot for journalists, artists, and locals seeking an authentic Philly bar experience.
   - id: 3
     name: Philadelphia's Tallest Residential Apartment Building
-    coordinates: [39.9506014, -75.1727323]
+    coordinates: [39.9453747, -75.1628123]
     icon: 🏠
     description: The Laurel at 1911 Walnut St is the city's tallest residential building. It is known for its $25 million penthouse listing, setting a new record for price per square foot in the region. The condos feature kitchens with rare "tribal makasar" wood, which has been touted as the most expensive in the world.
   - id: 4
