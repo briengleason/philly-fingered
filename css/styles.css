@@ -652,6 +652,16 @@ body, html {
     margin: 0 2px;
 }
 
+#scorecard-hint {
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 #share-score-btn {
     background: #10b981;
     color: white;
@@ -663,6 +673,7 @@ body, html {
     cursor: pointer;
     transition: background 0.2s ease;
     margin-top: 12px;
+    margin-bottom: 0;
 }
 
 #share-score-btn:hover {

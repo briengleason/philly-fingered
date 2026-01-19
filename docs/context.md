@@ -95,6 +95,8 @@
 - Locations without multipliers (1-2) show just the final score
 - Improved user understanding of why later locations are worth more points
 - Fixed game state persistence issue by adding `loadGameState()` call in `initializeGame()`
+- Added hint message "Tap any location to learn more" below share button on scorecard
+- Styled hint message to match "FINAL SCORE" label (uppercase, same font size/color)
 
 ## Project Structure
 
