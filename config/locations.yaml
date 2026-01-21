@@ -217,7 +217,7 @@ default:
     name: Swann Memorial Fountain
     coordinates: [39.957938, -75.170587]
     icon: ⛲
-    description: The center of Logan Square belongs to a popular fountain sculpture by Alexander Stirling Calder, son of the City Hall artist. Designed with architect Wilson Eyre, Swann Memorial Fountain memorializes Dr. Wilson Cary Swann, founder of the Philadelphia Fountain Society. Adapting the tradition of “river god” sculpture, Calder created large Native American figures to symbolize the area’s major local waterways: the Delaware River (a man), the Schuylkill River (a woman) and Wissahickon Creek (a girl). Frogs, turtles, a fish and two swans — puns on the name of Dr. Wilson Cary Swann — complete the group.
+    description: The center of Logan Square belongs to a popular fountain sculpture by Alexander Stirling Calder, son of the City Hall artist. Designed with architect Wilson Eyre, Swann Memorial Fountain memorializes Dr. Wilson Cary Swann, founder of the Philadelphia Fountain Society. Adapting the tradition of “river god” sculpture, Calder created large Native American figures to symbolize the area’s major local waterways - the Delaware River (a man), the Schuylkill River (a woman) and Wissahickon Creek (a girl). Frogs, turtles, a fish and two swans — puns on the name of Dr. Wilson Cary Swann — complete the group.
 
   - id: 4
     name: The First Girl Scout Cookie Booth
