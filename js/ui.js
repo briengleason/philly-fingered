@@ -115,7 +115,7 @@ function updateCurrentLocationDisplay(animate = true) {
             `✓ ${formatDistance(guess.distance)} away - ${guess.score} points`;
     } else {
         document.getElementById('current-location-instruction').textContent = 
-            'Tap on the map to guess where this location is';
+            'Tap the location on the map';
     }
 }
 

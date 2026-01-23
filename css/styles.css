@@ -219,8 +219,8 @@ body, html {
     text-align: center;
     font-size: 11px;
     color: #9ca3af;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
+    margin-bottom: 4px;
+    padding-bottom: 4px;
     border-bottom: 1px solid #e5e7eb;
 }
 
@@ -232,7 +232,8 @@ body, html {
 #date-indicator .location-source {
     font-size: 10px;
     color: #9ca3af;
-    margin-top: 2px;
+    margin-top: 1px;
+    line-height: 1.2;
 }
 
 #date-indicator .location-source.using-default {
@@ -245,27 +246,29 @@ body, html {
 
 #progress-indicator {
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
     color: #6b7280;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
+    line-height: 1.2;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 #multiplier-indicator {
     text-align: center;
-    font-size: 15px;
+    font-size: 13px;
     color: #2563eb;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 4px;
+    line-height: 1.2;
     display: none;
 }
 
 #current-location {
     text-align: center;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #e5e7eb;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e5e7eb;
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
@@ -290,8 +293,9 @@ body, html {
 }
 
 #current-location-icon {
-    font-size: 32px;
-    margin-bottom: 10px;
+    font-size: 28px;
+    margin-bottom: 2px;
+    line-height: 1;
     transition: transform 0.3s ease;
 }
 
@@ -309,14 +313,15 @@ body, html {
 }
 
 #current-location-name {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     color: #111827;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
+    line-height: 1.2;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
 }
 
 #location-info-btn {
@@ -344,8 +349,10 @@ body, html {
 }
 
 #current-location-instruction {
-    font-size: 14px;
+    font-size: 12px;
     color: #6b7280;
+    line-height: 1.2;
+    margin-top: 0;
 }
 
 /* Location info modal/bottom sheet */
@@ -549,7 +556,8 @@ body, html {
     color: #6b7280;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
+    line-height: 1.2;
 }
 
 #running-score-value {
@@ -801,7 +809,7 @@ body, html {
         left: auto;
         max-width: none;
         min-width: auto;
-        padding: 20px;
+        padding: 12px 16px;
     }
     
     #game-panel.minimized {
@@ -810,24 +818,54 @@ body, html {
         max-width: 80px;
     }
     
+    #current-location {
+        margin-bottom: 6px;
+        padding-bottom: 6px;
+    }
+    
     #current-location-icon {
-        font-size: 40px;
+        font-size: 24px;
+        margin-bottom: 1px;
     }
     
     #current-location-name {
-        font-size: 18px;
+        font-size: 15px;
+        margin-bottom: 1px;
+        line-height: 1.1;
+    }
+    
+    #current-location-instruction {
+        font-size: 10px;
+        line-height: 1.1;
+        margin-top: 0;
     }
     
     #date-indicator {
-        font-size: 10px;
+        font-size: 9px;
+        margin-bottom: 4px;
+        padding-bottom: 4px;
+        line-height: 1.2;
     }
     
     #date-indicator .date-value {
-        font-size: 11px;
+        font-size: 10px;
     }
     
     #date-indicator .location-source {
-        font-size: 9px;
+        font-size: 8px;
+        margin-top: 1px;
+    }
+    
+    #progress-indicator {
+        font-size: 11px;
+        margin-bottom: 2px;
+        line-height: 1.1;
+    }
+    
+    #multiplier-indicator {
+        font-size: 10px;
+        margin-bottom: 4px;
+        line-height: 1.1;
     }
     
     #running-score-value {
