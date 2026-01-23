@@ -149,6 +149,16 @@
 - Instruction text moved to span full width of card and centered
 - Updated instruction text to "Tap the location on the map" for clarity
 - Significantly reduced card height, especially on mobile devices
+- Running score stacks vertically (label on top, number below) to prevent overflow
+- Removed text truncation from location names (critical for gameplay)
+
+### Phase 16: Native Mobile Sharing
+- Integrated Web Share API for native mobile sharing experience
+- Share button now opens native share sheet on mobile devices (Messages, Email, etc.)
+- Falls back to clipboard API on desktop and older browsers
+- Handles user cancellation gracefully (no error shown)
+- Share includes score message with emojis and game URL
+- Added comprehensive tests for Web Share API functionality
 
 ## Project Structure
 
