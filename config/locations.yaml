@@ -227,33 +227,33 @@ default:
 
 2026-01-24:
   - id: 0
-    name: City Hall
-    coordinates: [39.952386, -75.163608]
-    icon: 🏛️
-    description: This is the Philly Tap equivalent of a free space! City Hall at one point was the largest government building in all of the US. The WIlliam Penn statue at the top is over 37 feet tall, making it the largest statue on top of a building in the world.
-
-  - id: 1
     name: Franklin Field
     coordinates: [39.950216, -75.190109]
-    icon: 🥪
+    icon: 🏃
     description: Named after Penn's founder, Benjamin Franklin, Franklin Field is the home stadium for the Penn Relays, and the university's venue for football, track and field, and lacrosse. It was home to the Philadelphia Eagles from 1958-1970.
 
+  - id: 1
+    name: Jewelers' Row
+    coordinates: [39.948705, -75.153356]
+    icon: 💎
+    description: Located in Center City, Philadelphia, Jewelers' Row is the oldest diamond district in America, dating back to 1851. Situated primarily on Sansom and 8th Streets, this historic area features hundreds of family-owned businesses, jewelers, and craftsmen, making it a major, bustling hub for jewelry shopping.
+
   - id: 2
-    name: Friday Saturday Sunday
-    coordinates: [39.948945, -75.175967]
+    name: Philly Mag's Top Restaurant of 2026
+    coordinates: [39.975649, -75.133089]
     icon: 🥙
-    description: Friday Saturday Sunday is a restaurant near Rittenhouse Square. In November 2025, it was one of the first three restaurants in Philadelphia to earn a Michelin star.
+    description: Kalaya was named Philly Mag's top restaurant of 2026. Kalaya is at it's second location on 4 W Palmer St in Fishtown. It is excellent Southern Thai food! Philly Mag describes it as a "lofty palm tree-filled restaurant" and a "beautiful ode to the Perankakan flavors of the chef's childhood".
 
   - id: 3
-    name: Fort Mifflin
-    coordinates: [39.875229, -75.213143]
-    icon: 🏰
-    description: Fort Mifflin is a preserved 18th-century fort on the Delaware River, built in 1771 to protect Philadelphia. The fort played a crucial role in the Revolutionary War, holding off the British Navy for six weeks in 1777 to allow Washington's army to escape. The fort is one of the only intact Revolutionary War forts in America and offers living history programs, ghost tours, and a chance to experience America's military history firsthand.
+    name: Mummers Museum
+    coordinates: [39.933448, -75.147569]
+    icon: 🎭
+    description: Located on 2nd and Washington, the Mummers museum features costumes, band memorabilia, and interactive struct exhibits. You can even host your wedding here!
 
   - id: 4
     name: Will Smith's Childhood Home
     coordinates: [39.986925, -75.243067]
-    icon: 🍓
+    icon: 🎤
     description: West Philadelphia, born & raised! The 2000 block of North 59th Street is now called "Will Smith Way". Will Smith was born to a middle-class family in the Wynnefield neighborhood of Philadelphia.
 
 2026-01-25:
