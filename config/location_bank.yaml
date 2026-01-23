@@ -398,3 +398,52 @@ locations:
     icon: 🏳️‍🌈
     description: Woody's is one of Philadelphia's most famous LGBTQ+ bars and nightlife destinations, opened in 1980. The bar has been a cornerstone of Philadelphia's gay community for over 40 years, hosting drag shows, dance parties, and community events. The bar's vibrant atmosphere and welcoming environment make it a beloved institution in Philadelphia's LGBTQ+ neighborhood and a must-visit destination for nightlife.
 
+  - name: Washington Square
+    coordinates: [39.947037, -75.152394]
+    icon: 🌳
+    description: Washington Square is one of Philadelphia's five original public squares laid out by William Penn in 1682. The park served as a burial ground during colonial times and is home to the Tomb of the Unknown Revolutionary War Soldier, honoring fallen soldiers. The square features beautiful landscaping, benches, and is a peaceful oasis in the heart of Old City, perfect for reflection and relaxation.
+
+  - name: Angelo's
+    coordinates: [39.940657, -75.157675]
+    icon: 🍕
+    description: Some people say it's the best Pizza and Cheesesteak in the city - what do you think??
+
+  - name: Top Attraction in Philadelphia on Trip Advisor
+    coordinates: [39.968336, -75.172665]
+    icon: 🏛️
+    description: I did not expect this to be the top attraction in Philadelphia! Eastern State Penitentiary Historic Site was once the most famous and expensive prison in the world, but stands today in ruin, a haunting world of crumbling cellblocks and empty guard towers. Known for its grand architecture and strict discipline, this was the world’s first true “penitentiary,” a prison designed to inspire penitence, or true regret, in the hearts of convicts. Tours today include the cellblocks, solitary punishment cells, Al Capone’s Cell, and Death Row.
+
+  - name: La Salle University (click as close to center of campus as possible)
+    coordinates: [40.03904, -75.155818]
+    icon: 🏛️
+    description: La Salle University is a private Catholic university in Philadelphia, Pennsylvania, grounded in the Lasallian tradition of providing accessible, holistic education for the common good.
+
+  - name: Real-life Location featured as "Adrian's Restaurant" in the Rocky Movies
+    coordinates: [39.93163, -75.166315]
+    icon: 🍝
+    description: The restaurant featured in Rocky Balboa, Creed, and Creed II, known as Adrian's Restaurant in the films, is actually The Victor Café in South Philadelphia, an authentic Italian spot famous for its live opera singers performing throughout dinner, offering a real taste of Philly movie magic.
+
+  - name: City Hall
+    coordinates: [39.952386, -75.163608]
+    icon: 🏛️
+    description: This is the Philly Tap equivalent of a free space! City Hall at one point was the largest government building in all of the US. The WIlliam Penn statue at the top is over 37 feet tall, making it the largest statue on top of a building in the world.
+
+  - name: Franklin Field
+    coordinates: [39.950216, -75.190109]
+    icon: 🥪
+    description: Named after Penn's founder, Benjamin Franklin, Franklin Field is the home stadium for the Penn Relays, and the university's venue for football, track and field, and lacrosse. It was home to the Philadelphia Eagles from 1958-1970.
+
+  - name: Philly Mag's Top Restaurant of 2026
+    coordinates: [39.975649, -75.133089]
+    icon: 🥙
+    description: Kalaya was named Philly Mag's top restaurant of 2026. Kalaya is at it's second location on 4 W Palmer St in Fishtown. It is excellent Southern Thai food! Philly Mag describes it as a "lofty palm tree-filled restaurant" and a "beautiful ode to the Perankakan flavors of the chef's childhood".
+
+  - name: Fort Mifflin
+    coordinates: [39.875229, -75.213143]
+    icon: 🏰
+    description: Fort Mifflin is a preserved 18th-century fort on the Delaware River, built in 1771 to protect Philadelphia. The fort played a crucial role in the Revolutionary War, holding off the British Navy for six weeks in 1777 to allow Washington's army to escape. The fort is one of the only intact Revolutionary War forts in America and offers living history programs, ghost tours, and a chance to experience America's military history firsthand.
+
+  - name: Will Smith's Childhood Home
+    coordinates: [39.986925, -75.243067]
+    icon: 🍓
+    description: West Philadelphia, born & raised! The 2000 block of North 59th Street is now called "Will Smith Way". Will Smith was born to a middle-class family in the Wynnefield neighborhood of Philadelphia.
