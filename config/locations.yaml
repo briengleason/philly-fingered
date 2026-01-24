@@ -264,7 +264,7 @@ default:
     description: Dilworth Park is a modern public plaza in front of City Hall, opened in 2014. The park features fountains, seating areas, a seasonal ice rink, and beautiful landscaping. The park serves as a gathering place for locals and visitors, hosting events, concerts, and festivals throughout the year. It transforms Philadelphia's most historic civic space into a vibrant modern park that connects City Hall to the surrounding neighborhood.
 
   - id: 1
-    photo: /images/morning-glory-diner-snow.jpg
+    photo: images/morning-glory-diner-snow.jpg
     name: Morning Glory Diner
     coordinates: [39.940840, -75.158870]
     icon: 🥓
