@@ -74,8 +74,27 @@ function updateCurrentLocationDisplay(animate = true) {
         multiplierEl.style.display = 'none';
     }
     
-    // Update current location display
-    iconEl.textContent = location.icon;
+    // Update current location display - check if photo exists
+    const photoContainer = document.getElementById('current-location-photo-container');
+    const photoImg = document.getElementById('current-location-photo');
+    const displayContainer = document.getElementById('current-location-display');
+    
+    if (location.photo) {
+        // Show photo, hide icon/name display
+        photoImg.src = location.photo;
+        photoImg.onerror = () => {
+            // If photo fails to load, show icon/name instead
+            photoContainer.style.display = 'none';
+            displayContainer.style.display = 'flex';
+        };
+        photoContainer.style.display = 'flex';
+        displayContainer.style.display = 'none';
+    } else {
+        // Show icon and name
+        photoContainer.style.display = 'none';
+        displayContainer.style.display = 'flex';
+        iconEl.textContent = location.icon;
+    }
     
     // Update location name with info button
     const locationNameEl = document.getElementById('current-location-name');
@@ -365,4 +384,26 @@ function showCompletionScreen() {
             tableBody.appendChild(row);
         }
     });
+}
+
+// Photo modal functions
+function openPhotoModal() {
+    const modal = document.getElementById('photo-modal');
+    const modalImage = document.getElementById('photo-modal-image');
+    const photoImg = document.getElementById('current-location-photo');
+    
+    if (photoImg.src) {
+        modalImage.src = photoImg.src;
+        modal.classList.add('show');
+    }
+}
+
+function closePhotoModal(event) {
+    // Allow closing by clicking outside the image or on the close button
+    if (event && event.target.id !== 'photo-modal') {
+        return;
+    }
+    
+    const modal = document.getElementById('photo-modal');
+    modal.classList.remove('show');
 }
