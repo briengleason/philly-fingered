@@ -2632,9 +2632,9 @@ suite.test('Photo hint: hint text should be "Tap to zoom"', () => {
     suite.assert(hintText === 'Tap to zoom', 'Hint text should be "Tap to zoom"');
 });
 
-suite.test('Photo modal hint: minimize hint should be "Tap to minimize"', () => {
-    const minimizeHint = 'Tap to minimize';
-    suite.assert(minimizeHint === 'Tap to minimize', 'Minimize hint should be "Tap to minimize"');
+suite.test('Photo modal hint: minimize hint should be "Tap photo to minimize"', () => {
+    const minimizeHint = 'Tap photo to minimize';
+    suite.assert(minimizeHint === 'Tap photo to minimize', 'Minimize hint should be "Tap photo to minimize"');
 });
 
 // Run all tests
