@@ -46,6 +46,7 @@
                 <div id="current-location">
                     <div id="current-location-photo-container" style="display: none;">
                         <img id="current-location-photo" src="" alt="Location photo" onclick="openPhotoModal()">
+                        <div id="photo-tap-hint">Tap to enlarge</div>
                     </div>
                     <div id="current-location-display">
                         <div id="current-location-icon">🔔</div>
@@ -109,8 +110,7 @@
     <!-- Photo Modal -->
     <div id="photo-modal" class="photo-modal" onclick="closePhotoModal(event)">
         <div class="photo-modal-content" onclick="event.stopPropagation()">
-            <button class="photo-modal-close" onclick="closePhotoModal()">×</button>
-            <img id="photo-modal-image" src="" alt="Location photo">
+            <img id="photo-modal-image" src="" alt="Location photo" onclick="closePhotoModal()">
         </div>
     </div>
     

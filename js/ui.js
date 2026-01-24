@@ -399,8 +399,10 @@ function openPhotoModal() {
 }
 
 function closePhotoModal(event) {
-    // Allow closing by clicking outside the image or on the close button
-    if (event && event.target.id !== 'photo-modal') {
+    // Close modal when:
+    // 1. Clicking the image itself
+    // 2. Clicking outside the content area
+    if (event && event.target.id !== 'photo-modal' && event.target.id !== 'photo-modal-image') {
         return;
     }
     
