@@ -911,7 +911,7 @@ All CSS is embedded in `<style>` tag in `index.html`.
 - **Responsive Sizing**: Photo container 120px × 100px (desktop), 100px × 80px (mobile)
 - **Tap to Enlarge**: Tap photo opens full-screen modal viewer
 - **Close Modal**: Tap the enlarged photo again or tap outside to minimize
-- **Visual Hints**: "Tap to enlarge" label below photo, "Tap to minimize" text at bottom of modal
+- **Visual Hints**: "Tap to zoom" label below photo, "Tap to minimize" text at bottom of modal
 - **Fallback to Icon/Name**: If photo URL fails to load, automatically shows icon/name instead
 - **Smooth Animations**: Fade-in animation for modal, hover zoom effect on photo
 - **Admin Support**: Admin console updated with photo URL input field and parsing
