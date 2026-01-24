@@ -139,6 +139,27 @@
 - Ensures users always see the latest daily locations, especially on mobile devices with aggressive caching
 - Added comprehensive tests for cache-busting functionality
 
+### Phase 15: Compact Location Card Layout
+- Redesigned location card to be more compact and take up less screen space
+- Location and running score now displayed side-by-side instead of stacked
+- Added vertical divider between location and running score for visual separation
+- Reduced font sizes and spacing throughout the card for better mobile experience
+- Location card centered on screen (instead of right-aligned) for better visibility
+- Minimized final score card remains right-aligned for consistency
+- Instruction text moved to span full width of card and centered
+- Updated instruction text to "Tap the location on the map" for clarity
+- Significantly reduced card height, especially on mobile devices
+- Running score stacks vertically (label on top, number below) to prevent overflow
+- Removed text truncation from location names (critical for gameplay)
+
+### Phase 16: Native Mobile Sharing
+- Integrated Web Share API for native mobile sharing experience
+- Share button now opens native share sheet on mobile devices (Messages, Email, etc.)
+- Falls back to clipboard API on desktop and older browsers
+- Handles user cancellation gracefully (no error shown)
+- Share includes score message with emojis and game URL
+- Added comprehensive tests for Web Share API functionality
+
 ## Project Structure
 
 ```

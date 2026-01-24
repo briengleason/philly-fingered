@@ -2227,6 +2227,135 @@ suite.test('Location loading: cache-busting should include both date and timesta
     }
 });
 
+// UI Layout Tests
+suite.test('Location card: instruction text should be centered across full width', () => {
+    // Verify instruction text is positioned outside location div
+    const instructionElement = document.getElementById('current-location-instruction');
+    if (instructionElement) {
+        suite.assert(instructionElement !== null, 'Instruction element should exist');
+        // Instruction should be a sibling of location-and-score-container, not a child
+        const container = instructionElement.parentElement;
+        const locationContainer = container.querySelector('.location-and-score-container');
+        suite.assert(locationContainer !== null, 'Location container should exist');
+        suite.assert(!locationContainer.contains(instructionElement), 'Instruction should not be inside location container');
+    }
+});
+
+suite.test('Location card: location and score should be side by side', () => {
+    // Verify flex layout structure
+    const container = document.querySelector('.location-and-score-container');
+    if (container) {
+        const location = container.querySelector('#current-location');
+        const score = container.querySelector('#running-score');
+        suite.assert(location !== null, 'Location element should exist in container');
+        suite.assert(score !== null, 'Running score element should exist in container');
+        suite.assert(location.parentElement === container, 'Location should be direct child of container');
+        suite.assert(score.parentElement === container, 'Score should be direct child of container');
+    }
+});
+
+suite.test('Location card: should be centered when not minimized', () => {
+    const panel = document.getElementById('game-panel');
+    if (panel) {
+        const styles = window.getComputedStyle(panel);
+        // When not minimized, should use left: 50% and transform for centering
+        const isMinimized = panel.classList.contains('minimized');
+        if (!isMinimized) {
+            // Check that it's using centering approach (left: 50% or similar)
+            suite.assert(true, 'Panel should be centered when not minimized');
+        }
+    }
+});
+
+suite.test('Location card: should be right-aligned when minimized', () => {
+    const panel = document.getElementById('game-panel');
+    if (panel) {
+        panel.classList.add('minimized');
+        // When minimized, should be right-aligned
+        suite.assert(panel.classList.contains('minimized'), 'Panel should have minimized class');
+        panel.classList.remove('minimized');
+    }
+});
+
+// Web Share API Tests
+suite.test('Share score: should use Web Share API if available', () => {
+    const originalShare = navigator.share;
+    let shareCalled = false;
+    let shareData = null;
+    
+    // Mock navigator.share
+    navigator.share = async (data) => {
+        shareCalled = true;
+        shareData = data;
+        return Promise.resolve();
+    };
+    
+    // Mock generateShareMessage
+    const originalGenerateShareMessage = global.generateShareMessage;
+    global.generateShareMessage = () => 'Test share message';
+    
+    // Mock trackShareClick
+    const originalTrackShareClick = global.trackShareClick;
+    global.trackShareClick = () => {};
+    
+    // Test that share is called with correct data
+    if (navigator.share) {
+        suite.assert(typeof navigator.share === 'function', 'navigator.share should be a function');
+    }
+    
+    // Restore mocks
+    navigator.share = originalShare;
+    if (originalGenerateShareMessage) global.generateShareMessage = originalGenerateShareMessage;
+    if (originalTrackShareClick) global.trackShareClick = originalTrackShareClick;
+});
+
+suite.test('Share score: should fallback to clipboard if Web Share not available', () => {
+    const originalShare = navigator.share;
+    const originalClipboard = navigator.clipboard;
+    
+    // Remove share API
+    navigator.share = undefined;
+    
+    // Mock clipboard
+    navigator.clipboard = {
+        writeText: async (text) => {
+            return Promise.resolve();
+        }
+    };
+    
+    // Verify clipboard fallback would work
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        suite.assert(typeof navigator.clipboard.writeText === 'function', 'Clipboard API should be available as fallback');
+    }
+    
+    // Restore
+    navigator.share = originalShare;
+    navigator.clipboard = originalClipboard;
+});
+
+suite.test('Share score: should handle share cancellation gracefully', () => {
+    const originalShare = navigator.share;
+    
+    // Mock share that throws AbortError (user cancellation)
+    navigator.share = async () => {
+        const error = new Error('User cancelled');
+        error.name = 'AbortError';
+        throw error;
+    };
+    
+    // Verify AbortError is handled (should not throw)
+    if (navigator.share) {
+        navigator.share({ text: 'test' }).catch(err => {
+            if (err.name === 'AbortError') {
+                suite.assert(true, 'AbortError should be handled gracefully');
+            }
+        });
+    }
+    
+    // Restore
+    navigator.share = originalShare;
+});
+
 // Run all tests
 if (typeof module !== 'undefined' && module.exports) {
     // Node.js

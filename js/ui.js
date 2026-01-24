@@ -115,7 +115,7 @@ function updateCurrentLocationDisplay(animate = true) {
             `✓ ${formatDistance(guess.distance)} away - ${guess.score} points`;
     } else {
         document.getElementById('current-location-instruction').textContent = 
-            'Tap on the map to guess where this location is';
+            'Tap the location on the map';
     }
 }
 
@@ -231,12 +231,33 @@ function generateShareMessage() {
     return `${url}  ${date}\n${scoreString}\nFinal score: ${finalScore}`;
 }
 
-// Share score to clipboard
+// Share score using Web Share API (mobile) or clipboard (desktop)
 async function shareScore() {
     try {
         const message = generateShareMessage();
         
-        // Try to use the Clipboard API
+        // Try Web Share API first (mobile devices)
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    text: message,
+                });
+                
+                // Track share button click
+                trackShareClick(gameState.totalScore, getTodayDateString());
+                return; // Successfully shared via native share
+            } catch (shareError) {
+                // User cancelled share or share failed, fall through to clipboard
+                if (shareError.name !== 'AbortError') {
+                    console.log('Web Share API failed, falling back to clipboard:', shareError);
+                } else {
+                    // User cancelled, don't show error
+                    return;
+                }
+            }
+        }
+        
+        // Fallback to Clipboard API (desktop or if Web Share not available)
         if (navigator.clipboard && navigator.clipboard.writeText) {
             await navigator.clipboard.writeText(message);
         } else {
@@ -263,9 +284,9 @@ async function shareScore() {
         }, 2000);
         
     } catch (error) {
-        console.error('Failed to copy to clipboard:', error);
+        console.error('Failed to share:', error);
         trackError('share_failed', error.message);
-        alert('Failed to copy. Please copy manually:\n\n' + generateShareMessage());
+        alert('Failed to share. Please copy manually:\n\n' + generateShareMessage());
     }
 }
 
