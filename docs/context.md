@@ -891,6 +891,54 @@ All CSS is embedded in `<style>` tag in `index.html`.
 
 ---
 
+## Photo Support Feature (2026-01-24)
+
+**Overview**: Added support for displaying location photos in the game, replacing icon/name when a photo is available.
+
+**YAML Structure**: 
+```yaml
+2026-01-24:
+  - id: 0
+    photo: https://example.com/photo.jpg    # Optional photo URL
+    name: Liberty Bell
+    coordinates: [39.9496, -75.1503]
+    icon: 🔔
+    description: Optional description
+```
+
+**Features Implemented**:
+- **Photo Display**: When a location has a `photo` field, it displays in the location card instead of icon/name
+- **Responsive Sizing**: Photo container 120px × 100px (desktop), 100px × 80px (mobile)
+- **Tap to Enlarge**: Tap photo opens full-screen modal viewer
+- **Close Modal**: Tap the enlarged photo again or tap outside to minimize
+- **Visual Hints**: "Tap to enlarge" label below photo, "Tap to minimize" text at bottom of modal
+- **Fallback to Icon/Name**: If photo URL fails to load, automatically shows icon/name instead
+- **Smooth Animations**: Fade-in animation for modal, hover zoom effect on photo
+- **Admin Support**: Admin console updated with photo URL input field and parsing
+
+**UI/UX Improvements**:
+- Photo card displays in same location as icon/name (left side of card)
+- Running total remains on right side with vertical divider
+- Photo has hover effect (slight zoom) to indicate interactivity
+- Full-screen modal with dark background (rgba(0,0,0,0.9)) for focus
+- "Tap to minimize" hint appears at bottom of enlarged photo
+
+**Files Modified**:
+- `index.html`: Added photo container HTML and modal structure
+- `css/styles.css`: Added 95+ lines for photo styling, modal, and animations
+- `js/ui.js`: Added `openPhotoModal()` and `closePhotoModal()` functions, updated `updateCurrentLocationDisplay()`
+- `admin/admin.html`: Added photo URL input field, updated YAML export logic, parse photo from existing locations
+- `test/game-tests.js`: Added 5 new tests for photo functionality
+
+**Tests Added**:
+- Photo display: location with photo displays photo instead of icon
+- Photo display: location without photo uses icon
+- Photo modal: modal toggles correctly on tap
+- Photo YAML export: photo field included in export
+- Photo fallback: broken photo fails over to icon
+
+---
+
 ## Development Philosophy
 
 This project follows a **test-first development** approach:

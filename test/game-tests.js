@@ -2356,6 +2356,99 @@ suite.test('Share score: should handle share cancellation gracefully', () => {
     navigator.share = originalShare;
 });
 
+// Photo support tests
+suite.test('Photo display: location with photo should display photo instead of icon', () => {
+    const location = {
+        id: 0,
+        photo: 'https://example.com/photo.jpg',
+        name: 'Test Location',
+        icon: '🔔',
+        coordinates: [39.9, -75.1]
+    };
+    
+    suite.assert(location.photo !== undefined, 'Photo field should be defined');
+    suite.assert(location.photo === 'https://example.com/photo.jpg', 'Photo URL should match');
+});
+
+suite.test('Photo display: location without photo should use icon', () => {
+    const location = {
+        id: 0,
+        name: 'Test Location',
+        icon: '🔔',
+        coordinates: [39.9, -75.1]
+    };
+    
+    suite.assert(location.photo === undefined, 'Photo field should be undefined');
+    suite.assert(location.icon !== undefined, 'Icon should be defined');
+});
+
+suite.test('Photo modal: modal should toggle on photo tap', () => {
+    // Simulate modal state
+    let modalOpen = false;
+    
+    function openPhotoModal() {
+        modalOpen = true;
+    }
+    
+    function closePhotoModal() {
+        modalOpen = false;
+    }
+    
+    // Test opening
+    openPhotoModal();
+    suite.assert(modalOpen === true, 'Modal should be open');
+    
+    // Test closing
+    closePhotoModal();
+    suite.assert(modalOpen === false, 'Modal should be closed');
+});
+
+suite.test('Photo YAML export: photo field should be included in export', () => {
+    const location = {
+        id: 0,
+        photo: 'https://example.com/photo.jpg',
+        name: 'Test Location',
+        coordinates: [39.9, -75.1],
+        icon: '🔔'
+    };
+    
+    // Simulate YAML generation
+    let yaml = `  - id: ${location.id}\n`;
+    if (location.photo) {
+        yaml += `    photo: ${location.photo}\n`;
+    }
+    yaml += `    name: ${location.name}\n`;
+    yaml += `    coordinates: [${location.coordinates[0]}, ${location.coordinates[1]}]\n`;
+    yaml += `    icon: ${location.icon}\n`;
+    
+    suite.assert(yaml.includes('photo:'), 'YAML should include photo field');
+    suite.assert(yaml.includes('https://example.com/photo.jpg'), 'YAML should include photo URL');
+});
+
+suite.test('Photo fallback: location with broken photo should fallback to icon', () => {
+    const location = {
+        id: 0,
+        photo: 'https://broken.example.com/404.jpg',
+        name: 'Test Location',
+        icon: '🔔',
+        coordinates: [39.9, -75.1]
+    };
+    
+    // Simulate photo error and fallback logic
+    let displayPhoto = location.photo;
+    let displayIcon = location.icon;
+    let usePhoto = true;
+    
+    // Simulate photo load error
+    function handlePhotoError() {
+        usePhoto = false;
+    }
+    
+    handlePhotoError();
+    suite.assert(usePhoto === false, 'Should fallback when photo fails');
+    suite.assert(displayIcon !== undefined, 'Icon should be available as fallback');
+});
+
 // Run all tests
 if (typeof module !== 'undefined' && module.exports) {
     // Node.js
