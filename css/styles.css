@@ -1088,6 +1088,29 @@ body, html {
     cursor: pointer;
 }
 
+#photo-minimize-hint {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    pointer-events: none;
+    animation: fadeInUp 0.4s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
 /* Adjust location card layout for photos */
 #current-location {
     flex: 1;
