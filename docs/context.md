@@ -4,7 +4,7 @@
 
 **Philly Tap** is a daily location-guessing game for Philadelphia landmarks. Users must identify 5 different locations each day by tapping on an interactive map, receiving scores based on proximity to the actual locations. The game features sequential location display with smooth animations, shareable score results, and comprehensive test coverage.
 
-**Live Site**: https://briengleason.github.io/philly-tap/
+**Live Site**: https://playphillytap.com
 
 ## Project Evolution & Development Summary
 
@@ -33,7 +33,7 @@
 ### Phase 5: Share Functionality
 - Added emoji-based scoring (🎯 for perfect, 🏅 for excellent, etc.)
 - Implemented share score button with clipboard API
-- Generated formatted share messages: `briengleason.github.io/philly-tap/ January 17 96🏅 100🎯...`
+- Generated formatted share messages: `playphillytap.com January 17 96🏅 100🎯...`
 
 ### Phase 6: Testing & Quality Assurance
 - Built comprehensive test suite (119+ tests)
@@ -290,7 +290,7 @@ philly-tap/
   - Examples: 🎯 (100), 👑 (98-99), ⭐ (97), 💫 (96), 🏅 (95), 🥇 (94), 🏵️ (93), 🎖️ (92), 🏆 (90-91), 💎 (89, 76), 💍 (88), ✨ (87, 78), 🌟 (86, 77), 🎉 (85), 🎊 (84), 🔥 (83), 💥 (82), ⚡ (81), 😁 (75), 😄 (74), 😊 (73), 👍 (72), 👏 (71), 🤗 (70), 🙌 (69, 65), 👋 (68), ✌️ (67), 🤞 (66), 🤝 (64), 👌 (63, 60), 🙂 (62), 😌 (61), 🤔 (58-59), 😐 (55-57, 35-37), 😑 (53-54, 38-39), 🫣 (50-52), 🤷 (48-49), 😕 (45-47, 33-34), 😶 (43-44, 40-42), 😟 (30-32, 20-22), 😞 (28-29), 😔 (25-27), 😓 (23-24), 😥 (18-19), 😢 (15-17), 😰 (13-14, 5-7), 😨 (10-12), 😱 (8-9), 😭 (3-4, 0), 💀 (1-2)
 - **Share message format**:
   ```
-  briengleason.github.io/philly-tap/ January 17
+  playphillytap.com January 17
   96⭐ 100🎯 95🏅 87💎 89💎
   Final score: 467
   ```
@@ -682,7 +682,7 @@ See `docs/DEVELOPMENT.md` for detailed development guide.
 
 ## Deployment
 
-**Live Site**: https://briengleason.github.io/philly-tap/
+**Live Site**: https://playphillytap.com
 
 **Platform**: GitHub Pages (static hosting)
 

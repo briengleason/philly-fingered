@@ -239,7 +239,7 @@ function updateRunningScore() {
 
 // Generate share message
 function generateShareMessage() {
-    const url = 'briengleason.github.io/philly-tap/';
+    const url = 'playphillytap.com';
     const date = formatShareDate();
     
     // Sort locations by their original order (by id)
