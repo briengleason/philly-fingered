@@ -16,11 +16,11 @@ Your repository is already connected to GitHub! Follow these steps to enable Git
 
 - GitHub Pages will build and deploy your site (usually takes 1-2 minutes)
 - You'll see a green checkmark when it's ready
-- Your site will be available at: **https://briengleason.github.io/philly-tap/**
+- Your site will be available at: **https://playphillytap.com**
 
 ## ✅ Step 3: Verify It Works
 
-1. Visit: https://briengleason.github.io/philly-tap/
+1. Visit: https://playphillytap.com
 2. You should see the interactive map
 3. Try selecting a location and tapping on the map!
 
@@ -67,4 +67,4 @@ If you want to use a custom domain:
 
 ---
 
-**Your site URL:** https://briengleason.github.io/philly-tap/
+**Your site URL:** https://playphillytap.com

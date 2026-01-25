@@ -4,7 +4,7 @@ A daily location-guessing game for Philadelphia landmarks.
 
 ## 🌐 Play Now
 
-**[https://briengleason.github.io/philly-tap/](https://briengleason.github.io/philly-tap/)**
+**[https://playphillytap.com](https://playphillytap.com)**
 
 ## 📚 Documentation
 
