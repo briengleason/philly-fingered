@@ -303,10 +303,10 @@ default:
     description: Iconic sledding spot in Philadelphia! Seems like the steps would be bumpy to me
 
   - id: 2
-    name: Chinatown Friendship Arch
+    name: Chinatown Friendship Gate
     coordinates: [39.953725, -75.156262]
     icon: 🥠
-    description: Completed in 1986, the Friendship Archway in Washington, D.C.'s Chinatown was built as a symbol of sister-city ties with Beijing, featuring traditional Chinese, Paifang-style architecture with 7,000 glazed tiles and seven roofs. Designed by Alfred H. Liu, the 47-foot-tall structure was restored in 1993 and 2020 to remain an enduring landmark of the neighborhood's cultural heritage.
+    description: The Philadelphia Chinatown Friendship Gate, located at 10th and Arch Streets, is a 40-foot tall, colorful, traditional Chinese archway installed in 1984. It was the first authentic Chinese gate built in America by artisans from Philadelphia’s sister city, Tianjin, marking a cultural exchange and serving as a prominent entrance to the neighborhood. 
 
   - id: 3
     photo: images/thomas-mansion-sledding.jpg
