@@ -229,19 +229,19 @@ body, html {
     background: #2563eb;
     border: none;
     border-radius: 8px;
-    padding: 10px 14px;
+    padding: 12px 16px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 30px;
     color: white;
     z-index: 1001;
     transition: all 0.2s ease;
-    line-height: 0.8;
+    line-height: 1;
     box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 7px;
-    padding-bottom: 13px;
+    width: 44px;
+    height: 44px;
 }
 
 #menu-btn:hover {
