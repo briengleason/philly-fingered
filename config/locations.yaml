@@ -387,57 +387,67 @@ default:
 
 2026-01-29:
   - id: 0
-    name: Chinatown Gate
-    coordinates: [39.9542, -75.1556]
-    icon: 🚪
-    description: The Chinatown Friendship Gate is a colorful 40-foot-tall gateway that marks the entrance to Philadelphia's Chinatown neighborhood. Built in 1984 as a gift from the city of Tianjin, China, it was the first authentic Chinese gate built in America by Chinese artisans. The gate features traditional Chinese architecture with elaborate decorations, dragons, and phoenixes, symbolizing friendship between Philadelphia and China.
+    name: Philadelphia International Airport
+    coordinates: [39.872980, -75.243699]
+    icon: ✈️
+    description: Philadelphia International Airport opened in 1940; it was known then as Philadelphia Municipal Airport and transported 40,000 passengers on just a handful of carriers. Through the ensuing decades, the Airport expanded and developed as air travel became more popular. Today, Philadelphia International Airport is a major air transportation hub and accommodates 30.8 million passengers a year. Click on the decades to learn more about the history of Philadelphia International Airport.
+
   - id: 1
-    name: Nomad Pizza
-    coordinates: [39.9478, -75.1625]
+    name: Friday Saturday Sunday
+    coordinates: [39.948945, -75.175967]
     icon: 🍕
-    description: Nomad Pizza is a beloved Philadelphia pizzeria known for its wood-fired Neapolitan-style pizzas, opened in 2009. The restaurant was founded in a mobile wood-fired oven before opening brick-and-mortar locations. Nomad Pizza has won numerous awards and is consistently ranked among Philadelphia's best pizza places, known for its quality ingredients, authentic preparation, and creative flavor combinations.
+    description: Friday Saturday Sunday is one of three restaurants in Philadelphia with a Michelin Star. It also won a James Beard Award. It is run by husband & wife duo Chad and Hannah Williams and it is impossible to get a reservation!
+
   - id: 2
-    name: Fabric Workshop & Museum
-    coordinates: [39.9528, -75.1597]
-    icon: 🧵
-    description: The Fabric Workshop and Museum is a contemporary art museum and artist residency program, founded in 1977. The museum focuses on fabric and textile arts, offering residencies to artists working with textiles and other materials. The museum features exhibitions, workshops, and educational programs, showcasing contemporary art that explores the relationship between art, craft, and technology.
+    name: Largest Movie Theater (by number of screens)
+    coordinates: [39.951983, -75.157165]
+    icon: 🎬
+    description: AMC Dine-In Fashion District 8 Theater is has the most screens of any theater in Philadelphia. Opening in 2019, the theater has 8 screens and fixed seating for 836. Last movie I saw there was One Battle After Another.
+
   - id: 3
-    name: Morris Arboretum
-    coordinates: [40.0736, -75.2319]
-    icon: 🌲
-    description: The Morris Arboretum is a 92-acre Victorian landscape garden and arboretum, part of the University of Pennsylvania. Founded in 1887 by John and Lydia Morris as their private estate, it features over 13,000 plants including rare and endangered species. The arboretum is home to the Garden Railway, a model train display, and the Out on a Limb tree canopy walk, offering visitors unique perspectives on the natural world.
+    photo: images/fairmount-water-works-snow.jpg
+    name: Fairmount Water Works Gazebo
+    coordinates: [39.966983, -75.184563]
+    icon: 💧
+    description: Fairmount Water Works located on the Schuykill River. When it opened 1815, the Fairmount Water Works was an incredible feat of engineering, and it was one of the most advanced public water systems in the world.  The system was the first public water supply in America. A public water system is so incredibly taken for granted today, but it was a marvelous futuristic system in the early 19th Century and even became a global touristic attraction.
+
   - id: 4
-    name: La Salle University Art Museum
-    coordinates: [40.0372, -75.1569]
-    icon: 🎨
-    description: The La Salle University Art Museum is a small but distinguished art museum featuring European and American paintings, sculptures, and decorative arts. The collection includes works by artists such as Goya, Rubens, and Degas, spanning from the Middle Ages to the 20th century. The museum is housed in a beautiful historic building and offers free admission, making it an accessible cultural destination in Philadelphia.
+    name: Mummers Clubhouse of this year's Fancy Brigade Champions
+    coordinates: [39.921674, -75.149744]
+    icon: 🎭
+    description: The Downtowners took the top spot for the Fancy Brigades. It all started in 1959 when, after taking First Prize in a special mention category, a Brigade led by their now legendary Hall of Fame Captain Bill Isaacs was accepted into the Fancy Brigade Division of the Mummers Parade. The name chosen for this new Brigade was “Downtowners". The Downtowners won their first championship in 1964 with "Coronation". The Brigade repeated as champions in 1965 with "Genghis Khan and the Mongols".
 
 2026-01-30:
   - id: 0
-    name: Market East Station
-    coordinates: [39.9531, -75.1575]
-    icon: 🚇
-    description: Market East Station (now Jefferson Station) is a major SEPTA regional rail and subway station in Center City Philadelphia. The station serves as a transportation hub connecting commuters to suburban areas and other parts of the city. The station is part of Philadelphia's extensive public transportation network and serves as a gateway to Center City for thousands of daily commuters.
+    name: Reading Terminal Market
+    coordinates: [39.953159, -75.159098]
+    icon: 🍢
+    description: Reading Terminal Market is America's oldest continuously operating farmers' market, opening in 1893. Built under the Reading Railroad train shed, it features over 80 merchants selling everything from Amish baked goods to cheesesteaks. The market's distinctive Victorian architecture and bustling atmosphere make it a beloved Philadelphia institution and food destination.
+
   - id: 1
     name: Standard Tap
-    coordinates: [39.9642, -75.1405]
+    coordinates: [39.964164, -75.140521]
     icon: 🍺
     description: Standard Tap is a neighborhood gastropub in Northern Liberties, opened in 2000. The bar helped pioneer Philadelphia's craft beer scene, focusing on local and regional beers served from casks. The restaurant features a menu of elevated pub food and has become a beloved neighborhood institution, known for its quality beer selection, friendly atmosphere, and commitment to supporting local breweries.
+
   - id: 2
-    name: Christ Church
-    coordinates: [39.9507, -75.1439]
-    icon: ⛪
-    description: Christ Church is a historic Episcopal church founded in 1695, known as the "Nation's Church" because many founding fathers were members. George Washington, Benjamin Franklin, and Betsy Ross worshipped here. The church's elegant Georgian architecture and beautiful interior make it one of America's finest colonial churches. The church's 196-foot-tall steeple was the tallest structure in America when completed in 1754.
+    photo: images/christopher-columbus-statue.jpg
+    name: Statue of Christopher Columbus
+    coordinates: [39.915572, -75.172083]
+    icon: ⛲
+    description: The Christopher Columbus Monument was originally erected on the Centennial Exposition grounds at the intersection of Fountain and Belmont Avenues, near the Conservatory and dedicated on October 13, 1876 as a tribute from Italy to America. The entire monument cost $18,000, was made of Italian Ravazzoni marble. It is now in Marconi Plaza in South Philadelphia.
+
   - id: 3
-    name: Germantown Friends Meeting
-    coordinates: [40.0317, -75.1731]
-    icon: 🙏
-    description: Germantown Friends Meeting is a historic Quaker meetinghouse, founded in 1683 and one of the oldest Quaker meetinghouses in America. The meetinghouse played a role in the abolitionist movement and served as a hospital during the Battle of Germantown in 1777. The simple, elegant building reflects Quaker values and continues to serve as a place of worship and community gathering for Philadelphia's Quaker community.
+    name: Location of First Professional Basketball League Game
+    coordinates: [39.987427, -75.129789]
+    icon: 🏀
+    description: The National Basketball League was the first professional basketball league in the world. The league debuted on December 1, 1898, with a game between the Trenton Nationals and the Hancock Athletic Association at Textile Hall in Philadelphia's Kensington section. The Nationals rallied in the second half to win, 21–19, before 900 fans.
+
   - id: 4
-    name: Mt. Moriah Cemetery
-    coordinates: [39.9203, -75.2261]
-    icon: ⚰️
-    description: Mount Moriah Cemetery is a historic 380-acre cemetery in Southwest Philadelphia, opened in 1855. The cemetery is the final resting place of many notable Philadelphians including Betsy Ross, and features beautiful Victorian architecture and sculpture. The cemetery fell into disrepair in the late 20th century but has been restored by volunteers, showcasing Philadelphia's commitment to preserving its historic cemeteries.
+    name: Highest Elevation in Philadelphias
+    coordinates: [40.078540, -75.210338]
+    icon: 🏔️
+    description: Summit Street, not surprisingly, is located at the highest elevation in Philadelphia which is 446 feet above sea level. But today it may be better known as one of the most interesting and beautiful streets in Chestnut Hill.
 
 2026-01-31:
   - id: 0
