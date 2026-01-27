@@ -267,12 +267,12 @@ philly-tap/
   - Locations 4-5 (id: 3-4): Base score × 3 (tripled)
 - **Total Score Range**: 0-1000 points (sum of all 5 locations with multipliers: 100 + 100 + 200 + 300 + 300)
 - **Distance-based**: Uses Haversine formula to calculate distance
-- **Scoring Curve**: Exponential decay with steeper curve to reward accuracy (closer = exponentially better score)
-  - Formula: `baseScore = 100 * (1 - (distance / MAX_DISTANCE))^2.3`
-  - Exponent of 2.3 creates a steeper curve that penalizes distance more
-  - Close guesses (200-500ft) still get high scores (96-98)
-  - Medium distances (1-2 miles) get lower scores (60, 31)
-  - Far distances (3-4 miles) get very low scores (12, 2)
+- **Scoring Curve**: Exponential decay with adjusted curve to reward accuracy (closer = exponentially better score)
+  - Formula: `baseScore = 100 * (1 - (distance / MAX_DISTANCE))^1.8`
+  - Exponent of 1.8 balances rewarding close guesses while not being too harsh on distance
+  - Close guesses (200-500ft) get high scores (99, 97)
+  - Medium distances (1-2 miles) get moderate scores (67, 40)
+  - Far distances (3-4 miles) get lower scores (19, 5)
   - Then multipliers are applied: `finalScore = baseScore × multiplier`
 - **Maximum Distance**: 8000m (8km / ~5 miles) - beyond this = 0 points
 
@@ -362,7 +362,7 @@ function formatDistance(meters)
 function calculateScore(distance, maxDistance = 8000)
 function applyScoreMultiplier(score, locationId)
 ```
-- Base Formula: `100 * (1 - (distance / maxDistance))^2.3`
+- Base Formula: `100 * (1 - (distance / maxDistance))^1.8`
 - Exponential decay curve with steeper penalty for distance
 - Closer guesses get disproportionately better scores
 - Maximum distance: 8000 meters (8km / ~5 miles)
@@ -856,6 +856,11 @@ All CSS is embedded in `<style>` tag in `index.html`.
   - Photo displays above description text in modal
   - Responsive sizing for mobile devices
   - Added 6 new tests for location info modal photo functionality
+- **Scoring Adjustments (2026-01-25)**: Updated scoring exponent to 1.8 for balanced scoring
+  - Adjusted scoring exponent from 2.3 to 1.8 for more balanced curve
+  - Balances rewarding close guesses while not being too harsh on distance
+  - MAX_DISTANCE remains 8000m (8km / ~5 miles) to avoid more zero scores
+  - Score examples: 200ft = 99, 500ft = 97, 1 mile = 67, 2 miles = 40, 3 miles = 19, 4 miles = 5
 - **Scoring Improvements (2026-01-25)**: Updated scoring system to reward accuracy more
   - Increased scoring exponent from 2.0 to 2.3 for steeper curve
   - Steeper curve penalizes distance more while keeping close guesses high
