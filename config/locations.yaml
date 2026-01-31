@@ -495,17 +495,80 @@ default:
     description: Beep beep! This weekend was the first weekend of the Philadelphia Auto Shoow at the Pennsylvania Convention Center. It runs form now until February 8.
 
   - id: 2
+    name: Urban Saloon
+    coordinates: [39.967182, -75.172915]
+    icon: 🍻
+    description: Urban Saloon is a sport-bar in Fairmount near the Eastern State Penitentiary. It is a pretty standard sports bar that gets absolutely packed for Eagles games. Better get there at 11 AM if you want a table for the 1 PM games.
+
+  - id: 3
+    photo: images/philly-car-in-ice.jpeg
+    name: Car Frozen in Fishtown
+    coordinates: [39.964608, -75.137525]
+    icon: 🚙
+    description: This car was frozen in ice in Fishtown at the 1000 block of Front Street this week. "I noticed the pipe burst (Wednesday) because that part of the street was blocked off with red crime scene tape," the owner of the car,Tiana Graham, told Action News. "I went over there to talk to the cop, and he told me about the water line. I asked him if I should move my car, and he told me I would be fine where I'm at."
+
+  - id: 4
+    name: Oldest Church in Philadelphia
+    coordinates: [39.934486, -75.143549]
+    icon: ⛪
+    description: It is Sunday after all! Gloria Dei Church aka Old Swedes is the oldest Church in not only Philadelphia, but all of Pennsylvania. It was built between 1698 and 1700. It is also the second oldest Swedish church in the United States after Holy Trinity Church in Delaware.
+
+2026-02-02:
+  - id: 0
+    name: National Constitution Center
+    coordinates: [39.953695, -75.149117]
+    icon: 🖊️
+    description: Located at 525 Arch Street on Philadelphia's Independence Mall, the National Constitution Center is a non-profit museum and national town hall dedicated to increasing public understanding of the U.S. Constitution. Opened in 2003, it features interactive exhibits, the life-size bronze statues of Signers' Hall, and educational programs that explore the history and relevance of the founding document.
+
+  - id: 1
+    name: Location of Women's Professional 3v3 League this weekend
+    coordinates: [39.901201, -75.171979]
+    icon: 🏀
+    description: On Friday, the Xfinity Mobile Arena hosted the first game of this year's women's professional 3v3 league. Founded by WNBA stars Breanna Stewart and Napheesa Collier, the league, Unrivaled, gives top players a new option for offseason play — and after a successful first season in Miami, the league has decided to hit the road. First stop- Xfinity Mobile Arena in South Philadelphia.
+
+  - id: 2
     photo: images/rittenhouse-square-snow.jpg
-    name: Rittenhouse Square in the Snow
-    coordinates: [39.949462, -75.171892]
+    name: Rittenhouse Square
+    coordinates: [39.949466, -75.171864]
     icon: 🌳
     description: Rittenhouse Square in the snow!
 
   - id: 3
-    name: Oldest Church in Philadelphia
-    coordinates: [39.934486, -75.143549]
-    icon: ⛪
-    description: Gloria Dei Church aka Old Swedes is the oldest Church in not only Philadelphia, but all of Pennsylvania. It was built between 1698 and 1700. It is also the second oldest Swedish church in the United States after Holy Trinity Church in Delaware.
+    name: Home Arena for Dawn Staley's Former Team
+    coordinates: [39.979879, -75.158554]
+    icon: 🏀
+    description: Dawn Staley was the coach of Temple Women's Basketball Team from 2000-2008. They played at the Liacouras Center on N Broad St. She coached the Owls while she was playing in the WNBA. Staley grew-up in Philadelphia and is one of the all-time greatest college basketball coaches.
+
+  - id: 4
+    name: Location of First Ever Professional Basketball League Game
+    coordinates: [39.987427, -75.129789]
+    icon: 🏀
+    description: The National Basketball League was the first professional basketball league in the world. The league debuted on December 1, 1898, with a game between the Trenton Nationals and the Hancock Athletic Association at Textile Hall in Philadelphia's Kensington section. The Nationals rallied in the second half to win, 21–19, before 900 fans.
+
+2026-02-03:
+  - id: 0
+    name: Geno's Steaks
+    coordinates: [39.933824, -75.158839]
+    icon: 🥩
+    description: Geno's Steaks is an iconic, 24/7 South Philadelphia landmark established in 1966 by Joey Vento, famous for its brightly lit neon facade at 9th and Passyunk. Located across from rival Pat's, this popular spot specializes in thinly sliced ribeye cheesesteaks, serving mostly tourists and some locals in a fast-paced, walk-up window setting.
+
+  - id: 1
+    name: Her Place Supper Club
+    coordinates: [39.950745, -75.170168]
+    icon: 🍲
+    description: Her Place Supper Club is a Michelen-starred restaurant on Sansom St in Center City Philadelphia. They describe themselves as a "Kind of like a restaurant but kind of like a dinner party." It was founded in 2021 by Amanda Shulman who also founded My Loup.
+
+  - id: 2
+    photo: images/keith-haring-street-art.jpg
+    name: We The Youth by Keith Haring
+    coordinates: [39.938566, -75.179916]
+    icon: 🎨
+    description: Renowned pop artist Keith Haring originally created 1987’s We the Youth — a bright and joyous public mural featuring the artists’ signature dancing figures  —  in collaboration with a group of high school students from New York and Philadelphia as well as three local artists. Located on the side of a rowhome at 22nd and Ellsworth streets in South Philadelphia, the mural was restored by Mural Arts Philadelphia with support from the Keith Haring Foundation in 2013. We the Youth is the only collaborative public mural by the artist remaining intact and on its original site.
+
+  - id: 3
+    name: Only 2-key Michelin Hotel in Philadelphia
+    coordinates: [39.955014, -75.170956]
+    icon: 🏢
 
   - id: 4
     name: Meeting spot of Hall and Oates
@@ -513,9 +576,103 @@ default:
     icon: 🎼
     description: The Adelphi Ballroom in West Philadelphia was the original meeting spot of Hall and Oates. There was a "Battle of the Bands" that they both played in. They were both Temple students at the time. John Oates was from MontCo and Darryl Oates was from Pottstown.
 
-2026-02-02:
+2026-02-04:
+  - id: 0
+    name: Betsy Ross Bridge Entrance (Philadelphia Side)
+    coordinates: [39.986439, -75.069778]
+    icon: 🚚
+    description: The Betsy Ross Bridge is a continuous steel truss bridge spanning the Delaware River from Philadelphia, Pennsylvania to Pennsauken, New Jersey. It was built from 1969 to 1974, and opened in April 1976, during the American Bicentennial Year.
+
+  - id: 1
+    name: Founding Fathers Sports Bar & Grill
+    coordinates: [39.944029, -75.169259]
+    icon: 🍻
+    description: Founding Fathers is a popular Philadelphia sports bar and restaurant located on South Street, known for its lively atmosphere and numerous TVs broadcasting Eagles, Phillies, Flyers, 76ers and Tottenham Hot Spurs games.
+
+  - id: 2
+    name: Betsy Ross House
+    coordinates: [39.952227, -75.144652]
+    icon: 🏠
+    description: The Betsy Ross House is at 239 Arch Street in Old City. It is a 18th-century, two-and-a-half-story Georgian-style home in Philadelphia's Old City, widely, though perhaps inaccurately, known as the birthplace of the American flag.
+
   - id: 3
-    name: Location of First Professional Basketball League Game
-    coordinates: [39.987427, -75.129789]
-    icon: 🏀
-    description: The National Basketball League was the first professional basketball league in the world. The league debuted on December 1, 1898, with a game between the Trenton Nationals and the Hancock Athletic Association at Textile Hall in Philadelphia's Kensington section. The Nationals rallied in the second half to win, 21–19, before 900 fans.
+    photo: images/american-flag-mural.png
+    name: Our Flag Unfurled Mural
+    coordinates: [39.959284, -75.138252]
+    icon: 🎨
+    description: In the wake of the 9/11 attacks, artist Meg Saligman volunteered to paint this now iconic mural, Our Flag Unfurled on the massive south facing wall of Philadelphia Warehousing and Cold Storage building. The design was intended to appear slightly sad, as if unfurling down the side of the building. Painted just north of center city, between I-95 and the Benjamin Franklin Bridge, the size and location of the mural make it a gateway to the city for thousands of daily commuters.
+
+  - id: 4
+    name: Oldest Bridge in America
+    coordinates: [40.043553, -75.020502]
+    icon: 🚘
+    description: Frankford Avenue Bridge was built in 1697 and is the oldest surviving roadway bridge in the United States. The bridge, built at the request of William Penn to connect his mansion with the new city of Philadelphia, was an important link on the King's Highway that linked Philadelphia with cities to the north.
+
+
+2026-02-05:
+
+2026-02-06:
+  - id: 0
+    name: Clark Park
+    coordinates: [39.948897, -75.210414]
+    icon: 🌳
+    description: West Philly park famous for a big farmers market and weekend crowds. It also has a great sledding hill. It is one of the premier parks in the city.
+
+  - id: 1
+    name: Chick's
+    coordinates: [39.938930, -75.174076]
+    icon: 🍻
+    description: Chick's Philly is a popular South Philadelphia bar on Washington Avenue. They describe themselves as an "upscale gastropub". They have a ton of TV, good bar food, and is a good spot for watching games.
+
+  - id: 2
+    name: Kelliann’s Bar & Grill
+    coordinates: [39.963101, -75.164517]
+    icon: 🍗
+    description: Many people say these are the best wings in the entire city. Known for their special sauce, which is hot buffalo,mixed with garlic parmesean, this little neighborhood bar is a must-try.
+
+  - id: 3
+    name: Original Location of the Wing Bowl
+    coordinates: [39.957391, -75.167268]
+    icon: 🍗
+    description: Wing Bowl was an annual eating contest founded in 1993 by Philadelphia talk-radio hosts Angelo Cataldi and Al Morganti. It was originally held on January 29, 1993, in the lobby of the former Wyndham Franklin Plaza Hotel located at 17th and Race Streets in Center City Philadelphia. It was traditionally on the Friday before the Super Bowl.
+
+  - id: 4
+    name: Last Location of the Wing Bowl in Philadelphia
+    coordinates: [39.901201, -75.171979]
+    icon: 🍗
+    description: The Wing Bowl was hosted in the Wells Fargo Center from 2000 until it ended in 2018. The Wing Bowl drew crowds of over 20,000. It is coming back this year but being hosted in Las Vegas.
+
+
+2026-02-07:
+
+2026-02-08:
+  - id: 0
+    name: Lincoln Financial Field
+    coordinates: [39.952493, -75.158059]
+    icon: 🚇
+    description: Lincoln Financial Field is the home of the Philadelphia Eagles. It is the largest stadium in the NFL and the second largest stadium in the United States. It is also the home of the Philadelphia Phillies.
+
+  - id: 1
+    name: North Broad Street after the Super Bowl
+    coordinates: [39.952493, -75.158059]
+    photo: images/broad-street-super-bowl.jpeg
+    icon: 🚇
+    description: This photo was taken at the intersection of Arch and Broad 
+
+  - id: 2
+    name: Location of most recent Bad Bunny Concert in Philadelphia
+    coordinates: [39.952493, -75.158059]
+    icon: 🚇
+    description: Wells Fargo Center
+
+  - id: 3
+    name: Only Philadelphia High School with an alumni playing in this year's Super Bowl
+    coordinates: [39.952493, -75.158059]
+    icon: 🚇
+    description: High School of Christian Barmore
+  
+  - id: 4
+    name: Location of the 1963 NFL Championship Game
+    coordinates: [39.952493, -75.158059]
+    icon: 🚇
+    description: The 1963 NFL Championship Game was the first ever NFL Championship Game. It was played between the Green Bay Packers and the New York Giants. The Packers won the game 16-7.
