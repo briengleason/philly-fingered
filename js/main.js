@@ -204,7 +204,7 @@ function adjustPositionsForBanner() {
 // Show weekend banner if it's Saturday or Sunday
 function showWeekendBanner() {
     const today = new Date();
-    const dayOfWeek = 6; // today.getDay(); // 0 = Sunday, 6 = Saturday
+    const dayOfWeek = today.getDay(); // 0 = Sunday, 6 = Saturday
     
     const banner = document.getElementById('weekend-banner');
     const bannerContent = document.getElementById('weekend-banner-content');
