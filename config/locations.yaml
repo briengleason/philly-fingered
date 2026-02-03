@@ -567,8 +567,9 @@ default:
 
   - id: 3
     name: Only 2-key Michelin Hotel in Philadelphia
-    coordinates: [39.955014, -75.170956]
+    coordinates: [39.955014, -75.1709561]
     icon: 🏢
+    description: The Four Seasons Hotel Philadelphia at Comcast Center has received the region's first two-key designation from the Michelin Guide. Michelin's key designations for hotels are equivalent to the travel guide's coveted stars awarded to restaurants around the globe.
 
   - id: 4
     name: Meeting spot of Hall and Oates
