@@ -211,7 +211,7 @@ function showWeekendBanner() {
     
     if (!banner || !bannerContent) return;
     
-    if (dayOfWeek === 6) {
+    if (dayOfWeek === 0) {
         // Saturday
         bannerContent.textContent = 'Tomorrow is the last day to play PhillyTap - thank you everyone for playing and sharing!';
         banner.style.display = 'flex';
@@ -219,7 +219,7 @@ function showWeekendBanner() {
         setTimeout(() => {
             adjustPositionsForBanner();
         }, 100);
-    } else if (dayOfWeek === 0) {
+    } else if (dayOfWeek === 1) {
         // Sunday
         bannerContent.textContent = 'Today is the last day to play PhillyTap - thank you everyone for playing!';
         banner.style.display = 'flex';
