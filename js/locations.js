@@ -16,15 +16,9 @@ function updateDateIndicator() {
     if (currentDateString) {
         dateDisplay.textContent = formatDateForDisplay(currentDateString);
         
-        if (usingDateSpecificLocations) {
-            // Hide the source indicator when using date-specific locations
-            sourceDisplay.textContent = '';
-            sourceDisplay.className = 'location-source';
-        } else {
-            // Only show warning when using default locations
-            sourceDisplay.textContent = `⚠ Using default locations (looking for: ${currentDateString})`;
-            sourceDisplay.className = 'location-source using-default';
-        }
+        // Hide the source indicator (no warning for default locations)
+        sourceDisplay.textContent = '';
+        sourceDisplay.className = 'location-source';
     } else {
         dateDisplay.textContent = 'Date not loaded';
         sourceDisplay.textContent = '';

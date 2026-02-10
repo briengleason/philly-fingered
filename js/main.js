@@ -201,37 +201,19 @@ function adjustPositionsForBanner() {
     }
 }
 
-// Show weekend banner if it's Saturday or Sunday
+// Show banner with message about no more new locations
 function showWeekendBanner() {
-    const today = new Date();
-    const dayOfWeek = today.getDay(); // 0 = Sunday, 6 = Saturday
-    
     const banner = document.getElementById('weekend-banner');
     const bannerContent = document.getElementById('weekend-banner-content');
     
     if (!banner || !bannerContent) return;
     
-    if (dayOfWeek === 0) {
-        // Saturday
-        bannerContent.textContent = 'Tomorrow is the last day to play PhillyTap - thank you everyone for playing and sharing!';
-        banner.style.display = 'flex';
-        // Wait for banner to render, then adjust positions
-        setTimeout(() => {
-            adjustPositionsForBanner();
-        }, 100);
-    } else if (dayOfWeek === 1) {
-        // Sunday
-        bannerContent.textContent = 'Today is the last day to play PhillyTap - thank you everyone for playing!';
-        banner.style.display = 'flex';
-        // Wait for banner to render, then adjust positions
-        setTimeout(() => {
-            adjustPositionsForBanner();
-        }, 100);
-    } else {
-        // Not weekend, hide banner
-        banner.style.display = 'none';
+    bannerContent.textContent = 'There will be no more new PhillyTap Locations - thank you everyone for playing!';
+    banner.style.display = 'flex';
+    // Wait for banner to render, then adjust positions
+    setTimeout(() => {
         adjustPositionsForBanner();
-    }
+    }, 100);
 }
 
 // Track page view on load
